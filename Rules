@@ -15,6 +15,14 @@
 
 compile '/stylesheets/*/' do
   # don’t filter or layout
+  filter :less
+end
+
+compile '/javascripts/*/' do
+end
+
+compile '/images/*/' do
+  # don’t filter or layout
 end
 
 compile '*' do
@@ -34,6 +42,14 @@ end
 
 route '/stylesheets/*/' do
   item.identifier.chop + '.css'
+end
+
+route '/javascripts/*/' do
+  item.identifier.chop + '.js'
+end
+
+route '/images/*/' do
+  item.identifier.chop + '.png'
 end
 
 route '*' do
