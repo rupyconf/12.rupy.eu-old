@@ -46,18 +46,28 @@
     #main.container
       %nav
         %ul
+          %li
+            %a{:href => "#sponsors"} Sponsors
           -#
             %li
               %a{:href => "#home"} Home
             %li
               %a{:href => "#speakers"} Speakers
             %li
-              %a{:href => "#sponsors"} Sponsors
-            %li
               %a{:href => "#venue"} Venue
           %li
             %a{:href => "#authors"} Team 
       #content
+        %article#sponsors
+          %h2 Our sponsors
+          .box
+            %a{href: '#'} Sponsor Brochure
+          %p.title Diamon 
+          %p.title Gold 
+          %p.title Silver
+          %a{href: 'http://vendavo.com'}
+            %img.sponsor{src: '/images/sponsor/vendavo.png'}
+          %p.title Bronze 
         -# 
           %article#speakers
             %h2 Speakers
@@ -71,8 +81,6 @@
                 %br/
                 %br/
             %br/
-          %article#sponsors
-            %h2 Our sponsors
           %article#venue
             %h2 Venue
         %article#authors
