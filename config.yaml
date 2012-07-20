@@ -75,3 +75,9 @@ watcher:
   # When to send notifications (using Growl or notify-send).
   notify_on_compilation_success: true
   notify_on_compilation_failure: true
+
+deploy:
+  default:
+    kind: rsync
+    dst:  "nukomeet:/srv/www/rupy.eu/public_html"
+    options: [ '-glpPrtvzOc', '--omit-dir-times' ]
