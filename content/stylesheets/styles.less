@@ -13,7 +13,11 @@
 .right {.fr();}
 
 a {text-decoration: none;}
-p {margin: 0;}
+p {
+    margin: 0;
+    margin-bottom: 12px;
+    margin-top: 6px;
+}
 
 h1 {
     .ubuntu();
@@ -51,11 +55,11 @@ header {
         text-align: center;
         font-size: 15px;
         &.br {
-            left: 405px;
+            right: 405px;
             background: url(../images/flagBr.png) no-repeat center top;
         }
         &.cz {
-            right: 405px;
+            left: 405px;
             background: url(../images/flagCz.png) no-repeat center top;
         }
         a {
@@ -63,6 +67,11 @@ header {
             color: #061c0b;
             height: 20px;
             padding-top: 110px;
+
+            strong {
+                .bl();
+            }
+
         }
     }
 }
@@ -293,6 +302,10 @@ footer {
                         width: 160px;
                         margin-right: 0px;
                     }
+                    .info {
+                        .bl();
+                        min-height: 150px;
+                    }
                     img {
                         .bl();
                         margin-bottom: 20px;
@@ -300,6 +313,7 @@ footer {
                         padding: 2px;
                     }
                     p {
+                        .bl();
                         .ubuntu();
                         color: #181818;
                         font-size: 12px;
@@ -316,7 +330,6 @@ footer {
                             text-transform: uppercase;
                         }
                         &.desc {
-                            min-height: 75px;
                             line-height: 12px;
                             margin-top: 12px;
                         }
