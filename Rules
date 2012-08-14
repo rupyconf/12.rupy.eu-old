@@ -14,8 +14,11 @@
 #   because “*” matches zero or more characters.
 
 compile '/stylesheets/*/' do
-  # don’t filter or layout
-  filter :less
+  ext = item[:extension].nil? ? nil : item[:extension].split('.').last
+
+  if ext == 'less'
+    filter :less
+  end 
 end
 
 compile '/javascripts/*/' do
