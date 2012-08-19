@@ -33,14 +33,14 @@
           });
           $('#redhat').modal('hide');
       });
-      var initLatLng = '60.178201,24.951067';
+      var initLatLng = '49.226544,16.5971215';
     %script{:src => "javascripts/custom/googleMaps.js", :type => "text/javascript"}
     %script{:src => "javascripts/custom/scroll.js", :type => "text/javascript"}
     %script{:src => "javascripts/custom/jquery.tweet.js", :type => "text/javascript"}
   %body
     %header
       .container
-        %img.logo{:alt => "RuPy is strongly dynamic conference with focus on Python, Ruby and JavaScript related technologies.", :src => "images/logo.png"}/
+        %img.logo{:alt => "", :src => "images/"}/
         %h1 RuPy is a strongly dynamic conference with focus on 
         %h1 Python, Ruby & JavaScript related technologies.
         %span.cz
@@ -55,21 +55,52 @@
       %nav
         %ul
           %li
+            %a{:href => "#home"} Home
+          %li
+            %a{:href => "#speakers"} Speakers
+          %li
             %a{:href => "#sponsors"} Sponsors
-          -#
-            %li
-              %a{:href => "#home"} Home
-            %li
-              %a{:href => "#speakers"} Speakers
-            %li
-              %a{:href => "#venue"} Venue
+          %li
+            %a{:href => "#venue"} Venue
           %li
             %a{:href => "#authors"} Team 
       #content
+        %article#speakers
+          %h2 Speakers
+
+          %section.left
+            %img{src: 'images/speaker/drnic.png'}
+            %p.title VP of Developer Evangelism at Engine Yard 
+            %p.name Dr Nic Williams 
+            %p
+              Dr Nic is a developer’s developer. He writes blog posts for developers; creates tools, libraries and text editor extensions for developers; and speaks to developers at conferences.
+            %p 
+              He’s the VP of Developer Evangelism at Engine Yard, the leading Platform as a Service. He has contributed to over 250 open source projects. He is known for creating or curating projects such as Rails Installer, Composite Primary Keys, Choc Top, App Scrolls, Rails TextMate bundle, New Gem, Tab Tab, GitHub Badges, Install Theme for Rails, and Dr Nic’s Magic Models.
+
+          %br{style: "clear: both"}
+
+          %section.left
+            %img{src: 'images/speaker/steveklabnik.png'}
+            %p.title &nbsp; 
+            %p.name Steve Klabnik 
+            %p
+              Ruby, anarchism, critical code studies. I love hypermedia APIs and teach awesome Ruby and Rails classes with Jumpstart Lab.
+
+          %br{style: "clear: both"}/
+
+          %section.left
+            %img{src: 'images/speaker/josevalim.png'}
+            %p.title Lead Developer at Plataformatec 
+            %p.name José Valim
+            %p
+              José Valim is a Rails Core member and author of Crafting Rails Applications. Also, he is the lead-developer of Plataformatec, a Ruby on Rails consultancy firm based in Brazil. He created and maintains many open source projects, the latest being Elixir and Dynamo, a language and web framework targeting the Erlang VM.
+
+          %br{style: "clear: both"}/
+
         %article#sponsors
           %h2 Our sponsors
           .box
-            %a{href: '#'} Sponsor Brochure
+            %a{href: 'https://dl.dropbox.com/u/7622715/rupy-12-sponsor.pdf'} Sponsor Brochure
           %p.title Diamond
           %p.title Gold 
           %a{href: '#redhat', :'data-toggle' => 'modal'}
@@ -78,21 +109,29 @@
           %a{href: 'http://vendavo.com'}
             %img.sponsor{src: 'images/sponsor/vendavo.png'}
           %p.title Bronze 
-        -# 
-          %article#speakers
-            %h2 Speakers
-            %section.left
-              %img{:alt => "Speaker", :src => "http://cambelt.co/icon/avatar/250x240"}/
-              %p.title Phasellus ut  ante
-              %p.name TBA
-              %p
-                %br/
-                %br/
-                %br/
-                %br/
+
+        %article#venue
+          %h2 Venue
+          .slideshow
+            #slides
+              .slides_container
+                %div
+                  %img{:alt => "", :src => "images/brno1.png"}/
+          %p.title Brno
+          %p 
+            Historic sites, modern architecture, busy city streets, quiet corners and parks, fancy restaurants, cosy cafés and pubs, culture, past and future, passion and charm... All this and even more can be found in Brno, the second biggest city of the Czech Republic, which will surely captivate you by its liveliness and cosy atmosphere.
+          %p
+            %strong Brno University of Technology
+            %br
+            Božetěchova 1/2
             %br/
-          %article#venue
-            %h2 Venue
+            612 66
+            %br/
+            Brno, Czech Republic
+
+          #googleMapWrapper
+            #googleMap
+
         %article#authors
           %h2 Team
           .author
