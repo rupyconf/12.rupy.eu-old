@@ -10,7 +10,7 @@ GEM
     cri (2.3.0)
       colored (>= 1.2)
     ffi (1.0.11)
-    haml (3.2.0.beta.2)
+    haml (3.2.0.beta.3)
       tilt
     less (2.2.1)
       commonjs (~> 0.2.6)

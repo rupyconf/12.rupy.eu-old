@@ -40,17 +40,24 @@
   %body
     %header
       .container
-        %img.logo{:alt => "", :src => "images/"}/
+        
         %h1 RuPy is a strongly dynamic conference with focus on 
         %h1 Python, Ruby & JavaScript related technologies.
-        %span.cz
-          %a{:href => "#", :title => "Brno Edition"} 
-            Brno Edition
-            %strong 16-18 Nov 2012
-        %span.br
-          %a{:href => "#", :title => "Sao Paolo Edition"} 
-            Sao Paolo Edition  
-            %strong 23-25 Nov 2012
+        
+        .flags_container.blog_button
+          %a{:href => "http://rupyconf.tumblr.com", :title => "RUPY BLOG"}
+            visit our blog
+        .flags_container
+          %div.cz
+            %a{:href => "#", :title => "Brno Edition"} 
+              Brno Edition
+              %br
+              %strong 16-18 Nov 2012
+          %div.br
+            %a{:href => "#", :title => "Sao Paolo Edition"} 
+              Sao Paolo Edition
+              %br
+              %strong 23-25 Nov 2012
     #main.container
       %nav
         %ul
@@ -69,7 +76,7 @@
           %h2 Speakers
 
           %section.left
-            %img{src: 'images/speaker/drnic.png'}
+            %img{:src => 'images/speaker/drnic.png'}
             %p.title VP of Developer Evangelism at Engine Yard 
             %p.name Dr Nic Williams 
             %p
@@ -77,7 +84,7 @@
             %p 
               He’s the VP of Developer Evangelism at Engine Yard, the leading Platform as a Service. He has contributed to over 250 open source projects. He is known for creating or curating projects such as Rails Installer, Composite Primary Keys, Choc Top, App Scrolls, Rails TextMate bundle, New Gem, Tab Tab, GitHub Badges, Install Theme for Rails, and Dr Nic’s Magic Models.
 
-          %br{style: "clear: both"}
+          %br{:style => "clear: both"}
 
           %section.left
             %img{src: 'images/speaker/steveklabnik.png'}
