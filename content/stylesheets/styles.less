@@ -32,9 +32,24 @@ body {
 }
 
 header {
-    height: 407px + 80px;
-    padding-top: 120px;
+    height: 290px + 80px;
+    padding-top: 318px;
     background: url(../images/header.png) repeat-x center top;
+    
+    .flags_container{
+      display: block;
+      width: 340px !important;
+      clear: both;
+      margin: 0 auto;
+      text-align: center;
+      a, a:hover{
+        color: #061C0B;
+      }
+    }
+    .blog_button{
+      margin: 15px auto;
+      font-style: italic;
+    }
     img.logo {
         .bl();
         margin: 0 auto 220px auto;
@@ -46,33 +61,20 @@ header {
         color: #081e0d;
         line-height: 24px;
     }
-    span {
-        .bl();
-        .abs();
-        top: 200px - 95px;
-        width: 130px;
-        height: 130px;
-        text-align: center;
-        font-size: 15px;
-        &.br {
-            right: 405px;
-            background: url(../images/flagBr.png) no-repeat center top;
-        }
-        &.cz {
-            left: 405px;
-            background: url(../images/flagCz.png) no-repeat center top;
-        }
-        a {
-            .bl();
-            color: #061c0b;
-            height: 20px;
-            padding-top: 110px;
-
-            strong {
-                .bl();
-            }
-
-        }
+    .br, .cz {
+      padding-top: 115px;
+      display: inline-block;
+      width: 141px;
+      height: 101px;
+      margin: 0 5px;
+    } 
+    .cz{
+      background: url(../images/flagCz.png) no-repeat center top;
+      float: left;
+    }
+    .br{
+      background: url(../images/flagBr.png) no-repeat center top;
+      float: right;
     }
 }
 
@@ -343,7 +345,6 @@ footer {
                         text-transform: none;
                         font-size: 16px;
                         margin: 22px 0 0 3px;
-                    }
                 }
             }
         }
