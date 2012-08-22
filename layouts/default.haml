@@ -32,6 +32,7 @@
             loading_text: "loading tweets..."
           });
           $('#redhat').modal('hide');
+          $('#vendavo').modal('hide');
       });
       var initLatLng = '49.226544,16.5971215';
     %script{:src => "javascripts/custom/googleMaps.js", :type => "text/javascript"}
@@ -139,7 +140,7 @@
           %a{href: '#redhat', :'data-toggle' => 'modal'}
             %img.sponsor{src: 'images/sponsor/redhat.png'}
           %p.title Silver
-          %a{href: 'http://vendavo.com'}
+          %a{href: '#vendavo', :'data-toggle' => 'modal'}
             %img.sponsor{src: 'images/sponsor/vendavo.png'}
           %p.title Bronze 
 
@@ -283,3 +284,4 @@
             %a{href: "https://www.hipchat.com/g4T5W6KqS"} Open Chat 
 
 = render '_redhat'
+= render '_vendavo'
