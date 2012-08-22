@@ -32,6 +32,7 @@
             loading_text: "loading tweets..."
           });
           $('#redhat').modal('hide');
+          $('#vendavo').modal('hide');
       });
       var initLatLng = '49.226544,16.5971215';
     %script{:src => "javascripts/custom/googleMaps.js", :type => "text/javascript"}
@@ -120,7 +121,34 @@
               Brian has been working on Rubinius since December 2006 and with Engine Yard since January 2008. He created the RubySpec project to improve the standards for high quality, compliant Ruby implementations. He hopes to see Ruby become an even more widely used language and improved to make lives of developers even better. He also enjoys whisky but will accept a good wine in a pinch.
 
           %section.left
-            %img{src: 'images/speaker/andrzejkrzywda.png'}
+            %img{src: 'images/speaker/mitchellhashimoto.png'}
+            %p.title &nbsp;
+            %p.name Mitchell Hashimoto
+            %p
+              Mitchell is the creator of <a href="http://vagrantup.com">Vagrant</a>, an <a href="http://www.oreillynet.com/pub/au/5373">O'Reilly author</a>, and a professional speaker. He is a well known and respected leader in the DevOps community, most commonly associated with building forward-thinking automation tools. He is also passionate about open source, and spends hours of his free time each day contributing to the community in any way possible.
+
+          %br{style: "clear: both"}/
+
+          %section.left
+            %img{src: 'images/speaker/benjaminbrowning.png'}
+            %p.title TorqueBox Lead at Red Hat
+            %p.name Benjamin Browning
+            %p
+              Ben is the lead of the TorqueBox project and an active contributor to many other open-source projects. He spent several years in the enterprise Java world before embracing the JRuby goodness and now works hard to bring the Ruby and Java communities together through TorqueBox.
+
+          %br{style: "clear: both"}/
+
+          %section.left
+            %img{src: 'images/speaker/piotrszotkowski.png'}
+            %p.title Cheap Science Officer at Rebased
+            %p.name Piotr Szotkowski
+            %p
+              Piotr Szotkowski is an assistant professor at Warsaw University of Technology (where he happily sneaks Ruby, EventMachine and newfangled database systems into the creaking world of twentieth-century academia) and a Ruby developer at <a href="http://rebased.pl">Rebased</a>. He’s also a long-time contributor to various open source projects for the civic sector and co-organiser of NetWtorek – monthly meetings of people from the NGO/non-profit and IT sectors, as well as SocHack – quarterly 48-hour hackatons for worthy causes, in coordination with <a href="http://www.rhok.org">Random Hacks of Kindness, <a href="http://www.opendataday.org">Open Data Day</a> and <a href="http://www.openeducationweek.org">Open Education Week</a>.
+
+          %br{style: "clear: both"}/
+
+          %section.left
+            %img{src: 'images/speaker/andrzejkrzywda.jpg'}
             %p.title &nbsp;
             %p.name Andrzej Krzywda
             %p
@@ -139,7 +167,7 @@
           %a{href: '#redhat', :'data-toggle' => 'modal'}
             %img.sponsor{src: 'images/sponsor/redhat.png'}
           %p.title Silver
-          %a{href: 'http://vendavo.com'}
+          %a{href: '#vendavo', :'data-toggle' => 'modal'}
             %img.sponsor{src: 'images/sponsor/vendavo.png'}
           %p.title Bronze 
 
@@ -283,3 +311,4 @@
             %a{href: "https://www.hipchat.com/g4T5W6KqS"} Open Chat 
 
 = render '_redhat'
+= render '_vendavo'
