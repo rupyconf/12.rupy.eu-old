@@ -4,8 +4,22 @@
     %title RUPY 2012
     %meta{:charset => "utf-8"}
     %meta{:content => "", :name => "description"}
-    %meta{:content => "", :name => "keywords"}
-    %meta{:content => "", :name => "author"}
+    %meta{:content => "python, ruby, copnference, europe, brazil", :name => "keywords"}
+    %meta{:content => "RUPY 2012 team", :name => "author"}
+
+    %meta{:content => "RUPY 2012", :property => "og:title"}/
+
+    %meta{:content => "http://rupy.eu", :property => "og:url"}/
+    
+    %meta{:content => "images/og_logo_info.png", :property => "og:image"}/
+    %meta{:content => "363", :property => "og:image:width"}/
+    %meta{:content => "250", :property => "og:image:height"}/
+
+    %meta{:content => "Rupy 2012", :itemprop => "name"}
+    %meta{:content => "Rupy 2012, Strongly dynamic Conference. Connecting Hemispheres.", :itemprop => "description"}
+    / this could be an smaller image
+    %meta{:content => "header.png", :itemprop => "image"}/
+
     /[if lt IE 9]
       <script src="js/lib/html5shiv.js"></script>
     %link{:href => "stylesheets/styles.css", :rel => "stylesheet", :type => "text/css"}/
@@ -42,7 +56,7 @@
     %header
       .container
         
-        %h1 RuPy is a strongly dynamic conference with focus on 
+        %h1 RuPy is a strongly dynamic conference with focus on
         %h1 Python, Ruby & JavaScript related technologies.
         
         .blog_container
@@ -50,7 +64,7 @@
             Our Blog
         .flags_container
           %div.cz
-            %a{:href => "#", :title => "Brno Edition"} 
+            %a{:href => "#", :title => "Brno Edition"}
               Brno Edition
               %br
               %strong 16-18 Nov 2012
@@ -71,26 +85,25 @@
           %li
             %a{:href => "#venue"} Venue
           %li
-            %a{:href => "#authors"} Team 
+            %a{:href => "#authors"} Team
       #content
         %article#speakers
           %h2 Speakers
 
           %section.left
             %img{:src => 'images/speaker/drnic.png'}
-            %p.title VP of Developer Evangelism at Engine Yard 
-            %p.name Dr Nic Williams 
+            %p.title VP of Developer Evangelism at Engine Yard
+            %p.name Dr Nic Williams
             %p
               Dr Nic is a developer’s developer. He writes blog posts for developers; creates tools, libraries and text editor extensions for developers; and speaks to developers at conferences.
-            %p 
+            %p
               He’s the VP of Developer Evangelism at Engine Yard, the leading Platform as a Service. He has contributed to over 250 open source projects. He is known for creating or curating projects such as Rails Installer, Composite Primary Keys, Choc Top, App Scrolls, Rails TextMate bundle, New Gem, Tab Tab, GitHub Badges, Install Theme for Rails, and Dr Nic’s Magic Models.
 
           %br{:style => "clear: both"}
 
           %section.left
             %img{src: 'images/speaker/steveklabnik.png'}
-            %p.title &nbsp; 
-            %p.name Steve Klabnik 
+            %p.name Steve Klabnik
             %p
               Ruby, anarchism, critical code studies. I love hypermedia APIs and teach awesome Ruby and Rails classes with Jumpstart Lab.
 
@@ -98,7 +111,7 @@
 
           %section.left
             %img{src: 'images/speaker/josevalim.png'}
-            %p.title Lead Developer at Plataformatec 
+            %p.title Lead Developer at Plataformatec
             %p.name José Valim
             %p
               José Valim is a Rails Core member and author of Crafting Rails Applications. Also, he is the lead-developer of Plataformatec, a Ruby on Rails consultancy firm based in Brazil. He created and maintains many open source projects, the latest being Elixir and Dynamo, a language and web framework targeting the Erlang VM.
@@ -106,7 +119,6 @@
           %br{style: "clear: both"}/
 
           %section.left
-            %p.title &nbsp;
             %p.name Charles Olivier Nutter
             %p
               Charles works on JRuby and other language implementations at Red Hat, helping to bring languages to the power of the JVM and bring the JVM to the broader polyglot world.
@@ -115,14 +127,12 @@
 
           %section.left
             %img{src: 'images/speaker/brianford.png'}
-            %p.title &nbsp;
             %p.name Brian Ford
             %p
               Brian has been working on Rubinius since December 2006 and with Engine Yard since January 2008. He created the RubySpec project to improve the standards for high quality, compliant Ruby implementations. He hopes to see Ruby become an even more widely used language and improved to make lives of developers even better. He also enjoys whisky but will accept a good wine in a pinch.
 
           %section.left
             %img{src: 'images/speaker/mitchellhashimoto.png'}
-            %p.title &nbsp;
             %p.name Mitchell Hashimoto
             %p
               Mitchell is the creator of <a href="http://vagrantup.com">Vagrant</a>, an <a href="http://www.oreillynet.com/pub/au/5373">O'Reilly author</a>, and a professional speaker. He is a well known and respected leader in the DevOps community, most commonly associated with building forward-thinking automation tools. He is also passionate about open source, and spends hours of his free time each day contributing to the community in any way possible.
@@ -149,7 +159,6 @@
 
           %section.left
             %img{src: 'images/speaker/andrzejkrzywda.png'}
-            %p.title &nbsp;
             %p.name Andrzej Krzywda
             %p
               Ruby and Coffee programmer. The founder of Arkency and GameBoxed. Rails teacher at University of Wroclaw.
@@ -167,18 +176,28 @@
 
           %br{style: "clear: both"}/
 
+          %section.left
+            %img{src: 'images/speaker/honzakral.png'}
+            %p.name Honza Král
+            %p
+              Honza is a Python programmer and Django core developer – since he is scared of the bright and shiny world of browsers, designers, and users he prefers to stay buried deep in the infrastructure code and just provides others with tools to do the actual site-building.
+
+          %br{style: "clear: both"}/
+
         %article#sponsors
           %h2 Our sponsors
           .box
             %a{href: 'https://dl.dropbox.com/u/7622715/rupy-12-sponsor.pdf'} Sponsor Brochure
           %p.title Diamond
-          %p.title Gold 
+          %p.title Gold
           %a{href: '#redhat', :'data-toggle' => 'modal'}
             %img.sponsor{src: 'images/sponsor/redhat.png'}
-          %p.title Silver
           %a{href: '#vendavo', :'data-toggle' => 'modal'}
             %img.sponsor{src: 'images/sponsor/vendavo.png'}
-          %p.title Bronze 
+          %p.title Silver
+          %p.title Bronze
+          %a{href: 'http://www.openshift.com'}
+            %img.sponsor{src: 'images/sponsor/openshift.png'}
 
         %article#venue
           %h2 Venue
@@ -186,9 +205,9 @@
             #slides
               .slides_container
                 %div
-                  %img{:alt => "", :src => "images/brno1.png"}/
+                  %img{:src => "images/brno1.png"}/
           %p.title Brno
-          %p 
+          %p
             Historic sites, modern architecture, busy city streets, quiet corners and parks, fancy restaurants, cosy cafés and pubs, culture, past and future, passion and charm... All this and even more can be found in Brno, the second biggest city of the Czech Republic, which will surely captivate you by its liveliness and cosy atmosphere.
           %p
             %strong Brno University of Technology
@@ -207,16 +226,15 @@
           .author
             %img{alt: "Alban", src: "images/alban.png"}
             .info
-              %p.title  
               %p.name Alban
               %p.desc
-                Ruby dev : 
-                %a{href: "http://nukomeet.com"} Nukomeet 
+                Ruby dev :
+                %a{href: "http://nukomeet.com"} Nukomeet
                 &
-                %a{href: "http://coworfing.com"} Coworfing 
+                %a{href: "http://coworfing.com"} Coworfing
                 cofounder
               %p.twitter
-                %a{href: "http://twitter.com/albanlv"} @albanlv 
+                %a{href: "http://twitter.com/albanlv"} @albanlv
 
           .author
             %img{alt: "Cadu", src: "images/cadu.png"}
@@ -232,32 +250,27 @@
           .author
             %img{alt: "Julien", src: "images/julien.png"}
             .info
-              %p.title  
-              %p.name Julien 
+              %p.name Julien
               %p.desc
-                After economics and statistics studies followed by two years working in the banking industry, Julien is now part of the 
+                After economics and statistics studies followed by two years working in the banking industry, Julien is now part of the
                 %a{href: "http://nukomeet.com"} Nukomeet
                 team as a Ruby developper.
               %p.twitter
-                %a{href: "http://twitter.com/julien_mu"} @julien_mu 
+                %a{href: "http://twitter.com/julien_mu"} @julien_mu
 
           .author
             %img{alt: "Katarina", src: "images/katarina.png"}
             .info
-              %p.title  
-              %p.name Katarina 
+              %p.name Katarina
               %p.desc
                 Language enthusiast, English language teacher and translator currently
                 working on her MA thesis on Translation Studies and trying to improve
                 her Dutch.
-              %p.twitter
-                %a{href: "http://twitter.com/"} @
 
           .author
             %img{alt: "Kristian", src: "images/kristian.png"}
             .info
-              %p.title  
-              %p.name Kristian 
+              %p.name Kristian
               %p.desc
                 Freelance Trainer for teaching, presentation, and development skills. Teaching Python to scientists and everything else to software developers.
               %p.twitter
@@ -266,10 +279,9 @@
           .author
             %img{alt: "Marek", src: "images/marek.png"}
             .info
-              %p.title  
-              %p.name Marek 
+              %p.name Marek
               %p.desc
-                Ruby enthusiast, polyglot programmer, working as 
+                Ruby enthusiast, polyglot programmer, working as
                 = link_to 'OpenShift', 'https://openshift.redhat.com/app/' 
                 and PaaS evangelist at Red Hat.
               %p.twitter
@@ -278,8 +290,7 @@
           .author
             %img{alt: "Martin", src: "images/martin.png"}
             .info
-              %p.title  
-              %p.name Martin 
+              %p.name Martin
               %p.desc
                 Ruby script-kiddie and teacher, Lean-Agile and Service Design thinker currently working on his master thesis focused on Lean Startup principles in Enterprise
               %p.twitter
@@ -288,8 +299,7 @@
           .author
             %img{alt: "Michel", src: "images/michel.png"}
             .info
-              %p.title  
-              %p.name Michel 
+              %p.name Michel
               %p.desc
                 Designa Founder, Agile Freak and Ruby enthusiast.
               %p.twitter
@@ -298,7 +308,6 @@
           .author
             %img{alt: "Robson", src: "images/robson.png"}
             .info
-              %p.title  
               %p.name Robson (bsao)
               %p.desc
                 Professional Chef, Amateur Brewer and Freelance Ruby Developer and researching about artificial intelligence applied to agile methodologies.
@@ -308,15 +317,14 @@
           .author
             %img{alt: "Zaiste!", src: "images/zaiste.png"}
             .info
-              %p.title  
-              %p.name Zaiste! 
+              %p.name Zaiste!
               %p.desc
-                Fast Coder : 
-                %a{href: "http://nukomeet.com"} Nukomeet 
-                cofounder : RuPy Founder 
-              %p.twitter
+                Fast Coder :
+                %a{href: "http://nukomeet.com"} Nukomeet
+                cofounder : RuPy Founder
+              %p
                 %a{href: "http://twitter.com/zaiste"} @zaiste
-          
+
     %footer
       .container
         .left
@@ -328,7 +336,7 @@
             %a{:href => "mailto:hello@rupy.eu"} hello@rupy.eu
           %p or
           %p
-            %a{href: "https://www.hipchat.com/g4T5W6KqS"} Open Chat 
+            %a{href: "https://www.hipchat.com/g4T5W6KqS"} Open Chat
 
 = render '_redhat'
 = render '_vendavo'
