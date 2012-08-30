@@ -1,0 +1,29 @@
+<%= simple_form_for [:admin, @speaker], :html => { :class => "form-horizontal" } do |f| %>
+
+  <%= f.error_notification %>
+
+  <%= f.association :event, :autofocus => true %>
+  <%= f.input :sequence, :input_html => { :class => "span1" } %>
+  <%= f.input :name %>
+  <%= f.input :title %>
+  <%= f.input :description, :input_html => { :class => "span8", :rows => 4 } %>
+
+  <div class="control-group auto-fill-file">
+    <%= f.label :photo %>
+    <div class="controls">
+      <%= link_to "#" do %>
+        <%= image_tag @speaker.photo.url, :class => "img-polaroid" %>
+      <% end %>
+    </div>
+    <div class="controls">
+      <%= f.hint '150x150' %>
+      <%= f.file_field :photo %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn-primary loading" %>
+    <%= link_to 'Cancel', admin_speakers_path, :class => "btn" %>
+  </div>
+
+<% end %>

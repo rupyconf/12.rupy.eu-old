@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h2>Listing speakers</h2>
+</div>
+
+<%= link_to 'New', new_admin_speaker_path, :class => 'btn btn-success btn-small btn-top' %>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Event</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @speakers.each do |speaker| %>
+      <tr>
+        <td class="nowrap"><%= speaker.sequence %></td>
+        <td class="nowrap"><%= speaker.event %></td>
+        <td><%= speaker.name %></td>
+        <td class="nowrap">
+          <div class="pull-right">
+            <%= link_to 'Edit', [:edit, :admin, speaker], :class => 'btn btn-small' %>
+            <%= link_to 'Destroy', [:admin, speaker], :class => 'btn btn-danger btn-small', :confirm => 'Tem certeza?', :method => :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  <tbody>
+</table>

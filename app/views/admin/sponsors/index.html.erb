@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h2>Listing sponsors</h2>
+</div>
+
+<%= link_to 'New', new_admin_sponsor_path, :class => 'btn btn-success btn-small btn-top' %>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Event</th>
+      <th>Type</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sponsors.each do |sponsor| %>
+      <tr>
+        <td class="nowrap"><%= sponsor.sequence %></td>
+        <td class="nowrap"><%= sponsor.event %></td>
+        <td class="nowrap"><%= sponsor.sponsor_type %></td>
+        <td><%= sponsor.name %></td>
+        <td class="nowrap">
+          <div class="pull-right">
+            <%= link_to 'Edit', [:edit, :admin, sponsor], :class => 'btn btn-small' %>
+            <%= link_to 'Destroy', [:admin, sponsor], :class => 'btn btn-danger btn-small', :confirm => 'Tem certeza?', :method => :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  <tbody>
+</table>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>RUPY 2012</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag "/favicon.png" %>
+  <%= stylesheet_link_tag "devise", :media => "all" %>
+  <%= javascript_include_tag "devise" %>
+</head>
+<body>
+  <div class="container well">
+    <%= render :partial => 'layouts/flashes' %>
+    <%= yield %>
+  </div>
+
+  <footer>
+    <p>®2012 RUPY</p>
+  </footer>
+</body>
+</html>

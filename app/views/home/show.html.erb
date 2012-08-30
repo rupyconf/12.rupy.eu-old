@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="span3 afix-sidebar hidden-phone">
+    <ul class="nav nav-list" data-spy="affix" data-offset-top="658" data-offset-bottom="550">
+      <li><%= link_to t(:speakers), "#speakers" %></li>
+      <li><%= link_to t(:sponsors), "#sponsors" %></li>
+      <li><%= link_to t(:venue), "#venue" %></li>
+      <li><%= link_to t(:team), "#team" %></li>
+    </ul>
+  </div>
+
+  <div class="span9">
+    <section id="speakers">
+      <%= content_tag :h2, t(:speakers) %>
+      <% @speakers.each do |speaker| %>
+        <%= content_tag :div, :class => "row" do %>
+          <%= content_tag :div, :class => "span9" do %>
+            <%= image_tag speaker.photo.url, :class => "img-rounded" %>
+            <%= content_tag :p, speaker.title, :class => "title" %>
+            <%= content_tag :h3, speaker.name %>
+            <%= content_tag :p, speaker.description.html_safe %>
+          <% end %>
+        <% end %>
+      <% end if @speakers.present? %>
+    </section>
+
+    <section id="sponsors">
+      <%= content_tag :h2, t(:sponsors) %>
+      <div class='box'><%= link_to t(:sponsor_brochure), @event.try(:brochure), :target => "_blank" %></div>
+      <% @sponsor_types.each do |sponsor_type| %>
+        <%= content_tag :p, sponsor_type.description, :class => "title" %>
+        <% sponsor_type.sponsors.find_all_by_event_id(@event.id).each do |sponsor| %>
+          <%= link_to image_tag(sponsor.logo.url), sponsor.website, :class => "thumbnail", :target => "_blank" %>
+        <% end %>
+      <% end if @sponsor_types.present? %>
+    </section>
+
+    <section id="venue">
+      <%= content_tag :h2, t(:venue) %>
+      <% if @event.present? %>
+        <%= image_tag @event.photo.url, :class => "photo" %>
+        <%= content_tag :p, @event.city, :class => "title" %>
+        <%= content_tag :p, @event.description %>
+        <%= content_tag :p do %>
+          <%= content_tag :strong, @event.place %><br>
+          <%= @event.address.html_safe %>
+        <% end %>
+      <% end %>
+      <div id="googleMapWrapper"><div id="googleMap"></div></div>
+    </section>
+
+    <section id="team">
+      <%= content_tag :h2, t(:team) %>
+      <% @teams.each_with_index do |team, index| %>
+        <% if index.zero? || index.divmod(3)[1].zero? %><div class="row"><% end %>
+          <%= content_tag :div, :class => "span3" do %>
+            <%= image_tag team.photo.url, :class => "img-polaroid" %>
+            <%= content_tag :h3, team.name %>
+            <%= content_tag :p, team.description.html_safe %>
+            <%= content_tag :p do %>
+              <%= link_to "@#{team.twitter}", "http://twitter.com/#{team.twitter}", :target => "_blank" %>
+            <% end unless team.twitter.blank? %>
+          <% end %>
+        <% if index.next.divmod(3)[1].zero? %></div><% end %>
+      <% end if @teams.present? %>
+    </section>
+  </div>
+</div>
