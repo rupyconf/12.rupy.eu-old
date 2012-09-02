@@ -4,6 +4,20 @@
   <title>RUPY 2012</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="latlong" content="<%= @event.try(:latitude_and_longitude) %>">
+
+  <meta name="keywords" content="python, ruby, copnference, europe, brazil">
+  <meta name="author" content="RUPY 2012 team">
+
+  <meta property="og:title" content="RUPY 2012">
+  <meta property="og:url" content="<%= root_url %>">
+  <meta property="og:image" content="<%= asset_path('og_logo_info.png') %>">
+  <meta property="og:image:width" content="363">
+  <meta property="og:image:height" content="250">
+
+  <meta itemprop="name" content="Rupy 2012">
+  <meta itemprop="description" content="Rupy 2012, Strongly dynamic Conference. Connecting Hemispheres.">
+  <meta itemprop="image" content="<%= asset_path('og_logo_info.png') %>">
+
   <%= csrf_meta_tags %>
   <%= favicon_link_tag "/favicon.png" %>
   <%= stylesheet_link_tag "application", :media => "all" %>
