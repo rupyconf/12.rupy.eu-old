@@ -9,5 +9,5 @@ test:
 
 production:
   authenticity_token: 55376360B6AB4728B39ABAB13B674C57
-  email: contato@desinga.com.br
+  email: contato@designa.com.br
   return_to: "http://rupy.com.br/br/payment"
