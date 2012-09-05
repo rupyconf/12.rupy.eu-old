@@ -1,0 +1,49 @@
+<%= simple_form_for [:admin, @training], :html => { :class => "form-horizontal" } do |f| %>
+
+  <%= f.error_notification %>
+
+  <%= f.association :event, :autofocus => true %>
+  <%= f.input :sequence, :input_html => { :class => "span1" } %>
+  <%= f.input :name %>
+  <%= f.input :description, :input_html => { :class => "span8", :rows => 4 } %>
+  <div class="control-group auto-fill-file">
+    <%= f.label :photo %>
+    <div class="controls">
+      <%= link_to "#" do %>
+        <%= image_tag @training.photo.url, :class => "img-polaroid" %>
+      <% end %>
+    </div>
+    <div class="controls">
+      <%= f.hint '870x230' %>
+      <%= f.file_field :photo %>
+    </div>
+  </div>
+
+  <legend>Instructor</legend>
+  <%= f.input :instructor_name %>
+  <%= f.input :instructor_description, :input_html => { :class => "span8", :rows => 4 } %>
+  <div class="control-group auto-fill-file">
+    <%= f.label :instructor_photo %>
+    <div class="controls">
+      <%= link_to "#" do %>
+        <%= image_tag @training.instructor_photo.url, :class => "img-polaroid" %>
+      <% end %>
+    </div>
+    <div class="controls">
+      <%= f.hint '150x150' %>
+      <%= f.file_field :instructor_photo %>
+    </div>
+  </div>
+
+  <legend>Summary</legend>
+  <%= f.input :summary, :label => false, :input_html => { :class => "span8", :rows => 4 } %>
+
+  <legend>Payment method</legend>
+  <%= f.input :payment_method, :label => false, :input_html => { :class => "span8", :rows => 4 } %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn-primary loading" %>
+    <%= link_to 'Cancel', admin_trainings_path, :class => "btn" %>
+  </div>
+
+<% end %>

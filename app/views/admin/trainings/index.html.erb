@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h2>Listing trainings</h2>
+</div>
+
+<%= link_to 'New', new_admin_training_path, :class => 'btn btn-success btn-small btn-top' %>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Event</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trainings.each do |training| %>
+      <tr>
+        <td class="nowrap"><%= training.sequence %></td>
+        <td class="nowrap"><%= training.event %></td>
+        <td><%= training.name %></td>
+        <td class="nowrap">
+          <div class="pull-right">
+            <%= link_to 'Edit', [:edit, :admin, training], :class => 'btn btn-small' %>
+            <%= link_to 'Destroy', [:admin, training], :class => 'btn btn-danger btn-small', :confirm => 'Tem certeza?', :method => :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  <tbody>
+</table>

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="span12">
+    <div class="well">
+      <% if @inscription.payment_status.blank? %>
+        <p>Para finalizar o processo de inscrição, você deve efetuar o pagamento:</p>
+        <%= pagseguro_form @order, :submit => "Efetuar pagamento!" %>
+      <% else %>
+        <%= content_tag :p, @inscription.payment_status %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -20,15 +20,13 @@
 
 $(function() {
   // Auto fill input file
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    $('.auto-fill-file img')[0].src  = e.target.result;
-  };
-
   function readURL(input){
-     if(input.files && input.files[0]){
-        reader.readAsDataURL(input.files[0]);
-     }
+    if(input.files && input.files[0]){
+      (new FileReader()).onload = function(e) {
+        $(input).parent().parent().find('img')[0].src = e.target.result;
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
   };
 
   $('.auto-fill-file input[type="file"]').change(function() {

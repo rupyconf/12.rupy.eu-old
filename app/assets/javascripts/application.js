@@ -4,7 +4,8 @@
 //= require googleMaps
 //= require google_analytics
 //= require bootstrap.min
-//= require_tree .
+//= require dispatcher
+//= require_directory ./application
 
 var initLatLng = $('meta[name=latlong]').attr('content');
 
@@ -16,3 +17,18 @@ $(function(){
     count: 5
   });
 });
+
+// Bootstrap button auto loading
+!function( $ ){
+
+  $.fn.button.defaults = {
+    loadingText: 'loading...'
+  }
+
+  $(function () {
+    $('body').delegate('.btn.loading', 'click', function () {
+      $(this).button('loading')
+    })
+  })
+
+}( window.jQuery || window.ender );

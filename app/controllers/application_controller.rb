@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
 protected
 
   def load_event
-    @event = Event.find_by_host(request.host)
+    if request.host == "localhost"
+      @event = Event.find_by_host_test
+    else
+      @event = Event.find_by_host(request.host)
+    end
   end
 
   def load_locale

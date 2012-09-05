@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829203535) do
+ActiveRecord::Schema.define(:version => 20120905171601) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -28,14 +28,55 @@ ActiveRecord::Schema.define(:version => 20120829203535) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
 
+  create_table "br_cities", :force => true do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "br_cities", ["state_id"], :name => "index_br_cities_on_state_id"
+
+  create_table "br_inscriptions", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "cpf"
+    t.integer  "city_id"
+    t.string   "twitter"
+    t.boolean  "student"
+    t.string   "educational_institution"
+    t.string   "company_name"
+    t.string   "company_website"
+    t.string   "company_position"
+    t.string   "ruby_experience"
+    t.string   "python_experience"
+    t.string   "javascript_experience"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "payment_token"
+    t.string   "payment_status"
+    t.string   "payment_method"
+    t.datetime "payment_processed_at"
+  end
+
+  add_index "br_inscriptions", ["city_id"], :name => "index_br_inscriptions_on_city_id"
+
+  create_table "br_states", :force => true do |t|
+    t.string   "symbol"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "events", :force => true do |t|
     t.string   "name"
     t.string   "city"
     t.text     "description"
     t.string   "place"
     t.string   "address"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -46,6 +87,12 @@ ActiveRecord::Schema.define(:version => 20120829203535) do
     t.string   "title"
     t.string   "locale"
     t.string   "brochure"
+    t.string   "inscription_photo_file_name"
+    t.string   "inscription_photo_content_type"
+    t.integer  "inscription_photo_file_size"
+    t.datetime "inscription_photo_updated_at"
+    t.text     "inscription_description"
+    t.float    "inscription_value"
   end
 
   create_table "speakers", :force => true do |t|
@@ -98,5 +145,28 @@ ActiveRecord::Schema.define(:version => 20120829203535) do
     t.datetime "photo_updated_at"
     t.integer  "event_id"
   end
+
+  create_table "trainings", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "sequence"
+    t.string   "name"
+    t.text     "description"
+    t.string   "instructor_name"
+    t.text     "instructor_description"
+    t.text     "summary"
+    t.text     "payment_method"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "instructor_photo_file_name"
+    t.string   "instructor_photo_content_type"
+    t.integer  "instructor_photo_file_size"
+    t.datetime "instructor_photo_updated_at"
+  end
+
+  add_index "trainings", ["event_id"], :name => "index_trainings_on_event_id"
 
 end

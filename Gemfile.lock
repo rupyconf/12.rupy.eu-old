@@ -72,6 +72,7 @@ GEM
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     orm_adapter (0.4.0)
+    pagseguro (0.1.13)
     paperclip (3.1.4)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -138,6 +139,7 @@ DEPENDENCIES
   jquery-rails
   menu_builder (~> 0.4.3)
   mysql2
+  pagseguro (~> 0.1.13)
   paperclip (~> 3.1.4)
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)

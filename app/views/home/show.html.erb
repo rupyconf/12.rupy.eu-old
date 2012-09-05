@@ -1,10 +1,32 @@
+<%= content_tag :h1, @event.try(:title) %>
+
+<div id="blog">
+  <%= link_to t(:our_blog), "http://blog.rupy.eu", :title => "Rupy blog", :target => "_blank" %>
+</div>
+
+<div id="flags" class="row">
+  <div id="cz" class="span2 offset4">
+    <a href="http://rupy.eu/" title="Brno Edition">
+      <%= image_tag "flag-cz.png" %>
+      <p>Brno Edition<br><strong>16-18 Nov 2012</strong></p>
+    </a>
+  </div>
+  <div id="br" class="span2">
+    <a href="http://rupy.com.br/" title="São José dos Campos/SP Edition">
+      <%= image_tag "flag-br.png" %>
+      <p>São José dos Campos/SP Edition<br><strong>7-9 Dec 2012</strong></p>
+    </a>
+  </div>
+</div>
+
 <div class="row">
   <div class="span3 afix-sidebar hidden-phone">
     <ul class="nav nav-list" data-spy="affix" data-offset-top="658" data-offset-bottom="550">
-      <li><%= link_to t(:speakers), "#speakers" %></li>
-      <li><%= link_to t(:sponsors), "#sponsors" %></li>
-      <li><%= link_to t(:venue), "#venue" %></li>
-      <li><%= link_to t(:team), "#team" %></li>
+      <%= content_tag :li, link_to(t(:speakers), "#speakers") %>
+      <%= content_tag :li, link_to(t(:sponsors), "#sponsors") %>
+      <%= content_tag :li, link_to(t(:venue), "#venue") %>
+      <%= content_tag :li, link_to(t(:team), "#team") %>
+      <%= content_tag :li, link_to(t(:inscriptions), "#inscriptions") if @event.present? && @event.has_event_inscription? %>
     </ul>
   </div>
 
@@ -63,5 +85,24 @@
         <% if index.next.divmod(3)[1].zero? %></div><% end %>
       <% end if @teams.present? %>
     </section>
+
+    <% if @event.present? && @event.has_event_inscription? %>
+      <section id="inscriptions">
+        <%= content_tag :h2, t(:inscriptions) %>
+        <%= image_tag @event.inscription_photo.url %>
+        <%= @event.inscription_description.html_safe %>
+      </section>
+    <% end %>
+
+    <% if @trainings.present? %>
+      <section id="trainings">
+        <%= content_tag :h2, t(:trainings) %>
+        <%= content_tag :p, "bla bla bla bla" %>
+        <% @trainings.each do |training| %>
+          <%= content_tag :h3, "#{t(:training)}: #{training.name}", :class => "title" %>
+          <%= image_tag training.photo.url %>
+        <% end %>
+      </section>
+    <% end %>
   </div>
 </div>
