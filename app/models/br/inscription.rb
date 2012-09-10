@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Br::Inscription < ActiveRecord::Base
+  belongs_to :event
+  belongs_to :training
   belongs_to :city
 
   attr_accessor :state_id

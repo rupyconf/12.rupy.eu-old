@@ -33,4 +33,8 @@ class Event < ActiveRecord::Base
     !self.inscription_description.blank?
   end
 
+  def domain_locale
+    self.domain[-2..-1]
+  end
+
 end

@@ -13,9 +13,10 @@ Rupy::Application.routes.draw do
 
   namespace :br do
     resources :inscriptions, :only => [:new, :create, :show]
+    get "payment/confirm", :to => "inscriptions#confirm"
+    post "payment/confirm", :to => "inscriptions#update"
+
     get "/cities/:state_id", :to => "cities#index"
-    get "payment", :to => "payments#show"
-    post "payment", :to => "payments#update"
   end
 
   root :to => "home#show"

@@ -27,6 +27,7 @@
       <%= content_tag :li, link_to(t(:venue), "#venue") %>
       <%= content_tag :li, link_to(t(:team), "#team") %>
       <%= content_tag :li, link_to(t(:inscriptions), "#inscriptions") if @event.present? && @event.has_event_inscription? %>
+      <%= content_tag :li, link_to(t(:trainings), "#trainings") if @trainings.present? %>
     </ul>
   </div>
 
@@ -101,6 +102,45 @@
         <% @trainings.each do |training| %>
           <%= content_tag :h3, "#{t(:training)}: #{training.name}", :class => "title" %>
           <%= image_tag training.photo.url %>
+          <%= content_tag :p, training.description %>
+          <%= content_tag :div, :id => "accordion#{training.id}", :class => "accordion" do %>
+
+            <%= content_tag :div, :class => "accordion-group" do %>
+              <%= content_tag :div, :class => "accordion-heading" do %>
+                <%= link_to t(:instructor_about), "#instructor-about", :class => "accordion-toggle", "data-toggle" => "collapse", "data-parent" => "#accordion#{training.id}" %>
+              <% end %>
+              <%= content_tag :div, :id => "instructor-about", :class => "accordion-body collapse" do %>
+                <%= content_tag :div, :class => "accordion-inner" do %>
+                  <%= image_tag training.instructor_photo.url, :class => "img-rounded" %>
+                  <%= content_tag :h4, training.instructor_name %>
+                  <%= content_tag :p, training.instructor_description.html_safe %>
+                <% end %>
+              <% end %>
+            <% end %>
+
+            <%= content_tag :div, :class => "accordion-group" do %>
+              <%= content_tag :div, :class => "accordion-heading" do %>
+                <%= link_to t(:summary), "#summary", :class => "accordion-toggle", "data-toggle" => "collapse", "data-parent" => "#accordion#{training.id}" %>
+              <% end %>
+              <%= content_tag :div, :id => "summary", :class => "accordion-body collapse" do %>
+                <%= content_tag :div, :class => "accordion-inner" do %>
+                  <%= content_tag :p, training.summary %>
+                <% end %>
+              <% end %>
+            <% end %>
+
+            <%= content_tag :div, :class => "accordion-group" do %>
+              <%= content_tag :div, :class => "accordion-heading" do %>
+                <%= link_to t(:payment_method), "#payment-method", :class => "accordion-toggle", "data-toggle" => "collapse", "data-parent" => "#accordion#{training.id}" %>
+              <% end %>
+              <%= content_tag :div, :id => "payment-method", :class => "accordion-body collapse" do %>
+                <%= content_tag :div, :class => "accordion-inner" do %>
+                  <%= content_tag :p, training.payment_method %>
+                <% end %>
+              <% end %>
+            <% end %>
+
+          <% end %>
         <% end %>
       </section>
     <% end %>

@@ -11,4 +11,8 @@ en:
   team: "Team"
   inscriptions: "Inscriptions"
   trainings: "Training sessions"
-  training: "Training session"  
+
+  training: "Training session"
+  instructor_about: "Instructor about"
+  summary: "Summary"
+  payment_method: "Payment method"

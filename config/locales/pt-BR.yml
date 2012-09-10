@@ -11,7 +11,11 @@ pt-BR:
   team: "Time"
   inscriptions: "Inscrições"
   trainings: "Treinamentos"
+
   training: "Treinamento"
+  instructor_about: "Sobre o instrutor"
+  summary: "Grade"
+  payment_method: "Formas de pagamento"
 
   errors: &errors
     format: ! '%{attribute} %{message}'
