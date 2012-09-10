@@ -24,6 +24,7 @@
           <div class="pull-right">
             <%= link_to 'Edit', [:edit, :admin, training], :class => 'btn btn-small' %>
             <%= link_to 'Destroy', [:admin, training], :class => 'btn btn-danger btn-small', :confirm => 'Tem certeza?', :method => :delete %>
+            <%= link_to 'Inscriptions', [training.event.domain_locale, training, :inscriptions], :class => 'btn btn-link btn-small' if training.event.domain_locale == "br" %>
           </div>
         </td>
       </tr>

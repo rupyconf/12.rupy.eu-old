@@ -92,13 +92,14 @@
         <%= content_tag :h2, t(:inscriptions) %>
         <%= image_tag @event.inscription_photo.url %>
         <%= @event.inscription_description.html_safe %>
+        <%= link_to t(:register), [:new, @event.domain_locale, :event, :inscription], :class => "btn btn-primary" %>
       </section>
     <% end %>
 
     <% if @trainings.present? %>
       <section id="trainings">
         <%= content_tag :h2, t(:trainings) %>
-        <%= content_tag :p, "bla bla bla bla" %>
+        <%= content_tag :p, t(:trainings_description) %>
         <% @trainings.each do |training| %>
           <%= content_tag :h3, "#{t(:training)}: #{training.name}", :class => "title" %>
           <%= image_tag training.photo.url %>
@@ -124,7 +125,7 @@
               <% end %>
               <%= content_tag :div, :id => "summary", :class => "accordion-body collapse" do %>
                 <%= content_tag :div, :class => "accordion-inner" do %>
-                  <%= content_tag :p, training.summary %>
+                  <%= training.summary.html_safe %>
                 <% end %>
               <% end %>
             <% end %>
@@ -135,12 +136,13 @@
               <% end %>
               <%= content_tag :div, :id => "payment-method", :class => "accordion-body collapse" do %>
                 <%= content_tag :div, :class => "accordion-inner" do %>
-                  <%= content_tag :p, training.payment_method %>
+                  <%= training.payment_method.html_safe %>
                 <% end %>
               <% end %>
             <% end %>
 
           <% end %>
+          <%= link_to t(:register), [:new, @event.domain_locale, training, :inscription], :class => "btn btn-primary" %>
         <% end %>
       </section>
     <% end %>

@@ -12,7 +12,15 @@ Rupy::Application.routes.draw do
   end
 
   namespace :br do
-    resources :inscriptions, :only => [:new, :create, :show]
+    resource :event, :only => [] do
+      resources :inscriptions, :only => [:index, :new]
+    end
+
+    resources :trainings, :only => [] do
+      resources :inscriptions, :only => [:index, :new]
+    end
+
+    resources :inscriptions, :only => [:create, :show]
     get "payment/confirm", :to => "inscriptions#confirm"
     post "payment/confirm", :to => "inscriptions#update"
 

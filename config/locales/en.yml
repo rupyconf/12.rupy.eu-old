@@ -12,7 +12,9 @@ en:
   inscriptions: "Inscriptions"
   trainings: "Training sessions"
 
+  trainings_description: "Customize yout trainings description"
   training: "Training session"
   instructor_about: "Instructor about"
   summary: "Summary"
   payment_method: "Payment method"
+  register: "Register"

@@ -2,10 +2,24 @@
 require "digest/sha1"
 
 class Br::InscriptionsController < Br::BrController
+  layout 'admin', :only => [:index]
+  before_filter :authenticate_admin!, :only => [:index]
   skip_before_filter :verify_authenticity_token, :only => [:update]
 
+  def index
+    if params[:training_id].present?
+      @inscriptions = Br::Inscription.find_all_by_training_id(params[:training_id])
+    else
+      @inscriptions = Br::Inscription.find_all_by_event_id(@event.id)
+    end
+  end
+
   def new
-    @inscription = Br::Inscription.new(:event_id => @event.id, :state_id => Br::State.find_by_symbol("SP").id)
+    if params[:training_id].present?
+      @inscription = Br::Inscription.new(:training_id => params[:training_id], :state_id => Br::State.find_by_symbol("SP").id)
+    else
+      @inscription = Br::Inscription.new(:event_id => @event.id, :state_id => Br::State.find_by_symbol("SP").id)
+    end
   end
 
   def create

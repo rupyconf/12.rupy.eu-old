@@ -19,9 +19,10 @@
         <td class="nowrap"><%= index.next %></td>
         <td><%= event.name %></td>
         <td class="nowrap">
-          <div class="pull-right">
+          <div>
             <%= link_to 'Edit', [:edit, :admin, event], :class => 'btn btn-small' %>
             <%= link_to 'Destroy', [:admin, event], :class => 'btn btn-danger btn-small', :confirm => 'Tem certeza?', :method => :delete %>
+            <%= link_to 'Inscriptions', [event.domain_locale, :event, :inscriptions], :class => 'btn btn-link btn-small' if event.domain_locale == "br" %>
           </div>
         </td>
       </tr>
