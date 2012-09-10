@@ -22,7 +22,8 @@ $(function() {
   // Auto fill input file
   function readURL(input){
     if(input.files && input.files[0]){
-      (new FileReader()).onload = function(e) {
+      reader = new FileReader();
+      reader.onload = function(e) {
         $(input).parent().parent().find('img')[0].src = e.target.result;
       };
       reader.readAsDataURL(input.files[0]);
