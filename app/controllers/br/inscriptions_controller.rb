@@ -42,11 +42,14 @@ class Br::InscriptionsController < Br::BrController
 
   def update
     pagseguro_notification do |notification|
-      @inscription = Br::Inscription.find_by_payment_token(params[:Referencia])
-      @inscription.payment_status = notification.status
-      @inscription.payment_method = notification.payment_method
-      @inscription.payment_processed_at = notification.processed_at
-      @inscription.save
+      inscription = Br::Inscription.find_by_payment_token(params[:Referencia])
+      old_status = inscription.payment_status
+      inscription.payment_status = notification.status
+      inscription.payment_method = notification.payment_method
+      inscription.payment_processed_at = notification.processed_at
+      inscription.save!
+
+      Br::InscriptionMailer.confirm_email(inscription).deliver if inscription.payment_confirmed?(old_status)
     end
 
     render :nothing => true

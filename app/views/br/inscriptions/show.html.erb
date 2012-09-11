@@ -31,6 +31,11 @@
         <strong>SITUAÇÃO DO PAGAMENTO:</strong><br>
         <%= @inscription.payment_status_formatted %>
       </td></tr>
+
+      <tr><td>
+        <strong>SITUAÇÃO DA INSCRIÇÃO:</strong><br>
+        <%= @inscription.status %>
+      </td></tr>
     <tbody>
   </table>
   <%= link_to "Voltar para a página inicial", root_path, :id => "root-link", :class => "btn btn-primary" %>

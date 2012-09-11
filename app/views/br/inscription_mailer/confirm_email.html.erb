@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p>Olá <%= @inscription.name %>!</p>
+
+    <p><strong>Sua inscrição para o evento RUPY 2012 (São José dos Campos/SP Edition) está confirmada!</strong></p>
+
+    <p>
+      O evento será realizado nos dias 08/12 (sáb) e 09/12 (dom) no Parque Tecnológico de São José dos Campos.<br>
+      Veja toda a programação, palestrantes, palestras e outras informações em nosso site: <%= link_to root_url, root_url, :target => "_blank" %>
+    </p>
+
+    <p>
+      Você pode verificar as informações de sua inscrição a qualquer momento através do link abaixo:<br>
+      <%= link_to br_inscription_url(@inscription), br_inscription_url(@inscription), :target => "_blank" %>
+    </p>
+
+    <p>Atenciosamente,</p>
+
+    <p>
+      Equipe RuPy 2012<br>
+      <%= link_to "rupy.com.br", root_url, :target => "_blank" %>
+    </p>
+  </body>
+</html>

@@ -5,6 +5,7 @@ class Br::Inscription < ActiveRecord::Base
   belongs_to :city
 
   attr_accessor :state_id
+  validates_uniqueness_of :payment_token
   validates_presence_of :first_name, :last_name, :email, :cpf, :city_id, :ruby_experience, :python_experience, :javascript_experience
   validates_inclusion_of :student, :in => [true, false]
 
@@ -30,6 +31,18 @@ class Br::Inscription < ActiveRecord::Base
       "refunded" => "Devolvido",
     }
     self.payment_status.blank? ? "" : status[self.payment_status]
+  end
+
+  def status
+    confirmed_status.include?(self.payment_status.to_s) ? "Confirmada" : "Aguardando confirmação do pagamento"
+  end
+
+  def payment_confirmed?(old_status)
+    !confirmed_status.include?(old_status) && confirmed_status.include?(self.payment_status.to_s)
+  end
+
+  def confirmed_status
+    ["completed", "approved"]
   end
 
   def id_formatted
