@@ -19,7 +19,7 @@ protected
   end
 
   def load_locale
-    if self.send(:_layout) == "application"
+    if (self.send(:_layout).class == String && self.send(:_layout) == "application") || (self.send(:_layout).class == ActionView::Template && self.send(:_layout).virtual_path == "layouts/application")
       I18n.locale = @event.try(:locale) || I18n.default_locale
     else
       I18n.locale = I18n.default_locale

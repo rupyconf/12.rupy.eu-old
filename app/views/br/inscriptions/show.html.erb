@@ -9,5 +9,29 @@
   </p>
   <%= pagseguro_form @order, :submit => "Efetuar pagamento" %>
 <% else %>
-  <%= content_tag :p, @inscription.payment_status %>
+  <h2>Situação da sua inscrição</h2>
+  <table class="table table-striped table-hover">
+    <tbody>
+      <tr><td>
+        <strong>NÚMERO DA INSCRIÇÃO:</strong><br>
+        <%= @inscription.id_formatted %>
+      </td></tr>
+
+      <tr><td>
+        <strong>INSCRITO:</strong><br>
+        <%= "#{@inscription.name} (#{@inscription.email})" %>
+      </td></tr>
+
+      <tr><td>
+        <strong>INSCRIÇÃO REALIZADA EM:</strong><br>
+        <%= @inscription.created_at.strftime("%d/%m/%Y %H:%M:%S") %>
+      </td></tr>
+
+      <tr><td>
+        <strong>SITUAÇÃO DO PAGAMENTO:</strong><br>
+        <%= @inscription.payment_status_formatted %>
+      </td></tr>
+    <tbody>
+  </table>
+  <%= link_to "Voltar para a página inicial", root_path, :id => "root-link", :class => "btn btn-primary" %>
 <% end %>

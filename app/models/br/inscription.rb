@@ -20,4 +20,20 @@ class Br::Inscription < ActiveRecord::Base
     self.payment_token
   end
 
+  def payment_status_formatted
+    status = {
+      "completed" => "Completo",
+      "pending" => "Aguardando pagamento",
+      "approved" => "Aprovado",
+      "verifying" => "Em análise",
+      "canceled" => "Cancelado",
+      "refunded" => "Devolvido",
+    }
+    self.payment_status.blank? ? "" : status[self.payment_status]
+  end
+
+  def id_formatted
+    self.id.to_s.rjust(4, "0")
+  end
+
 end
