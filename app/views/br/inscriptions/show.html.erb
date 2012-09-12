@@ -29,12 +29,12 @@
 
       <tr><td>
         <strong>SITUAÇÃO DO PAGAMENTO:</strong><br>
-        <%= @inscription.payment_status_formatted %>
+        <%= content_tag :span, @inscription.payment_status_formatted, :class => "label #{@inscription.confirmed_status? ? 'label-success' : 'label-important'}" %>
       </td></tr>
 
       <tr><td>
         <strong>SITUAÇÃO DA INSCRIÇÃO:</strong><br>
-        <%= @inscription.status %>
+        <%= content_tag :span, @inscription.status, :class => "label #{@inscription.confirmed_status? ? 'label-success' : 'label-important'}" %>
       </td></tr>
     <tbody>
   </table>

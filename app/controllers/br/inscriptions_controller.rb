@@ -2,9 +2,10 @@
 require "digest/sha1"
 
 class Br::InscriptionsController < Br::BrController
-  layout 'admin', :only => [:index]
-  before_filter :authenticate_admin!, :only => [:index]
-  skip_before_filter :verify_authenticity_token, :only => [:update]
+  layout 'admin', :only => [:index, :edit, :update]
+  before_filter :authenticate_admin!, :only => [:index, :edit, :update]
+
+  skip_before_filter :verify_authenticity_token, :only => [:pagseguro]
 
   def index
     if params[:training_id].present?
@@ -32,6 +33,22 @@ class Br::InscriptionsController < Br::BrController
     respond_with @inscription
   end
 
+  def edit
+    @inscription = Br::Inscription.find_by_payment_token(params[:id])
+  end
+
+  def update
+    @inscription = Br::Inscription.find_by_payment_token(params[:id])
+
+    flash[:success] = "Inscription was successfully updated." if @inscription.update_attributes(params[:br_inscription])
+
+    if @inscription.event.present?
+      respond_with @inscription, :location => br_event_inscriptions_path
+    else
+      respond_with @inscription, :location => br_training_inscriptions_path(@inscription.training_id)
+    end
+  end
+
   def show
     @inscription = Br::Inscription.find_by_payment_token(params[:id])
 
@@ -40,7 +57,7 @@ class Br::InscriptionsController < Br::BrController
     @order.add :id => @inscription.id, :price => @event.inscription_value, :description => "Inscrição no evento RUPY 2012 (São José dos Campos/SP Edition) para os dias 08/12 e 09/12"
   end
 
-  def update
+  def pagseguro_update
     pagseguro_notification do |notification|
       inscription = Br::Inscription.find_by_payment_token(params[:Referencia])
       old_status = inscription.payment_status

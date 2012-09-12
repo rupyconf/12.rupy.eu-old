@@ -20,9 +20,9 @@ Rupy::Application.routes.draw do
       resources :inscriptions, :only => [:index, :new]
     end
 
-    resources :inscriptions, :only => [:create, :show]
+    resources :inscriptions, :only => [:create, :show, :edit, :update]
     get "payment/confirm", :to => "inscriptions#confirm"
-    post "payment/confirm", :to => "inscriptions#update"
+    post "payment/confirm", :to => "inscriptions#pagseguro_update"
 
     get "/cities/:state_id", :to => "cities#index"
   end

@@ -23,10 +23,10 @@
         <td class="nowrap"><%= l inscription.created_at, :format => :short %></td>
         <td><%= inscription.name %></td>
         <td><%= inscription.email %></td>
-        <td class="nowrap"><%= inscription.payment_status_formatted %></td>
+        <td class="nowrap"><%= inscription.payment_status %></td>
         <td class="nowrap">
           <div>
-            <%= link_to 'Edit', "#", :class => 'btn btn-small' %>
+            <%= link_to 'Edit', [:edit, inscription], :class => 'btn btn-small' %>
           </div>
         </td>
       </tr>

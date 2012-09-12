@@ -34,19 +34,24 @@ class Br::Inscription < ActiveRecord::Base
   end
 
   def status
-    confirmed_status.include?(self.payment_status.to_s) ? "Confirmada" : "Aguardando confirmação do pagamento"
+    self.confirmed_status? ? "Confirmada" : "Aguardando confirmação do pagamento"
   end
 
   def payment_confirmed?(old_status)
-    !confirmed_status.include?(old_status) && confirmed_status.include?(self.payment_status.to_s)
+    !confirmed_status?(old_status) && confirmed_status?
   end
 
-  def confirmed_status
-    ["completed", "approved"]
+  def confirmed_status?(status = nil)
+    status ||= self.payment_status.to_s
+    ["completed", "approved"].include? status
   end
 
   def id_formatted
     self.id.to_s.rjust(4, "0")
+  end
+
+  def payment_processed_at_formatted
+    I18n.l self.created_at, :format => :short
   end
 
 end
