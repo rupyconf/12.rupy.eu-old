@@ -1,7 +1,7 @@
 development: &development
   developer: true
   base: "http://localhost:3000"
-  return_to: "/br/payment/confirm"
+  return_to: "/br/payment/"
   email: user@example.com
 
 test:
@@ -10,4 +10,4 @@ test:
 production:
   authenticity_token: 55376360B6AB4728B39ABAB13B674C57
   email: contato@designa.com.br
-  return_to: "http://rupy.com.br/br/payment/confirm"
+  return_to: "http://rupy.com.br/br/payment/"
