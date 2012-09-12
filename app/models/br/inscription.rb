@@ -51,7 +51,7 @@ class Br::Inscription < ActiveRecord::Base
   end
 
   def payment_processed_at_formatted
-    I18n.l self.created_at, :format => :short
+    self.payment_processed_at.nil? ? "" : I18n.l(self.payment_processed_at, :format => :short)
   end
 
 end
