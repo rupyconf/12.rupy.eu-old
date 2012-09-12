@@ -38,6 +38,7 @@ class Br::Inscription < ActiveRecord::Base
   end
 
   def payment_confirmed?(old_status)
+    old_status ||= ""
     !confirmed_status?(old_status) && confirmed_status?
   end
 

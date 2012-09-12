@@ -50,8 +50,6 @@ class Br::InscriptionsController < Br::BrController
   end
 
   def show
-    Br::InscriptionMailer.confirm_email(Br::Inscription.last).deliver
-
     @inscription = Br::Inscription.find_by_payment_token(params[:id])
 
     @order = PagSeguro::Order.new(@inscription.payment_token)
