@@ -61,6 +61,7 @@ class Br::InscriptionsController < Br::BrController
     pagseguro_notification do |notification|
       inscription = Br::Inscription.find_by_payment_token(params[:Referencia])
       old_status = inscription.payment_status
+      inscription.payment_transaction = notification.transaction_id
       inscription.payment_status = notification.status
       inscription.payment_method = notification.payment_method
       inscription.payment_processed_at = notification.processed_at

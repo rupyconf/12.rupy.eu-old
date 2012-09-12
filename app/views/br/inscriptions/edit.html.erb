@@ -14,6 +14,7 @@
   <%= f.input :cpf, :label => "CPF", :input_html => { :class => "input-medium" } %>
 
   <legend>Dados do pagamento</legend>
+  <%= f.input :payment_transaction, :label => "Transaction", :disabled => true, :input_html => { :class => "input-xxlarge" } %>
   <%= f.input :payment_token, :label => "Token", :disabled => true, :input_html => { :class => "input-xxlarge" } %>
   <%= f.input :payment_processed_at_formatted, :label => "Date", :disabled => true, :input_html => { :class => "input-medium" } %>
   <%= f.input :payment_status, :label => "Status", :input_html => { :class => "input-medium" } %>

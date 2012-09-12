@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910191328) do
+ActiveRecord::Schema.define(:version => 20120912143111) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20120910191328) do
     t.datetime "payment_processed_at"
     t.integer  "event_id"
     t.integer  "training_id"
+    t.string   "payment_transaction"
   end
 
   add_index "br_inscriptions", ["city_id"], :name => "index_br_inscriptions_on_city_id"
