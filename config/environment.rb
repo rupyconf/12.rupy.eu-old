@@ -9,5 +9,5 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   :authentication => :plain,
   :user_name => "contato@designa.com.br",
-  :password => ENV["SMTP_RUPY_PASSWORD"]
+  :password => <%= ENV["SMTP_RUPY_PASSWORD"] %>
 }
