@@ -22,16 +22,91 @@
 <div class="row">
   <div class="span3 afix-sidebar hidden-phone">
     <ul class="nav nav-list" data-spy="affix" data-offset-top="658" data-offset-bottom="550">
+      <%= content_tag :li, link_to(t(:inscriptions), "#inscriptions") if @event.present? && @event.has_event_inscription? %>
+      <%= content_tag :li, link_to(t(:trainings), "#trainings") if @trainings.present? %>
       <%= content_tag :li, link_to(t(:speakers), "#speakers") %>
       <%= content_tag :li, link_to(t(:sponsors), "#sponsors") %>
       <%= content_tag :li, link_to(t(:venue), "#venue") %>
       <%= content_tag :li, link_to(t(:team), "#team") %>
-      <%= content_tag :li, link_to(t(:inscriptions), "#inscriptions") if @event.present? && @event.has_event_inscription? %>
-      <%= content_tag :li, link_to(t(:trainings), "#trainings") if @trainings.present? %>
     </ul>
   </div>
 
   <div class="span9">
+    <% if @event.present? && @event.has_event_inscription? %>
+      <section id="inscriptions">
+        <%= content_tag :h2, t(:inscriptions) %>
+        <%= image_tag @event.inscription_photo.url %>
+        <%= @event.inscription_description.html_safe %>
+        <% if @event.inscription_available? %>
+          <%= link_to t(:register), [:new, @event.domain_locale, :event, :inscription], :class => "btn btn-primary" %>
+        <% else %>
+          <div class="control-group string required error">
+          <button type="button" class="btn btn-primary" disabled=""><%= t(:register) %></button>
+          <span class="help-inline">inscrições encerradas</span>
+          </div>
+        <% end %>
+      </section>
+    <% end %>
+
+    <% if @trainings.present? %>
+      <section id="trainings">
+        <%= content_tag :h2, t(:trainings) %>
+        <%= content_tag :p, t(:trainings_description) %>
+        <% @trainings.each do |training| %>
+          <%= content_tag :h3, "#{t(:training)}: #{training.name}", :class => "title" %>
+          <%= image_tag training.photo.url %>
+          <%= content_tag :p, training.description %>
+          <%= content_tag :div, :id => "accordion#{training.id}", :class => "accordion" do %>
+
+            <%= content_tag :div, :class => "accordion-group" do %>
+              <%= content_tag :div, :class => "accordion-heading" do %>
+                <%= link_to t(:instructor_about), "#instructor-about", :class => "accordion-toggle", "data-toggle" => "collapse", "data-parent" => "#accordion#{training.id}" %>
+              <% end %>
+              <%= content_tag :div, :id => "instructor-about", :class => "accordion-body collapse" do %>
+                <%= content_tag :div, :class => "accordion-inner" do %>
+                  <%= image_tag training.instructor_photo.url, :class => "img-rounded" %>
+                  <%= content_tag :h4, training.instructor_name %>
+                  <%= content_tag :p, training.instructor_description.html_safe %>
+                <% end %>
+              <% end %>
+            <% end %>
+
+            <%= content_tag :div, :class => "accordion-group" do %>
+              <%= content_tag :div, :class => "accordion-heading" do %>
+                <%= link_to t(:summary), "#summary", :class => "accordion-toggle", "data-toggle" => "collapse", "data-parent" => "#accordion#{training.id}" %>
+              <% end %>
+              <%= content_tag :div, :id => "summary", :class => "accordion-body collapse" do %>
+                <%= content_tag :div, :class => "accordion-inner" do %>
+                  <%= training.summary.html_safe %>
+                <% end %>
+              <% end %>
+            <% end %>
+
+            <%= content_tag :div, :class => "accordion-group" do %>
+              <%= content_tag :div, :class => "accordion-heading" do %>
+                <%= link_to t(:payment_method), "#payment-method", :class => "accordion-toggle", "data-toggle" => "collapse", "data-parent" => "#accordion#{training.id}" %>
+              <% end %>
+              <%= content_tag :div, :id => "payment-method", :class => "accordion-body collapse" do %>
+                <%= content_tag :div, :class => "accordion-inner" do %>
+                  <%= training.payment_method.html_safe %>
+                <% end %>
+              <% end %>
+            <% end %>
+
+          <% end %>
+
+          <% if training.inscription_available? %>
+            <%= link_to t(:register), [:new, @event.domain_locale, training, :inscription], :class => "btn btn-primary" %>
+          <% else %>
+            <div class="control-group string required error">
+            <button type="button" class="btn btn-primary" disabled=""><%= t(:register) %></button>
+            <span class="help-inline">inscrições encerradas</span>
+            </div>
+          <% end %>
+        <% end %>
+      </section>
+    <% end %>
+
     <section id="speakers">
       <%= content_tag :h2, t(:speakers) %>
       <% @speakers.each do |speaker| %>
@@ -86,65 +161,5 @@
         <% if index.next.divmod(3)[1].zero? %></div><% end %>
       <% end if @teams.present? %>
     </section>
-
-    <% if @event.present? && @event.has_event_inscription? %>
-      <section id="inscriptions">
-        <%= content_tag :h2, t(:inscriptions) %>
-        <%= image_tag @event.inscription_photo.url %>
-        <%= @event.inscription_description.html_safe %>
-        <%= link_to t(:register), [:new, @event.domain_locale, :event, :inscription], :class => "btn btn-primary" %>
-      </section>
-    <% end %>
-
-    <% if @trainings.present? %>
-      <section id="trainings">
-        <%= content_tag :h2, t(:trainings) %>
-        <%= content_tag :p, t(:trainings_description) %>
-        <% @trainings.each do |training| %>
-          <%= content_tag :h3, "#{t(:training)}: #{training.name}", :class => "title" %>
-          <%= image_tag training.photo.url %>
-          <%= content_tag :p, training.description %>
-          <%= content_tag :div, :id => "accordion#{training.id}", :class => "accordion" do %>
-
-            <%= content_tag :div, :class => "accordion-group" do %>
-              <%= content_tag :div, :class => "accordion-heading" do %>
-                <%= link_to t(:instructor_about), "#instructor-about", :class => "accordion-toggle", "data-toggle" => "collapse", "data-parent" => "#accordion#{training.id}" %>
-              <% end %>
-              <%= content_tag :div, :id => "instructor-about", :class => "accordion-body collapse" do %>
-                <%= content_tag :div, :class => "accordion-inner" do %>
-                  <%= image_tag training.instructor_photo.url, :class => "img-rounded" %>
-                  <%= content_tag :h4, training.instructor_name %>
-                  <%= content_tag :p, training.instructor_description.html_safe %>
-                <% end %>
-              <% end %>
-            <% end %>
-
-            <%= content_tag :div, :class => "accordion-group" do %>
-              <%= content_tag :div, :class => "accordion-heading" do %>
-                <%= link_to t(:summary), "#summary", :class => "accordion-toggle", "data-toggle" => "collapse", "data-parent" => "#accordion#{training.id}" %>
-              <% end %>
-              <%= content_tag :div, :id => "summary", :class => "accordion-body collapse" do %>
-                <%= content_tag :div, :class => "accordion-inner" do %>
-                  <%= training.summary.html_safe %>
-                <% end %>
-              <% end %>
-            <% end %>
-
-            <%= content_tag :div, :class => "accordion-group" do %>
-              <%= content_tag :div, :class => "accordion-heading" do %>
-                <%= link_to t(:payment_method), "#payment-method", :class => "accordion-toggle", "data-toggle" => "collapse", "data-parent" => "#accordion#{training.id}" %>
-              <% end %>
-              <%= content_tag :div, :id => "payment-method", :class => "accordion-body collapse" do %>
-                <%= content_tag :div, :class => "accordion-inner" do %>
-                  <%= training.payment_method.html_safe %>
-                <% end %>
-              <% end %>
-            <% end %>
-
-          <% end %>
-          <%= link_to t(:register), [:new, @event.domain_locale, training, :inscription], :class => "btn btn-primary" %>
-        <% end %>
-      </section>
-    <% end %>
   </div>
 </div>

@@ -40,4 +40,12 @@
   form.pagseguro input[type="submit"] {
     @extend .btn, .btn-primary;
   }
+
+  p#inscription-closed {
+    text-transform: uppercase;
+    color: #B94A48;
+    text-align: center;
+    font-weight: bold;
+    font-size: 26pt;
+  }
 }

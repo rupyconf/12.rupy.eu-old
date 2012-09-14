@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
   has_many :sponsors
   has_many :teams
   has_many :trainings
+  has_many :inscriptions, :class_name => "Br::Inscription"
 
   validates_presence_of :name, :domain, :locale, :title, :brochure, :city, :description, :place, :address, :latitude, :longitude
   has_attached_file :photo, :url => "/system/:class/:attachment/:id.:extension", :default_url => "/default/default-event.png", :styles => { :original => ["500>x333", :png] }
@@ -35,6 +36,10 @@ class Event < ActiveRecord::Base
 
   def domain_locale
     self.domain[-2..-1]
+  end
+
+  def inscription_available?
+    self.inscription_amount.nil? || self.inscription_amount > self.inscriptions.count
   end
 
 end
