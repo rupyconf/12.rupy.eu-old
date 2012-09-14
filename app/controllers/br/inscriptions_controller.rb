@@ -54,7 +54,7 @@ class Br::InscriptionsController < Br::BrController
 
     @order = PagSeguro::Order.new(@inscription.payment_token)
     @order.billing = { :name => @inscription.name, :email => @inscription.email }
-    @order.add :id => @inscription.id, :price => @event.inscription_value, :description => "Inscrição no evento RUPY 2012 (São José dos Campos/SP Edition) para os dias 08/12 e 09/12"
+    @order.add :id => @inscription.id, :price => (@inscription.student? ? @event.inscription_value / 2 : @event.inscription_value), :description => "Inscrição no evento RUPY 2012 (São José dos Campos/SP Edition) para os dias 08/12 e 09/12"
   end
 
   def pagseguro_update
