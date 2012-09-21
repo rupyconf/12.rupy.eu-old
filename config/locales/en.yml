@@ -4,6 +4,8 @@ en:
   or: "or"
   our_blog: "Our blog"
   sponsor_brochure: "Sponsor brochure"
+  previous_editions: "Previous Editions"
+  frequently_asked_questions: "Frequently Asked Questions"
 
   speakers: "Speakers"
   sponsors: "Sponsors"
@@ -11,6 +13,11 @@ en:
   team: "Team"
   inscriptions: "Inscriptions"
   trainings: "Training sessions"
+  faq: "FAQ"
+  location: "Location"
+  agenda: "Agenda"
+  workshops: "Workshops"
+  about: "About"
 
   trainings_description: "Customize yout trainings description"
   training: "Training session"
