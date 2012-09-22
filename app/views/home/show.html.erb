@@ -75,7 +75,9 @@
               </div>
               <div class="info">
                 <%= content_tag :p, speaker.name, :class => "name white" %>
-                <p class="nick"><a href="#">@headius</a></p>
+                <%= content_tag :p, :class => "nick" do %>
+                  <%= link_to "@#{speaker.twitter}", "http://twitter.com/#{speaker.twitter}", :target => "_blank", :class => "white" %>
+                <% end unless speaker.twitter.blank? %>
                 <%= content_tag :p, speaker.title, :class => "description" %>
                 <p class="modals">
                     <!--
@@ -252,7 +254,7 @@
           </div>
       </div>
   </div>
-  <div class="lineWithHole"><span class="blue"><span class="h2">Accomodation</span></span></div>
+  <div class="lineWithHole"><span class="blue"><span class="h2"><%= t(:accomodation) %></span></span></div>
   <p class="larger">&nbsp;</p>
   <div class="colset">
       <div class="row">
@@ -357,15 +359,15 @@
       <div class="colset">
           <div class="row logo">
               <div class="col13">
-                  <div class="inner logo">
-                      <%= image_tag sponsor.logo.url %>
-                  </div>
+                <%= content_tag :div, :class => "inner logo" do %>
+                    <%= image_tag sponsor.logo.url %>
+                <% end %>
               </div>
               <% if sponsor.description_available? %>
               <div class="col30">
-                  <div class="inner">
+                  <%= content_tag :div, :class => "inner" do %>
                     <%= content_tag :p, sponsor.description, :class => "white" %>
-                  </div>
+                  <% end %>
               </div>
               <% end %>
           </div>
@@ -441,7 +443,7 @@
 </div>
 
 <div id="lastNote" class="container hr">
-    <p class="red xl">Feel free to contact us</p>
+    <p class="red xl"><%= t(:contact) %></p>
     <p class="white xl"><strong><a href="mailto:hello@rupy.eu">hello@rupy.eu</a></strong> or <strong><a href="https://www.hipchat.com/g4T5W6KqS">chat</a></strong></p>
 </div>
 <div id="footer" class="container">
