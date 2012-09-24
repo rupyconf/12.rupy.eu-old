@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'ITCAvantGardePro-Demi';
+	src: url('../fonts/itcavantgardepro-demi.eot');
+	src: url('../fonts/itcavantgardepro-demi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/itcavantgardepro-demi.woff') format('woff'),
+		url('../fonts/itcavantgardepro-demi.ttf') format('truetype'),
+		url('../fonts/itcavantgardepro-demi.svg#itcavantgardepro-demi') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ITCAvantGardePro-Bk';
+	src: url('../fonts/itcavantgardepro-bk.eot');
+	src: url('../fonts/itcavantgardepro-bk.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/itcavantgardepro-bk.woff') format('woff'),
+		url('../fonts/itcavantgardepro-bk.ttf') format('truetype'),
+		url('../fonts/itcavantgardepro-bk.svg#itcavantgardepro-bk') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
