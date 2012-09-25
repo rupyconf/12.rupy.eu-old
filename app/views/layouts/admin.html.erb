@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>RUPY 2012</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag "/favicon.png" %>
+  <%= stylesheet_link_tag "admin", :media => "all" %>
+  <%= javascript_include_tag "admin" %>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <%= link_to "RUPY 2012", root_path, :class => "brand" %>
+
+        <ul class="nav pull-right">
+          <li><%= link_to "sign out", destroy_admin_session_path %></li>
+          <li class="divider-vertical"></li>
+        </ul>
+
+        <div class="nav-collapse collapse">
+          <%= menu :class => "nav", :current_class => "active" do |m| %>
+            <%= m.event "Events", admin_events_path %>
+            <%= m.speaker "Speakers", admin_speakers_path %>
+            <%= m.sponsor "Sponsors", admin_sponsors_path %>
+            <%= m.team "Team", admin_teams_path %>
+            <%= m.training "Trainings", admin_trainings_path %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="main" class="container">
+    <%= render :partial => 'layouts/flashes' %>
+    <%= yield %>
+  </div>
+</body>
+</html>

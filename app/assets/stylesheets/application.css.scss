@@ -1,0 +1,98 @@
+/*
+ *= require bootstrap
+ *= require bootstrap-responsive
+ *= require_self
+*/
+
+@media (max-width: 767px) {
+  header, footer {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  header > div, footer > div {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body { position: relative; }
+
+body > header {
+  margin-bottom: 30px;
+
+  #header-background {
+    margin-bottom: 20px;
+
+    @media (max-width: 767px) {
+      background: #1b2458 image-url("header-small.png") no-repeat center top;
+      height: 480px;
+    }
+    @media (min-width: 768px) {
+      background: #1b2458 image-url("header-medium.png") no-repeat center top;
+      height: 307px;
+    }
+    @media (min-width: 980px) {
+      background: #1b2458 image-url("header-large.png") no-repeat center top;
+      height: 307px;
+    }
+  }
+}
+
+body > footer {
+  padding-top: 15px;
+  > div {
+    background-color: #151749;
+    padding-bottom: 30px;
+  }
+  background: image-url("footer.png") repeat-x center top;
+  h4 {
+    color: #e9e9e9;
+    text-transform: uppercase;
+    font-family: 'Ubuntu';
+    font-size: 18px;
+    text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .tweet_list {
+    font: Arial, sans-serif;
+    font-size: 13px;
+    border-radius: 0.5em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    li {
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 0.5em;
+      list-style-type: none;
+      color: #EFEFEF;
+    }
+    li a {
+      color: #e20031;
+    }
+    .tweet_even {
+      background-color: #EFEFEF;
+      color: #111;
+    }
+    .tweet_avatar {
+      padding-right: .5em;
+      float: left;
+    }
+    .tweet_avatar img {
+      vertical-align: middle;
+    }
+  }
+
+  .right p {
+    font-family: 'Ubuntu';
+    font-size: 34px;
+    color: #ffffff;
+    line-height: 36px;
+  }
+  .right p a {
+    color: #e20031;
+  }
+}

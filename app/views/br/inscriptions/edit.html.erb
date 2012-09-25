@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h2>Editing inscription</h2>
+</div>
+
+<%= simple_form_for @inscription, :html => { :class => "form-horizontal" } do |f| %>
+
+  <%= f.error_notification %>
+
+  <legend>Dados pessoais</legend>
+  <%= f.input :id_formatted, :label => "Number", :disabled => true, :input_html => { :class => "input-mini" } %>
+  <%= f.input :first_name, :input_html => { :class => "input-medium" } %>
+  <%= f.input :last_name, :input_html => { :class => "input-medium" } %>
+  <%= f.input :email, :label => "E-mail", :input_html => { :class => "input-xlarge" } %>
+  <%= f.input :cpf, :label => "CPF", :input_html => { :class => "input-medium" } %>
+
+  <legend>Dados do pagamento</legend>
+  <%= f.input :payment_transaction, :label => "Transaction", :disabled => true, :input_html => { :class => "input-xxlarge" } %>
+  <%= f.input :payment_token, :label => "Token", :disabled => true, :input_html => { :class => "input-xxlarge" } %>
+  <%= f.input :payment_processed_at_formatted, :label => "Date", :disabled => true, :input_html => { :class => "input-medium" } %>
+  <%= f.input :payment_status, :label => "Status", :input_html => { :class => "input-medium" } %>
+  <%= f.input :payment_method, :label => "Method", :input_html => { :class => "input-medium" } %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn-primary loading" %>
+    <%= link_to 'Cancel', :back, :class => "btn" %>
+  </div>
+
+<% end %>

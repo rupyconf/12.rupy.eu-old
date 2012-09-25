@@ -1,0 +1,52 @@
+<%= simple_form_for [:admin, @event], :html => { :class => "form-horizontal" } do |f| %>
+
+  <%= f.error_notification %>
+
+  <%= f.input :name, :autofocus => true %>
+  <%= f.input :domain %>
+  <%= f.input :locale, :as => :select, :collection => @event.available_locale, :input_html => { :class => "span2" } %>
+  <%= f.input :city %>
+  <%= f.input :title, :input_html => { :class => "span8" } %>
+  <%= f.input :brochure %>
+  <%= f.input :description, :input_html => { :class => "span8", :rows => 4 } %>
+  <%= f.input :place %>
+  <%= f.input :address %>
+  <%= f.input :latitude, :input_html => { :class => "span2" } %>
+  <%= f.input :longitude, :input_html => { :class => "span2" } %>
+
+  <div class="control-group auto-fill-file">
+    <%= f.label :photo %>
+    <div class="controls">
+      <%= link_to "#" do %>
+        <%= image_tag @event.photo.url, :class => "img-polaroid" %>
+      <% end %>
+    </div>
+    <div class="controls">
+      <%= f.hint '500x333' %>
+      <%= f.file_field :photo %>
+    </div>
+  </div>
+
+  <legend>Inscrição</legend>
+  <div class="control-group auto-fill-file">
+    <%= f.label :inscription_photo %>
+    <div class="controls">
+      <%= link_to "#" do %>
+        <%= image_tag @event.inscription_photo.url, :class => "img-polaroid" %>
+      <% end %>
+    </div>
+    <div class="controls">
+      <%= f.hint '870x230' %>
+      <%= f.file_field :inscription_photo %>
+    </div>
+  </div>
+  <%= f.input :inscription_description, :input_html => { :class => "span8", :rows => 4 } %>
+  <%= f.input :inscription_value, :input_html => { :class => "span2" } %>
+  <%= f.input :inscription_amount, :input_html => { :class => "span2" } %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn-primary loading" %>
+    <%= link_to 'Cancel', admin_events_path, :class => "btn" %>
+  </div>
+
+<% end %>

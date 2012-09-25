@@ -1,0 +1,42 @@
+<%= render :partial => "header" %>
+
+<% if @inscription.payment_status.blank? %>
+  <h2>Pagamento</h2>
+  <p>Para finalizar o processo de inscrição, você deve efetuar o pagamento. Você será redirecionado para a página de pagamento do PagSeguro para escolher a forma de pagamento e realizar a mesma.</p>
+  <p class="information">
+    ***Note que a página do PagSeguro estará em nome de "Designa Soluções em TI Ltda. ME", que é a empresa responsável por processar os pagamentos da conferência.<br>
+    Se tiver qualquer problema durante o pagamento você pode entrar em contato pelo e-mail rupy@designa.com.br.
+  </p>
+  <%= pagseguro_form @order, :submit => "Efetuar pagamento" %>
+<% else %>
+  <h2>Situação da sua inscrição</h2>
+  <table class="table table-striped table-hover">
+    <tbody>
+      <tr><td>
+        <strong>NÚMERO DA INSCRIÇÃO:</strong><br>
+        <%= @inscription.id_formatted %>
+      </td></tr>
+
+      <tr><td>
+        <strong>INSCRITO:</strong><br>
+        <%= "#{@inscription.name} (#{@inscription.email})" %>
+      </td></tr>
+
+      <tr><td>
+        <strong>INSCRIÇÃO REALIZADA EM:</strong><br>
+        <%= @inscription.created_at.strftime("%d/%m/%Y %H:%M:%S") %>
+      </td></tr>
+
+      <tr><td>
+        <strong>SITUAÇÃO DO PAGAMENTO:</strong><br>
+        <%= content_tag :span, @inscription.payment_status_formatted, :class => "label #{@inscription.confirmed_status? ? 'label-success' : 'label-important'}" %>
+      </td></tr>
+
+      <tr><td>
+        <strong>SITUAÇÃO DA INSCRIÇÃO:</strong><br>
+        <%= content_tag :span, @inscription.status, :class => "label #{@inscription.confirmed_status? ? 'label-success' : 'label-important'}" %>
+      </td></tr>
+    <tbody>
+  </table>
+  <%= link_to "Voltar para a página inicial", root_path, :id => "root-link", :class => "btn btn-primary" %>
+<% end %>

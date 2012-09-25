@@ -1,0 +1,51 @@
+#br_inscriptions > #main {
+
+  padding-bottom: 30px;
+
+  #inscription-header {
+    margin-bottom: 10px;
+    p {
+      font-size: 17pt;
+      height: 101px;
+      font-weight: bold;
+      line-height: 25px;
+    }
+    .left p {
+      background: image-url("ticket.png") no-repeat left center;
+      padding-top: 60px;
+      padding-left: 140px;
+    }
+    .right p {
+      background: image-url("flag-br.png") no-repeat right center;
+      padding-top: 40px;
+      padding-right: 130px;
+      float: right;
+      small { font-weight: normal; }
+    }
+  }
+
+  h2, p { color: #1b2458; }
+  h2 { font-size: 17pt; }
+  p { margin-bottom: 20px; }
+
+  p.information {
+    font-size: 10pt;
+    line-height: 16px;
+    margin-bottom: 5px;
+    &, a { color: red; }
+    a { font-weight: bold; }
+  }
+
+  form.pagseguro, #root-link { margin: 30px 0; }
+  form.pagseguro input[type="submit"] {
+    @extend .btn, .btn-primary;
+  }
+
+  p#inscription-closed {
+    text-transform: uppercase;
+    color: #B94A48;
+    text-align: center;
+    font-weight: bold;
+    font-size: 26pt;
+  }
+}

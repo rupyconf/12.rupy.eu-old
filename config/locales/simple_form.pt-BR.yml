@@ -1,0 +1,10 @@
+pt-BR:
+  simple_form:
+    "yes": 'Sim'
+    "no": 'Não'
+    required:
+      text: 'requerido'
+      mark: '*'
+      html: '<abbr title="requerido">*</abbr>'
+    error_notification:
+      default_message: "Alguns erros foram encontrados:"

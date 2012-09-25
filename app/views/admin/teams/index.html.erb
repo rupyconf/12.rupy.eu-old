@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h2>Listing team members</h2>
+</div>
+
+<%= link_to 'New', new_admin_team_path, :class => 'btn btn-success btn-small btn-top' %>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Event</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each_with_index do |team, index| %>
+      <tr>
+        <td class="nowrap"><%= index.next %></td>
+        <td class="nowrap"><%= team.event %></td>
+        <td><%= team.name %></td>
+        <td class="nowrap">
+          <div class="pull-right">
+            <%= link_to 'Edit', [:edit, :admin, team], :class => 'btn btn-small' %>
+            <%= link_to 'Destroy', [:admin, team], :class => 'btn btn-danger btn-small', :confirm => 'Tem certeza?', :method => :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  <tbody>
+</table>

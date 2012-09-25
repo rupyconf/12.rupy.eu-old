@@ -1,0 +1,32 @@
+<%= simple_form_for [:admin, @team], :html => { :class => "form-horizontal" } do |f| %>
+
+  <%= f.error_notification %>
+
+  <%= f.association :event, :autofocus => true %>
+  <%= f.input :name %>
+  <%= f.input :description, :input_html => { :class => "span8", :rows => 4 } %>
+
+  <%= f.input :twitter, :wrapper => :prepend do %>
+    <%= content_tag :span, "@", :class => "add-on" %>
+    <%= f.input_field :twitter, :class => "span2" %>
+  <% end %>
+
+  <div class="control-group auto-fill-file">
+    <%= f.label :photo %>
+    <div class="controls">
+      <%= link_to "#" do %>
+        <%= image_tag @team.photo.url, :class => "img-polaroid" %>
+      <% end %>
+    </div>
+    <div class="controls">
+      <%= f.hint '150x150' %>
+      <%= f.file_field :photo %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => "btn-primary loading" %>
+    <%= link_to 'Cancel', admin_teams_path, :class => "btn" %>
+  </div>
+
+<% end %>

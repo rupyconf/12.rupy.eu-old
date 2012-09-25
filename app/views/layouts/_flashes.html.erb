@@ -1,0 +1,27 @@
+<% unless flash[:notice].blank? %>
+  <div class="alert alert-info fade in">
+    <a class="close" data-dismiss="alert" href="#">&times;</a>
+    <strong>Heads up!</strong> <%= flash[:notice].html_safe %>
+  </div>
+<% end %>
+
+<% unless flash[:error].blank? %>
+  <div class="alert alert-error fade in">
+    <a class="close" data-dismiss="alert" href="#">&times;</a>
+    <strong>Oh snap!</strong> <%= flash[:error].html_safe %>
+  </div>
+<% end %>
+
+<% unless flash[:alert].blank? %>
+  <div class="alert fade in">
+    <a class="close" data-dismiss="alert" href="#">&times;</a>
+    <strong>Warning!</strong> <%= flash[:alert].html_safe %>
+  </div>
+<% end %>
+
+<% unless flash[:success].blank? %>
+  <div class="alert alert-success fade in">
+    <a class="close" data-dismiss="alert" href="#">&times;</a>
+    <strong>Well done!</strong> <%= flash[:success].html_safe %>
+  </div>
+<% end %>

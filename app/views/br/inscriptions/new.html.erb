@@ -1,0 +1,51 @@
+<%= render :partial => "header" %>
+
+<% if (@inscription.event.present? && @inscription.event.inscription_available?) || (@inscription.training.present? && @inscription.training.inscription_available?) %>
+  <p class="information">
+    *Inscrição válida somente para os 2 dias de conferência (8 e 9 de dezembro). O dia 7 de dezembro é um dia específico para treinamentos e não está incluso nesta inscrição.<br>
+    Para inscriver-se em um treinamento <%= link_to "clique aqui", root_path.concat("#trainings") %>.
+  </p>
+
+  <%= simple_form_for @inscription, :html => { :class => "well form-horizontal" } do |f| %>
+
+    <%= f.error_notification %>
+
+    <legend>Dados pessoais</legend>
+    <%= f.hidden_field :event_id %>
+    <%= f.hidden_field :training_id %>
+    <%= f.input :first_name, :label => "Nome", :input_html => { :class => "input-medium" } %>
+    <%= f.input :last_name, :label => "Sobrenome", :input_html => { :class => "input-medium" } %>
+    <%= f.input :email, :label => "E-mail", :input_html => { :class => "input-xlarge" } %>
+    <%= f.input :cpf, :label => "CPF", :input_html => { :class => "input-medium" } %>
+    <%= f.input :city_id, :label => "Cidade" do %>
+      <%= f.input_field :state_id, :class => "input-mini", :collection => Br::State.all.collect { |state| [state.symbol, state.id] }, :include_blank => false %>
+      <%= f.input_field :city_id, :class => "input-xlarge", :collection => [], :"data-current" => @inscription.city_id %>
+    <% end %>
+    <%= f.input :twitter, :label => "Twitter", :wrapper => :prepend do %>
+      <%= content_tag :span, "@", :class => "add-on" %>
+      <%= f.input_field :twitter, :class => "input-small" %>
+    <% end %>
+
+    <legend>Instituição de ensino</legend>
+    <%= f.input :student, :label => "Estudante", :input_html => { :class => "input-large" }, :collection => [["Sim", true], ["Não", false]], :as => :radio_buttons, :required => true %>
+    <%= f.input :educational_institution, :label => "Nome da instituição", :input_html => { :class => "input-large" } %>
+
+    <legend>Empresa</legend>
+    <%= f.input :company_name, :label => "Nome", :input_html => { :class => "input-large" } %>
+    <%= f.input :company_website, :label => "Site", :input_html => { :class => "input-large" } %>
+    <%= f.input :company_position, :label => "Cargo", :input_html => { :class => "input-large" } %>
+
+    <legend>Experiência profissional</legend>
+    <%= f.input :ruby_experience, :label => "Ruby", :input_html => { :class => "input-large" }, :collection => Br::Inscription.experiences_itens, :as => :radio_buttons %>
+    <%= f.input :python_experience, :label => "Python", :input_html => { :class => "input-large" }, :collection => Br::Inscription.experiences_itens, :as => :radio_buttons %>
+    <%= f.input :javascript_experience, :label => "Javascript", :input_html => { :class => "input-large" }, :collection => Br::Inscription.experiences_itens, :as => :radio_buttons %>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Inscrever-se", :class => "btn-primary loading" %>
+      <%= link_to "Cancelar", root_path, :class => "btn" %>
+    </div>
+
+  <% end %>
+<% else %>
+  <p id="inscription-closed">Inscrições encerradas</p>
+<% end %>    
