@@ -1,0 +1,502 @@
+/*
+ */
+
+@import "reset";
+@import "variables";
+@import "mixins";
+
+body {
+    margin: 0;
+}
+
+body, html {
+    font-size: 15px;
+    line-height: 20px;
+    font-family: 'ITCAvantGardePro-Bk';
+    background: @colorDark;
+}
+
+a {
+    text-decoration: none;
+    &:hover {text-decoration: underline;}
+}
+
+strong, .strong {
+    font-family: 'ITCAvantGardePro-Demi';
+    font-weight: normal;
+    a {color: #ffffff;}
+}
+
+hr, .hr {
+    background: url(/assets/hr.png) repeat-x bottom left;
+}
+
+hr {
+    height: 0;
+    padding-bottom: 9px;
+}
+
+.hrDark {
+    background: url(/assets/hrDark.png) repeat-x bottom left;
+    padding-bottom: 9px;
+}
+
+p {
+    &.larger {
+        font-size: @fontSizeLarge;
+        line-height: @lineHeightLarge;
+        text-align: center;
+    }
+    &.large {
+        font-size: 25px;
+    }
+    &.centered {
+        text-align: center;
+    }
+    &.right {
+        text-align: right;
+    }
+    &.red {
+        color: @colorRed;
+    }
+    &.white {
+        @color: #ffffff;
+    }
+
+}
+
+h1 {
+    margin: 55px 0 50px 0;
+    font-size: 64px;
+    line-height: 64px;
+    font-family: @demi;
+    color: @colorRed;
+    text-align: center;
+}
+span.h2 {
+    font-size: 25px;
+    font-family: @demi;
+    color: @colorRed;
+}
+
+.white {color: #ffffff !important;}
+
+.button {
+    display: inline-block;
+    background: @colorRed;
+    height: 49px;
+    line-height: 49px;
+    font-size: 32px;
+    font-family: @demi;
+    color: @colorDark;
+    padding: 0 25px;
+}
+
+.ico {
+    display: inline-block;
+    background: url(/assets/icos.png) no-repeat;
+    &.ss {
+        width: 36px;
+        height: 36px;
+        &.t {background-position: 0 0}
+        &.tw {background-position: -36px 0}
+        &.f {background-position: -72px 0}
+        &.in {background-position: -108px 0}
+        &.dg {background-position: -288px 0}
+        &.dtw {background-position: -324px 0}
+        &.dw {background-position: -360px 0}
+        &.dpeople {background-position: -144px 0}
+        &.dtime {background-position: -180px 0}
+        &.g {background-position: -216px 0}
+        &.b {background-position: -252px 0}
+    }
+    &.sm {
+        width: 46px;
+        height: 46px;
+        &.tw {background-position: 0 -36px}
+        &.t {background-position: -46px -36px}
+    }
+    &.sl {
+        width: 68px;
+        height: 68px;
+        &.t1 {background-position: 0 -83px}
+        &.t2 {background-position: -68px -83px}
+        &.t3 {background-position: -136px -83px}
+        &.t4 {background-position: -204px -83px}
+    }
+}
+
+.lineWithHole {
+    background: url(/assets/lineWithHole.png) no-repeat center;
+    text-align: center;
+    span.blue {
+        display: inline-block;
+        height: 100%;
+        padding: 0 13px;
+        background: @colorDark;
+    }
+}
+
+.colset {
+    width: @pw;
+    .row {
+        .over();
+        margin-left: -1 * @colSpace;
+    }
+    .col14, .col24, .col34, .col13, .col44 {
+        .fl();
+        text-align: center;
+        margin-left: @colSpace;
+        div.inner {
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+    }
+    .col14, .col44 {
+        width: @colWidth;
+        div.inner {
+            text-align: justify;
+        }
+    }
+    .col13 {
+        width: 370px;
+        div.inner {
+            text-align: justify;
+        }
+        .icos {
+            .fl();
+            a, span {margin: 0 12px 0 0;}
+        }
+    }
+    .col24 {
+        width: 2 * @colWidth + @colSpace;
+    }
+    .col34 {
+        width: 3 * @colWidth + 2 * @colSpace;
+    }
+    .col44 {
+        width: 4 * @colWidth + 3 * @colSpace;
+    }
+}
+
+.speaker {
+    width: 240px;
+    margin: 0 auto 60px auto;
+    background: @colorRed;
+    min-height: 473px;
+    .info {
+        width: 180px;
+        margin: 0 auto;
+        p, a {color: @colorDark;}
+        p.name, p.nick {
+            font-family: @demi;
+            font-size: @fontSizeLarge;
+            line-height: @lineHeightLarge;
+        }
+        p.name {padding: 30px 0 0 0;}
+        p.nick {margin: 8px 0 16px 0;}
+        p.description {margin: 0 0 17px 0;}
+        p.modals a {text-decoration: underline;}
+    }
+    &.blue {
+        padding: 0 0 25px 0;
+        background: @colorLight;
+        p.name {padding: 20px 0 0 0; font-size: 25px; color: @colorRed;}
+        p.nick {margin: 12px 0 20px 0; font-size: 25px;}
+    }
+}
+
+.modal, .modalLike {
+    @pl: 17px;
+    @pt: 15px;
+    background: @colorRed;
+    padding: @pt @pl;
+    text-align: justify;
+    div.top {
+        .over();
+        font-family: @demi;
+        margin: 0 0 16px 0;
+        div.title {
+            .fl();
+            p.white {
+                font-size: @fontSizeLarge;
+            }
+        }
+    }
+}
+
+.modalLike {
+    .rel();
+    @pl: 17px;
+    @pt: 15px;
+    width: 3 * @colWidth + 2 * @colSpace - 30px - 2 * @pl;
+    min-height: 473px - 2 * @pt;
+    color: @colorDark;
+    margin: 0 auto;
+    div.top {
+        div.title {
+            p.white {
+                margin: 12px 0 7px 0;
+            }
+            p.regular {
+                margin: 0 0 12px 0;
+            }
+        }
+        ul.params {
+            .fr();
+            list-style-type: none;
+            li {
+                .fl();
+                margin: 0 0 0 12px;
+                line-height: 36px;
+                span {
+                    .fl();
+                    margin: 0 11px 0 0;
+                }
+            }
+        }
+    }
+    .register {
+        .abs();
+        right: 17px;
+        bottom: 15px;
+        display: inline-block;
+        height: 31px;
+        line-height: 31px;
+        background: @colorDark;
+        padding: 0 15px;
+        font-family: @demi;
+        color: @colorRed;
+    }
+}
+
+.modal {
+    @pl: 17px;
+    .fix();
+    top: 50%;
+    left: 50%;
+    width: 570px - 2 * @pl;
+    div.top {
+        div.title {
+            p.white {
+                margin: 0 0 7px 0;
+            }
+            p.regular {
+                margin: 0 0 14px 0;
+            }
+        }
+        a.close {
+            display: inline-block;
+            .fr();
+            width: 16px;
+            height: 15px;
+            background: url(/assets/x.png) no-repeat;
+        }
+    }
+    p img {
+        .fl();
+        margin: 0 14px 24px 0;
+    }
+    div.bottom {
+        clear:both;
+        div.social {
+            .fl();
+            .ico {margin: 0 12px 0 0;}
+        }
+        a.close {
+            .fr();
+            display: inline-block;
+            height: 31px;
+            line-height: 31px;
+            background: @colorDark;
+            padding: 0 15px;
+            font-family: @demi;
+            color: @colorRed;
+        }
+    }
+}
+
+.container {
+    .rel();
+    width: @pw;
+    margin: 0 auto;
+}
+
+#topMenu {
+    height: 71px;
+    line-height: 78px;
+    font-size: @fontSizeLarge;
+    #editions {
+        .fl();
+        padding-left: 30px;
+        color: #ffffff;
+        background: url(/assets/logoS.png) no-repeat 0 9px;
+        a {
+            color: #ffffff;
+            &.current {font-family: @demi;}
+        }
+    }
+    #menu {
+        .fr();
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li {
+            .fl();
+            margin: 0 0 0 23px;
+            a {
+                color: @colorRed;
+            }
+            &:last-child a {
+                color: #ffffff;
+                font-family: @demi;
+            }
+        }
+    }
+}
+
+#about {
+    .rel();
+    padding: 17px 0 73px 0;
+    #previous {
+        .fl();
+        padding-left: @contentSidePadding;
+        color: @colorRed;
+        font-family: @demi;
+        a {color: #ffffff;}
+        z-index:1;
+    }
+    #social {
+        padding-right: @contentSidePadding;
+        .fr();
+        a {
+            margin-left: 12px;
+        }
+        z-index:1;
+    }
+    #logoXl {
+        .abs();
+        z-index: 0;
+        top: 50px;
+        left: 0;
+        @pt: 279px;
+        @pl: 375px;
+        padding: @pt 0 0 @pl;
+        width: @pw - @pl;
+        height: 500px - @pt;
+        background: url(/assets/logoXL.png) no-repeat 187px 0px;
+        p {
+            font-size: 32px;
+            line-height: 30px;
+            font-family: @demi;
+            color: @colorRed;
+        }
+    }
+    #info {
+        margin: 500px 0 0 0;
+        padding: 0 0 46px;
+        .button {margin: 47px 0;}
+    }
+    .feed {
+        text-align: left;
+        color: #ffffff;
+        padding: 10px @contentSidePadding 0 @contentSidePadding;
+        a {color: @colorRed;}
+    }
+}
+
+#speakers {
+    padding: 0 0 18px 0;
+}
+
+#workshops {
+    padding: 0 0 10px 0;
+}
+
+#location {
+    #googleMap {
+        width: 100%;
+        height: 279px;
+    }
+    #gps {
+        .fr();
+        width: 200px;
+    }
+    .locationDetails {
+        min-height: 200px - 2 * 22px;
+        padding: 22px 19px;
+        background: @colorRed;
+        color: @colorDark;
+        text-align: left;
+        margin: 0 0 65px 0;
+        p.white {
+            font-family: @demi;
+            font-size: @fontSizeLarge;
+            padding-bottom: 27px;
+            margin: 0 0 14px 0;
+        }
+    }
+    p.travelIco {
+        margin: 0 0 36px 0;
+        text-align: center;
+    }
+}
+
+#sponsors {
+    .row.logo {
+        margin-bottom: 40px;
+    }
+    .sponsor {
+        padding: 0 0 68px 0;
+        text-align: center;
+        a {
+            display: inline-block;
+            height: 48px;
+            line-height: 48px;
+            font-size: 32px;
+            text-align: center;
+            font-family: @demi;
+            color: @colorDark;
+            background: @colorRed;
+            padding: 0 21px;
+        }
+    }
+}
+
+#team {
+    padding: 0 0 10px 0;
+}
+
+#faq {
+    padding: 0 0 70px 0;
+    p.large {
+        text-align: center;
+        font-family: @demi;
+        margin: 0 0 25px 0;
+        line-height: 31px;
+    }
+}
+
+#lastNote {
+    text-align: center;
+    padding: 57px 0 63px 0;
+    p.xl {
+        font-size: 32px;
+        line-height: 37px;
+    }
+    p.red {
+        font-family: @demi;
+    }
+}
+
+#footer {
+    p {line-height: 78px;}
+    .thanks {
+        .fl();
+        padding: 0 0 0 37px;
+        background: url(/assets/logoS.png) no-repeat 0 9px;
+    }
+    .design {
+        .fr();
+    }
+}
