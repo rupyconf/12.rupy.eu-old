@@ -6,7 +6,8 @@ gem 'sqlite3'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'uglifier', '>= 1.0.3'
-  gem 'less', '~> 2.2.2'
+  #gem 'less', '~> 2.2.2'
+  gem 'less-rails' 
   gem 'therubyracer', '~> 0.10.2'
 end
 
