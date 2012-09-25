@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120914191449) do
+ActiveRecord::Schema.define(:version => 20120922022221) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20120914191449) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "event_id"
+    t.string   "twitter"
   end
 
   create_table "sponsor_types", :force => true do |t|
