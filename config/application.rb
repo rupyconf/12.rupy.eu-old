@@ -52,6 +52,7 @@ module Rupy
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
     config.serve_static_assets = true
 
