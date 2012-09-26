@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120922022221) do
+ActiveRecord::Schema.define(:version => 20120926013139) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -171,6 +171,9 @@ ActiveRecord::Schema.define(:version => 20120922022221) do
     t.integer  "instructor_photo_file_size"
     t.datetime "instructor_photo_updated_at"
     t.integer  "inscription_amount"
+    t.string   "instructor_profile"
+    t.string   "instructor_twitter"
+    t.string   "instructor_website"
   end
 
   add_index "trainings", ["event_id"], :name => "index_trainings_on_event_id"

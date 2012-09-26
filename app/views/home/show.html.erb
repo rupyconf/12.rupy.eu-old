@@ -161,7 +161,7 @@
                     <% if training.inscription_available? %>
                       <%= link_to t(:register), [:new, @event.domain_locale, training, :inscription], :class => "register" %>
                     <% else %>
-                      <a href="#" class="register">Register</a>
+                      <%= link_to t(:register), "#", :class => "register" %>
                     <% end %>
                   </div>
               </div>
@@ -172,8 +172,10 @@
                       <%= image_tag training.instructor_photo.url %>
                   </div>
                   <div class="info">
-                      <%= content_tag :p, training.name, :class => "name white" %>
-                      <p class="nick"><a href="#">@cs3b</a></p>
+                      <%= content_tag :p, training.instructor_name, :class => "name white" %>
+                      <%= content_tag :p, :class => "nick" do %>
+                        <%= link_to "@#{training.instructor_twitter}", "http://twitter.com/#{training.instructor_twitter}", :target => "_blank", :class => "white" %>
+                      <% end unless training.instructor_twitter.blank? %>
                       <p class="description">Team Leader at Selleo</p>
                       <p class="modals">
                           <!--
@@ -196,9 +198,11 @@
                           <%= content_tag :p, training.instructor_description %>
                           <div class="bottom">
                               <div class="social">
-                                  <a href="#" class="ico ss dg"></a><a href="#" class="ico ss dtw"></a><a href="#" class="ico ss dw"></a>
+                                  <%= link_to_unless training.instructor_profile.blank?, "", "#{training.instructor_profile}", :target => "_blank", :class => "ico ss dg" %>
+                                  <%= link_to_unless training.instructor_twitter.blank?, "", "#{training.instructor_twitter}", :target => "_blank", :class => "ico ss dtw" %>
+                                  <%= link_to_unless training.instructor_twitter.blank?, "", "#{training.instructor_website}", :target => "_blank", :class => "ico ss dw" %>
                               </div>
-                              <a href="#" class="close">Close</a>
+                              <a href="#" class="close"><%= t(:close) %></a>
                           </div>
                       </div>
                   </div>
