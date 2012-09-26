@@ -8,4 +8,8 @@ class Sponsor < ActiveRecord::Base
 
   default_scope order("event_id, sponsor_type_id, sequence")
 
+  def description_available?
+    not self.description.blank?
+  end
+
 end
