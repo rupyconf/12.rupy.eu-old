@@ -176,7 +176,7 @@
                       <%= content_tag :p, :class => "nick" do %>
                         <%= link_to "@#{training.instructor_twitter}", "http://twitter.com/#{training.instructor_twitter}", :target => "_blank", :class => "white" %>
                       <% end unless training.instructor_twitter.blank? %>
-                      <p class="description">Team Leader at Selleo</p>
+                      <%= content_tag :p, training.instructor_job_title, :class => "description" %>
                       <p class="modals">
                           <!--
                               Modals usage:
@@ -190,7 +190,7 @@
                           <div class="top hrDark">
                               <div class="title">
                                   <%= content_tag :p, training.instructor_name, :class => "white" %>
-                                  <p class="regular">Team Leader at Selleo</p>
+                                  <%= content_tag :p, training.instructor_job_title, :class => "regular" %>
                               </div>
                               <a href="#" class="close"></a>
                           </div>
