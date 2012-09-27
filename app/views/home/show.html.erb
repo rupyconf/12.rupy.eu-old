@@ -203,7 +203,7 @@
                           <div class="bottom">
                               <div class="social">
                                   <%= link_to_unless training.instructor_profile.blank?, "", "#{training.instructor_profile}", :target => "_blank", :class => "ico ss dg" %>
-                                  <%= link_to_unless training.instructor_twitter.blank?, "", "#{training.instructor_twitter}", :target => "_blank", :class => "ico ss dtw" %>
+                                  <%= link_to_unless training.instructor_twitter.blank?, "", "http://twitter.com/#{training.instructor_twitter}", :target => "_blank", :class => "ico ss dtw" %>
                                   <%= link_to_unless training.instructor_twitter.blank?, "", "#{training.instructor_website}", :target => "_blank", :class => "ico ss dw" %>
                               </div>
                               <a href="#" class="close"><%= t(:close) %></a>
