@@ -7,6 +7,7 @@ pt-BR:
   previous_editions: "Edições anteriores"
   frequently_asked_questions: "Dúvidas Frequentes"
   accomodation: "Acomodações"
+  close: "Fechar"
 
   speakers: "Palestrantes"
   sponsors: "Patrocinadores"
@@ -20,12 +21,18 @@ pt-BR:
   workshops: "Workshops"
   about: "Sobre"
 
+  attendee: 'participante'
   trainings_description: "O dia anterior a conferência, dia 07/12 (sex), será totalmente dedicado a cursos com duração de 8 horas e com vagas limitadas para que você possa aprofundar seu conhecimento ou ter o primeiro contato com as linguagens mais poderosas do momento. Aproveite!"
   training: "Treinamento"
   instructor_about: "Sobre o instrutor"
   summary: "Grade"
   payment_method: "Formas de pagamento"
   register: "Inscrever-se"
+
+  faq_about_title: "Do que se trata essa conferência?"
+  faq_different_title: "No que o RuPy difere das outras?"
+  faq_hemisphere_title: "Por que conectando hemisférios?"
+  faq_for_title: "Estou apto para o RuPy?"
 
   errors: &errors
     format: ! '%{attribute} %{message}'

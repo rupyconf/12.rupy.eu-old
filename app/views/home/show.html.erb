@@ -151,8 +151,12 @@
                           <%= content_tag :p, training.instructor_name, :class => "regular" %>
                       </div>
                       <ul class="params">
-                          <li><span class="ico ss dpeople"></span>20 attendees</li>
-                          <li><span class="ico ss dtime"></span>2 hours</li>
+                          <%= content_tag :li do %>
+                            <span class="ico ss dpeople"></span><%= pluralize(training.inscription_amount, t(:attendee)) %>
+                          <% end unless training.inscription_amount.blank? %>
+                          <%= content_tag :li do %>
+                            <span class="ico ss dtime"></span><%= training.hours %>
+                          <% end unless training.hours.blank? %>
                       </ul>
                   </div>
                   <%= content_tag :p, training.description %>
@@ -161,7 +165,7 @@
                     <% if training.inscription_available? %>
                       <%= link_to t(:register), [:new, @event.domain_locale, training, :inscription], :class => "register" %>
                     <% else %>
-                      <a href="#" class="register">Register</a>
+                      <%= link_to t(:register), "#", :class => "register" %>
                     <% end %>
                   </div>
               </div>
@@ -172,9 +176,11 @@
                       <%= image_tag training.instructor_photo.url %>
                   </div>
                   <div class="info">
-                      <%= content_tag :p, training.name, :class => "name white" %>
-                      <p class="nick"><a href="#">@cs3b</a></p>
-                      <p class="description">Team Leader at Selleo</p>
+                      <%= content_tag :p, training.instructor_name, :class => "name white" %>
+                      <%= content_tag :p, :class => "nick" do %>
+                        <%= link_to "@#{training.instructor_twitter}", "http://twitter.com/#{training.instructor_twitter}", :target => "_blank", :class => "white" %>
+                      <% end unless training.instructor_twitter.blank? %>
+                      <%= content_tag :p, training.instructor_job_title, :class => "description" %>
                       <p class="modals">
                           <!--
                               Modals usage:
@@ -188,7 +194,7 @@
                           <div class="top hrDark">
                               <div class="title">
                                   <%= content_tag :p, training.instructor_name, :class => "white" %>
-                                  <p class="regular">Team Leader at Selleo</p>
+                                  <%= content_tag :p, training.instructor_job_title, :class => "regular" %>
                               </div>
                               <a href="#" class="close"></a>
                           </div>
@@ -196,9 +202,11 @@
                           <%= content_tag :p, training.instructor_description %>
                           <div class="bottom">
                               <div class="social">
-                                  <a href="#" class="ico ss dg"></a><a href="#" class="ico ss dtw"></a><a href="#" class="ico ss dw"></a>
+                                  <%= link_to_unless training.instructor_profile.blank?, "", "#{training.instructor_profile}", :target => "_blank", :class => "ico ss dg" %>
+                                  <%= link_to_unless training.instructor_twitter.blank?, "", "http://twitter.com/#{training.instructor_twitter}", :target => "_blank", :class => "ico ss dtw" %>
+                                  <%= link_to_unless training.instructor_twitter.blank?, "", "#{training.instructor_website}", :target => "_blank", :class => "ico ss dw" %>
                               </div>
-                              <a href="#" class="close">Close</a>
+                              <a href="#" class="close"><%= t(:close) %></a>
                           </div>
                       </div>
                   </div>
@@ -416,25 +424,25 @@
       <div class="row">
           <div class="col14">
               <div class="inner">
-                  <p class="large red">What is this conference about?</p>
+                  <p class="large red"><%= t(:faq_about_title) %></p>
                   <p class="white">RuPy is the first, non-profit, volunteered conference in Central and Eastern Europe about Ruby, Python and JavaScript organized by developers for developers. Its aim is to bring together communities from different state-of-the-art programming languages: Ruby, Python and JavaScript. The goal of the conference is to bridge these communities because we believe that being a polyglot developer brings huge benefits to the skill-set of a developer.</p>
               </div>
           </div>
           <div class="col14">
               <div class="inner">
-                  <p class="large red">How is RuPy different from the others?</p>
+                  <p class="large red"><%= t(:faq_different_title) %></p>
                   <p class="white">Don’t expect any singular, monothematic technological views or boring talks. If you are looking for diversity, high quality, interesting talks from remarkable speakers, workshops led by experts, open events, lightning talks, affordable price, confrontations, contrasting and comparing different approaches, diving into modern, still unexplored, technology solutions, unexpected synergies or creative mixes, then RuPy conference is the right conference for you.</p>
               </div>
           </div>
           <div class="col14">
               <div class="inner">
-                  <p class="large red">Why connecting hemispheres?</p>
+                  <p class="large red"><%= t(:faq_hemisphere_title) %></p>
                   <p class="white">The first four years of the conference were held in Poland. This year there will be two simultaneous editions across two hemispheres, one in Brno and one in São José dos Campos. Brno is becoming the technological centre of Central Europe with several universities providing technical education and many tech-companies setting up centres here. São José dos Campos is an important technological centre in Brazil with constantly evolving and growing community of Ruby and Python.</p>
               </div>
           </div>
           <div class="col14">
               <div class="inner">
-                  <p class="large red">Am I fit for RuPy?</p>
+                  <p class="large red"><%= t(:faq_for_title) %></p>
                   <p class="white">If you are a developer who is not afraid to confront different points of view, willing to learn and experiment with new languages and technologies, eager to compare problems and solutions, determined to dive into and explore modern still unexplored technology solutions, ready to share methodologies and philosophy in order to come up with new synergies and ideas, then Rupy is exactly the conference you shouldn't miss.</p>
               </div>
           </div>
