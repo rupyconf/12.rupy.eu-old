@@ -185,9 +185,10 @@ span.h2 {
     background: @colorRed;
     min-height: 473px;
     .info {
-        width: 180px;
+        width: 190px;
         margin: 0 auto;
-        p, a {color: @colorDark;}
+        p {color: @colorDark;}
+        a { color: @colorRed; } 
         p.name, p.nick {
             font-family: @demi;
             font-size: @fontSizeLarge;
@@ -195,7 +196,10 @@ span.h2 {
         }
         p.name {padding: 30px 0 0 0;}
         p.nick {margin: 8px 0 16px 0;}
-        p.description {margin: 0 0 17px 0;}
+        p.description {
+          margin: 0 0 17px 0;
+          font-size: @fontSizeProfileDesc;
+        }
         p.modals a {text-decoration: underline;}
     }
     &.blue {
@@ -450,6 +454,20 @@ span.h2 {
 #sponsors {
     .row.logo {
         margin-bottom: 40px;
+        .foo {
+          background-color: white;
+          padding: 6px;
+          text-align: center;
+        }
+        .titled {
+          color: @colorRed;
+          font-size: 20px; 
+          text-align: left;
+        }
+        .bar {
+          text-align: left;
+        }
+
     }
     .sponsor {
         padding: 0 0 68px 0;

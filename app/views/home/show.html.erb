@@ -366,14 +366,16 @@
       <p class="larger">&nbsp;</p>
       <div class="colset">
           <div class="row logo">
-              <div class="col13">
-                <%= content_tag :div, :class => "inner logo" do %>
+              <div class="col14">
+                <%= content_tag :div, :class => "inner logo foo" do %>
+                  <%- link_to sponsor.website do %>
                     <%= image_tag sponsor.logo.url %>
+                  <% end %>
                 <% end %>
               </div>
               <% if sponsor.description_available? %>
-              <div class="col30">
-                  <%= content_tag :div, :class => "inner" do %>
+              <div class="col34">
+                  <%= content_tag :div, :class => "inner bar" do %>
                     <%= content_tag :p, sponsor.description, :class => "white" %>
                   <% end %>
               </div>
