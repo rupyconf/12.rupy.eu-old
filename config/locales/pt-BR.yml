@@ -29,6 +29,11 @@ pt-BR:
   payment_method: "Formas de pagamento"
   register: "Inscrever-se"
 
+  faq_about_title: "Do que se trata essa conferência?"
+  faq_different_title: "No que o RuPy difere das outras?"
+  faq_hemisphere_title: "Por que conectando hemisférios?"
+  faq_for_title: "Estou apto para o RuPy?"
+
   errors: &errors
     format: ! '%{attribute} %{message}'
     messages:

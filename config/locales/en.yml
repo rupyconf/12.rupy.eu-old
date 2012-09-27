@@ -28,3 +28,8 @@ en:
   summary: "Summary"
   payment_method: "Payment method"
   register: "Register"
+
+  faq_about_title: "What is this conference about?"
+  faq_different_title: "How is RuPy different from the others?"
+  faq_hemisphere_title: "Why connecting hemispheres?"
+  faq_for_title: "Am I fit for RuPy?"
