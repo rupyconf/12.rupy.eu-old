@@ -1,3 +1,4 @@
+
 var GoogleMapsController =
 {
     map: null,
@@ -54,6 +55,8 @@ var GoogleMapsController =
 }
 
 $(document).ready(function() {
+    var initLatLng = $('meta[name=latlong]').attr('content');
+
     var initPosition = (typeof initLatLng === 'undefined') ? null : initLatLng.split(';');
     var initText = (typeof initMarkerText === 'undefined') ? null : initMarkerText;
     
