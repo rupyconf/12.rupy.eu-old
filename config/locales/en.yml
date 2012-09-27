@@ -21,6 +21,7 @@ en:
   workshops: "Workshops"
   about: "About"
 
+  attendee: 'attendee'
   trainings_description: "Customize yout trainings description"
   training: "Training session"
   instructor_about: "Instructor about"

@@ -151,8 +151,12 @@
                           <%= content_tag :p, training.instructor_name, :class => "regular" %>
                       </div>
                       <ul class="params">
-                          <li><span class="ico ss dpeople"></span>20 attendees</li>
-                          <li><span class="ico ss dtime"></span>2 hours</li>
+                          <%= content_tag :li do %>
+                            <span class="ico ss dpeople"></span><%= pluralize(training.inscription_amount, t(:attendee)) %>
+                          <% end unless training.inscription_amount.blank? %>
+                          <%= content_tag :li do %>
+                            <span class="ico ss dtime"></span><%= training.hours %>
+                          <% end unless training.hours.blank? %>
                       </ul>
                   </div>
                   <%= content_tag :p, training.description %>
