@@ -1,6 +1,6 @@
 <div id="topMenu" class="container hr">
     <div id="editions">
-        <a href="http://rupy.eu/" title="Brno Edition" class="current">Brno Edition|<a href="http://rupy.com.br/" title="Brazil Edition">Brazil Edition</a>
+        <a href="http://rupy.eu/" title="Brno Edition" class="current">Brno Edition</a>|<a href="http://rupy.com.br/" title="Brazil Edition">Brazil Edition</a>
     </div>
     <ul id="menu">
         <%= content_tag :li, link_to(t(:about), "#about") %>
@@ -59,7 +59,7 @@
 </div>
 
 <div id="speakers" class="container hr">
-  <h1><%= content_tag :h1, t(:speakers) %></h1>
+  <h1><%= t(:speakers) %></h1>
   <p class="larger white">Behold our <strong>professional, creative, sharp-witted</strong> and simply <strong>awesome speakers</strong> and <strong>developers</strong></p>
   <p class="larger white">who will surely make this conference an <strong>unforgettable experience.</strong></p>
   <p class="larger">&nbsp;</p>
@@ -135,7 +135,7 @@
 </div>
 <% if @trainings.present? %>
 <div id="workshops" class="container hr">
-  <h1><%= content_tag :h1, t(:workshops) %></h1>
+  <h1><%= t(:workshops) %></h1>
   <p class="larger white">In addition to the lectures, we offer an attendees the <strong>possibility to participate in workshops</strong> which </p>
   <p class="larger white">provide a <strong>more active</strong> and hands-on approach to gain <strong>new useful knowledge</strong>.</p>
   <p class="larger">&nbsp;</p>
@@ -210,7 +210,7 @@
 </div>
 <% end %>
 <div id="agenda" class="container hr">
-    <h1><%= content_tag :h1, t(:agenda) %></h1>
+    <h1><%= t(:agenda) %></h1>
     <p class="larger white">Roses are red, violets are blue, </p>
     <p class="larger white">RuPy team's busy working on conference schedule, </p>
     <p class="larger white">so stay tuned.</p>
@@ -219,7 +219,7 @@
     <p class="larger">&nbsp;</p>
 </div>
 <div id="location" class="container hr">
-  <h1><%= content_tag :h1, t(:location) %></h1>
+  <h1><%= t(:location) %></h1>
   <% if @event.present? %>
   <p class="larger white">Lorem ipsum kanfgpoangpoemvide a sf <strong>mfsegore acgeetive</strong> and hands-on approachvg</p>
   <p class="larger white">dev to gaiuseful vdajklnva dapoúpa vaúpmpoepknowledge.</p>
@@ -347,7 +347,7 @@
   <% end %>
 </div>
 <div id="sponsors" class="container hr">
-  <h1><%= content_tag :h1, t(:sponsors) %></h1>
+  <h1><%= t(:sponsors) %></h1>
   <p class="larger white">It’s <strong>thanks to the support and assistance</strong> of our sponsors that RuPy conference is possible </p>
   <p class="larger white">so take the time and have a look on <strong>who they are</strong> and <strong>what they do.</strong></p>
   <p class="larger">&nbsp;</p>
@@ -384,7 +384,7 @@
   <p class="sponsor"><%= link_to t(:sponsor_brochure), @event.try(:brochure), :target => "_blank" %></p>
 </div>
 <div id="team" class="container hr">
-  <h1><%= content_tag :h1, t(:team) %></h1>
+  <h1><%= t(:team) %></h1>
   <p class="larger white">Our dedicated and enthusiastic team of organizers is ready </p>
   <p class="larger white">to make the <strong>best RuPy conference yet.</strong></p>
   <p class="larger">&nbsp;</p>
@@ -411,7 +411,7 @@
   </div>
 </div>
 <div id="faq" class="container hr">
-  <h1><%= content_tag :h1, t(:frequently_asked_questions) %></h1>
+  <h1><%= t(:frequently_asked_questions) %></h1>
   <div class="colset">
       <div class="row">
           <div class="col14">
