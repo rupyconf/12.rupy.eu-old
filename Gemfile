@@ -17,6 +17,7 @@ end
 
 gem 'jquery-rails'
 gem 'capistrano'
+gem 'capistrano_colors'
 gem "paperclip", "~> 3.1.4"
 gem "devise", "~> 2.1.2"
 gem "menu_builder", "~> 0.4.3"
