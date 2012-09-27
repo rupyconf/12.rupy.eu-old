@@ -7,6 +7,8 @@ gem 'devise',       '2.1.2'
 gem 'menu_builder', '0.4.3'
 gem 'simple_form',  '2.0.2'
 gem 'pagseguro',    '0.1.13'
+gem 'capistrano'
+gem 'capistrano_colors'
 
 group :assets do
   gem 'sass-rails',   '3.2.5'
@@ -16,7 +18,6 @@ group :assets do
 end
 
 group :development do
-  gem 'capistrano', '2.13.4'
   gem 'sqlite3',    '1.3.6'
 end
 
