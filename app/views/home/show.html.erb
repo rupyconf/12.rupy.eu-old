@@ -18,7 +18,7 @@
 <div id="about" class="container hr">
   <div id="previous"><%= t(:previous_editions) %>: <a href="http://11.rupy.eu/">2011</a> <a href="#">2009</a> <a href="#">2008</a> <a href="#">2007</a> </div>
   <div id="social">
-      <a href="http://blog.rupy.eu/" class="ico ss t"></a><a href="http://twitter.com/rupy" class="ico ss tw"></a><a href="facebook.com/rupy.conference" class="ico ss f"></a><a href="https://www.linkedin.com/groups?gid=63103&mostPopular=&trk=tyah" class="ico ss in"></a>
+      <a href="http://blog.rupy.eu/" class="ico ss t" target="_blank"></a><a href="http://twitter.com/rupy" class="ico ss tw" target="_blank"></a><a href="facebook.com/rupy.conference" class="ico ss f" target="_blank"></a><a href="https://www.linkedin.com/groups?gid=63103&mostPopular=&trk=tyah" class="ico ss in" target="_blank"></a>
   </div>
   <div id="logoXl">
       <p>Strongly Dynamic Conference</p>
@@ -86,7 +86,7 @@
                         $('.modals a') click shows modal div with ID
                         set by rel attribute
                     -->
-                    <a href="#" rel="bio<%= index %>">Bio</a> | <a href="#" rel="talk<%= index %>">Talk</a>
+                    <a href="#" rel="bio<%= index %>">Bio</a> 
                 </p>
                 <div id="bio<%= index %>" class="modal" style="display:none;">
                     <div class="top hrDark">
@@ -96,11 +96,13 @@
                         </div>
                         <a href="#" class="close"></a>
                     </div>
-                    <p><img src="upload/images/speakerSmall.jpg" alt="Charles Olivier Nutter" /></p>
                     <%= content_tag :p, speaker.description.html_safe %>
                     <div class="bottom">
                         <div class="social">
-                            <a href="#" class="ico ss dg"></a><a href="#" class="ico ss dtw"></a><a href="#" class="ico ss dw"></a>
+                          <%= link_to "", "http://github.com/#{speaker.twitter}", :target => "_blank", :class => "ico ss dg" %>
+                          <%= link_to "", "http://twitter.com/#{speaker.twitter}", :target => "_blank", :class => "ico ss dtw" %>
+                          <%= link_to "", "#", :target => "_blank", :class => "ico ss dw" %>
+
                         </div>
                         <a href="#" class="close">Close</a>
                     </div>
