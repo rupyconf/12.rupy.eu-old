@@ -30,9 +30,16 @@ pt-BR:
   register: "Inscrever-se"
 
   faq_about_title: "Do que se trata essa conferência?"
+  text_about_title: "RuPy é a primeira, sem fins lucrativos e conferencia voluntária do Brasil sobre Python, Ruby e JavaScript organizada exclusivamente por desenvolvedores para desenvolvedores. A missão da RuPy é unir comunidades das diferentes linguagens de programação. RuPy, Python e JavaScript. O objetivo da conferência é estabelecer uma ponte entre essas comunidades, porque acreditamos que ser um desenvolvedor poliglota traz enormes benefícios para o conjunto de habilidades de um desenvolvedor."
   faq_different_title: "No que o RuPy difere das outras?"
+  text_different_title: "Não espere nada singular ou  uma visão monotemática ou palestras chatas. Se você esta procurando diversidade, alta qualidade, palestras interessantes de alto nível de renomados palestrantes, workshops liderados por especialistas, open-spaces, lightning talks, preço acessível, confronto de ideias e técnicas, mergulhar em modernas e ainda inexploradas soluções tecnológicas,  criar uma sinergia ou misturar ideias criativas, então RuPy conferência é a conferência ideal para você."
   faq_hemisphere_title: "Por que conectando hemisférios?"
+  text_hemisphere_title: "Os primeiros quatro anos da conferência foram realizadas na Polônia. Este ano haverá duas edições simultâneas entre nos dois hemisférios, um em Brno, Republica Tcheca e uma em São José dos Campos, São Paulo. Brno está se tornando o centro tecnológico da Europa Central com diversas universidades de ensino técnico e muitas empresas de tecnologia-criação de centros aqui. São José dos Campos é um importante centro tecnológico no Brasil, com constante evolução e crescente comunidade de Ruby e Python."
   faq_for_title: "Estou apto para o RuPy?"
+  text_for_title: "Se você é um desenvolvedor que não tem medo de confrontar pontos de vista, está disposto a aprender e experimentar novas linguagens e tecnologias, está ansiosos para comparar os problemas e soluções, quer mergulhar e explorar modernas soluções ainda inexploradas, está pronto para compartilhar metodologias a fim de chegar a novas sinergias e ideias, então Rupy é exatamente a conferência que você não deve perder."
+
+  thanks_for: "Obrigado aos nossos amigos da "
+  thanks_for_help: " por nos ajudar a realizar a RuPy."  
 
   errors: &errors
     format: ! '%{attribute} %{message}'
