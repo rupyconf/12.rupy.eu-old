@@ -1,13 +1,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.tweet
+//= require application/modal 
+//= require application/scroll 
 //= require googleMaps
-//= require google_analytics
-//= require bootstrap.min
-//= require dispatcher
-//= require_directory ./application
 
-var initLatLng = $('meta[name=latlong]').attr('content');
 
 $(function(){
   $(".tweet").tweet({

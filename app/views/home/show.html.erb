@@ -1,60 +1,60 @@
 <div id="topMenu" class="container hr">
-    <div id="editions">
-        <a href="http://rupy.eu/" title="Brno Edition" class="current">Brno Edition</a>|<a href="http://rupy.com.br/" title="Brazil Edition">Brazil Edition</a>
-    </div>
-    <ul id="menu">
-        <%= content_tag :li, link_to(t(:about), "#about") %>
-        <%= content_tag :li, link_to(t(:speakers), "#speakers") %>
-        <%= content_tag :li, link_to(t(:workshops), "#workshops") if @trainings.present? %>
-        <%= content_tag :li, link_to(t(:agenda), "#agenda") %>
-        <%= content_tag :li, link_to(t(:location), "#location") %>
-        <%= content_tag :li, link_to(t(:sponsors), "#sponsors") %>
-        <%= content_tag :li, link_to(t(:team), "#team") %>
-        <%= content_tag :li, link_to(t(:faq), "#faq") %>
-        <%= content_tag :li, link_to(t(:register), "#register") if @event.present? && @event.has_event_inscription? %>
-    </ul>
+  <div id="editions">
+    <a href="http://rupy.eu/" title="Brno Edition" class="current">Brno Edition</a>|<a href="http://rupy.com.br/" title="Brazil Edition">Brazil Edition</a>
+  </div>
+  <ul id="menu">
+    <%= content_tag :li, link_to(t(:about), "#about") %>
+    <%= content_tag :li, link_to(t(:speakers), "#speakers") %>
+    <%= content_tag :li, link_to(t(:workshops), "#workshops") if @trainings.present? %>
+    <%= content_tag :li, link_to(t(:agenda), "#agenda") %>
+    <%= content_tag :li, link_to(t(:location), "#location") %>
+    <%= content_tag :li, link_to(t(:sponsors), "#sponsors") %>
+    <%= content_tag :li, link_to(t(:team), "#team") %>
+    <%= content_tag :li, link_to(t(:faq), "#faq") %>
+    <%= content_tag :li, link_to(t(:register), "#register") if @event.present? && @event.has_event_inscription? %>
+  </ul>
 </div>
 
 <div id="about" class="container hr">
   <div id="previous"><%= t(:previous_editions) %>: <a href="http://11.rupy.eu/">2011</a> <a href="#">2009</a> <a href="#">2008</a> <a href="#">2007</a> </div>
   <div id="social">
-      <a href="http://blog.rupy.eu/" class="ico ss t" target="_blank"></a><a href="http://twitter.com/rupy" class="ico ss tw" target="_blank"></a><a href="facebook.com/rupy.conference" class="ico ss f" target="_blank"></a><a href="https://www.linkedin.com/groups?gid=63103&mostPopular=&trk=tyah" class="ico ss in" target="_blank"></a>
+    <a href="http://blog.rupy.eu/" class="ico ss t" target="_blank"></a><a href="http://twitter.com/rupy" class="ico ss tw" target="_blank"></a><a href="facebook.com/rupy.conference" class="ico ss f" target="_blank"></a><a href="https://www.linkedin.com/groups?gid=63103&mostPopular=&trk=tyah" class="ico ss in" target="_blank"></a>
   </div>
   <div id="logoXl">
-      <p>Strongly Dynamic Conference</p>
-      <p class="white">Connecting Hemispheres</p>
+    <p>Strongly Dynamic Conference</p>
+    <p class="white">Connecting Hemispheres</p>
   </div>
   <div id="info">
-      <p class="white larger"><strong>RuPy</strong> is unique conference that brings together communities from different state-of-the-art programming </p>
-      <p class="white larger">languages <strong>Ruby, Python, JavaScript</strong> and related technologies.</p>
-      <p class="larger">&nbsp;</p>
-      <p class="white larger">Joins us on <strong>November 16-18, 2012</strong></p>
-      <p class="white larger">in Brno, Czech Republic.</p>
-      <p class="centered"><a href="http://www.amiando.com/rupy12.html" class="button">Register Now</a></p>
-      <p class="white centered"><strong>Save money</strong> and get your <strong>early bird ticket</strong> for <strong>54 EUR (with 19% VAT)</strong> until </p>
-      <p class="white centered">October, 5th. <strong>Regular ticket</strong> for <strong>78 EUR (with 19% VAT)</strong></p>
+    <p class="white larger"><strong>RuPy</strong> is unique conference that brings together communities from different state-of-the-art programming </p>
+    <p class="white larger">languages <strong>Ruby, Python, JavaScript</strong> and related technologies.</p>
+    <p class="larger">&nbsp;</p>
+    <p class="white larger">Joins us on <strong>November 16-18, 2012</strong></p>
+    <p class="white larger">in Brno, Czech Republic.</p>
+    <p class="centered"><a href="http://www.amiando.com/rupy12.html" class="button">Register Now</a></p>
+    <p class="white centered"><strong>Save money</strong> and get your <strong>early bird ticket</strong> for <strong>54 EUR (with 19% VAT)</strong> until </p>
+    <p class="white centered">October, 5th. <strong>Regular ticket</strong> for <strong>78 EUR (with 19% VAT)</strong></p>
   </div>
   <div class="colset">
-      <div class="row">
-          <div class="col24">
-              <div class="lineWithHole">
-                  <span class="blue"><span class="ico sm tw"></span></span>
-              </div>
-              <div class="feed">
-                  <p><strong>RuPy</strong> <a href="#">@RuPy</a></p>
-                  <p><a href="#">about a day ago</a> I was looking at Post about RuPy conference on <a href="#">@openshift blog openshift.redhat.com/community/blog...</a></p>
-              </div>
-          </div>
-          <div class="col24">
-              <div class="lineWithHole">
-                  <span class="blue"><span class="ico sm t"></span></span>
-              </div>
-              <div class="feed">
-                  <p><strong>Introducing PyVec, our bronze sponsor</strong></p>
-                  <p>We are thrilled to announce that PyVec decided to become our bronze sponsor...</p>
-              </div>
-          </div>
+    <div class="row">
+      <div class="col24">
+        <div class="lineWithHole">
+          <span class="blue"><span class="ico sm tw"></span></span>
+        </div>
+        <div class="feed">
+          <p><strong>RuPy</strong> <a href="#">@RuPy</a></p>
+          <p><a href="#">about a day ago</a> I was looking at Post about RuPy conference on <a href="#">@openshift blog openshift.redhat.com/community/blog...</a></p>
+        </div>
       </div>
+      <div class="col24">
+        <div class="lineWithHole">
+          <span class="blue"><span class="ico sm t"></span></span>
+        </div>
+        <div class="feed">
+          <p><strong>Introducing PyVec, our bronze sponsor</strong></p>
+          <p>We are thrilled to announce that PyVec decided to become our bronze sponsor...</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -77,43 +77,43 @@
                 <%= content_tag :p, speaker.name, :class => "name white" %>
                 <%= content_tag :p, :class => "nick" do %>
                   <%= link_to "@#{speaker.twitter}", "http://twitter.com/#{speaker.twitter}", :target => "_blank", :class => "white" %>
-                <% end unless speaker.twitter.blank? %>
-                <%= content_tag :p, speaker.title, :class => "description" %>
-                <p class="modals">
-                    <!--
-                        Modals usage:
-                        
-                        $('.modals a') click shows modal div with ID
-                        set by rel attribute
-                    -->
-                    <a href="#" rel="bio<%= index %>">Bio</a> 
-                </p>
-                <div id="bio<%= index %>" class="modal" style="display:none;">
+                  <% end unless speaker.twitter.blank? %>
+                  <%= content_tag :p, speaker.title, :class => "description" %>
+                  <p class="modals">
+                  <!--
+                  Modals usage:
+
+                  $('.modals a') click shows modal div with ID
+                  set by rel attribute
+                  -->
+                  <a href="#" rel="bio<%= index %>">Bio</a> 
+                  </p>
+                  <div id="bio<%= index %>" class="modal" style="display:none;">
                     <div class="top hrDark">
-                        <div class="title">
-                            <%= content_tag :p, speaker.name, :class => "white" %>
-                            <%= content_tag :p, speaker.title, :class => "regular" %>
-                        </div>
-                        <a href="#" class="close"></a>
+                      <div class="title">
+                        <%= content_tag :p, speaker.name, :class => "white" %>
+                        <%= content_tag :p, speaker.title, :class => "regular" %>
+                      </div>
+                      <a href="#" class="close"></a>
                     </div>
                     <%= content_tag :p, speaker.description.html_safe %>
                     <div class="bottom">
-                        <div class="social">
-                          <%= link_to "", "http://github.com/#{speaker.twitter}", :target => "_blank", :class => "ico ss dg" %>
-                          <%= link_to "", "http://twitter.com/#{speaker.twitter}", :target => "_blank", :class => "ico ss dtw" %>
-                          <%= link_to "", "#", :target => "_blank", :class => "ico ss dw" %>
+                      <div class="social">
+                        <%= link_to "", "http://github.com/#{speaker.twitter}", :target => "_blank", :class => "ico ss dg" %>
+                        <%= link_to "", "http://twitter.com/#{speaker.twitter}", :target => "_blank", :class => "ico ss dtw" %>
+                        <%= link_to "", "#", :target => "_blank", :class => "ico ss dw" %>
 
-                        </div>
-                        <a href="#" class="close">Close</a>
+                      </div>
+                      <a href="#" class="close">Close</a>
                     </div>
-                </div>
-                <div id="talk<%= index %>" class="modal" style="display:none;">
+                  </div>
+                  <div id="talk<%= index %>" class="modal" style="display:none;">
                     <div class="top hrDark">
-                        <div class="title">
-                            <%= content_tag :p, speaker.name, :class => "white" %>
-                            <%= content_tag :p, speaker.title, :class => "regular" %>
-                        </div>
-                        <a href="#" class="close"></a>
+                      <div class="title">
+                        <%= content_tag :p, speaker.name, :class => "white" %>
+                        <%= content_tag :p, speaker.title, :class => "regular" %>
+                      </div>
+                      <a href="#" class="close"></a>
                     </div>
                     <p>Dipisci blaore tet, conullandre dip erci et, vel incip ecte feugait dolore commy nummodo et volesed essequi tatem quat at am init wis alit wisis nim vulluptat. Ut luptat ullaor sit er at lut dipsusc iduisl esed ea augiam inis nulla feuipit aliquis eniamet exerit adiat velesto commolortio od tio od estio odolor sequis nos del dolut vel dolobor sed tie feuis non utpat. Rat. Ut luptatum ipit ut ad molut at. Ut alisi.</p>
                     <p>&nbsp;</p>
@@ -124,250 +124,250 @@
                     <p>Commy niam duip estie minibh er sumsandrem dolobore faci tiscipit, summy nostrud tatue digna con exer sed magna aliquate faccum dolore mincill uptat. Dui et vent utat. Utet, sequi tat velenim iure tat. </p>
                     <p>&nbsp;</p>
                     <div class="bottom">
-                        <a href="#" class="close">Close</a>
+                      <a href="#" class="close">Close</a>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% if @trainings.present? %>
+    <div id="workshops" class="container hr">
+      <h1><%= t(:workshops) %></h1>
+      <p class="larger white">In addition to the lectures, we offer an attendees the <strong>possibility to participate in workshops</strong> which </p>
+      <p class="larger white">provide a <strong>more active</strong> and hands-on approach to gain <strong>new useful knowledge</strong>.</p>
+      <p class="larger">&nbsp;</p>
+      <p class="larger">&nbsp;</p>
+      <div class="colset">
+        <% @trainings.each_with_index do |training, index| %>
+          <div class="row">
+            <div class="col34">
+              <div class="modalLike" >
+                <div class="top hrDark">
+                  <div class="title">
+                    <%= content_tag :p, training.name, :class => "white" %>
+                    <%= content_tag :p, training.instructor_name, :class => "regular" %>
+                  </div>
+                  <ul class="params">
+                    <%= content_tag :li do %>
+                      <span class="ico ss dpeople"></span><%= pluralize(training.inscription_amount, t(:attendee)) %>
+                    <% end unless training.inscription_amount.blank? %>
+                    <%= content_tag :li do %>
+                      <span class="ico ss dtime"></span><%= training.hours %>
+                    <% end unless training.hours.blank? %>
+                  </ul>
+                </div>
+                <%= content_tag :p, training.description %>
+                <p>&nbsp;</p>
+                <div class="bottom">
+                  <% if training.inscription_available? %>
+                    <%= link_to t(:register), [:new, @event.domain_locale, training, :inscription], :class => "register" %>
+                  <% else %>
+                    <%= link_to t(:register), "#", :class => "register" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="col14">
+              <div class="speaker">
+                <div class="img">
+                  <%= image_tag training.instructor_photo.url %>
+                </div>
+                <div class="info">
+                  <%= content_tag :p, training.instructor_name, :class => "name white" %>
+                  <%= content_tag :p, :class => "nick" do %>
+                    <%= link_to "@#{training.instructor_twitter}", "http://twitter.com/#{training.instructor_twitter}", :target => "_blank", :class => "white" %>
+                    <% end unless training.instructor_twitter.blank? %>
+                    <%= content_tag :p, training.instructor_job_title, :class => "description" %>
+                    <p class="modals">
+                    <!--
+                    Modals usage:
+
+                    $('.modals a') click shows modal div with ID
+                    set by rel attribute
+                    -->
+                    <a href="#" rel="bio<%= index %>">Bio</a>
+                    </p>
+                    <div id="bio<%= index %>" class="modal" style="display:none;">
+                      <div class="top hrDark">
+                        <div class="title">
+                          <%= content_tag :p, training.instructor_name, :class => "white" %>
+                          <%= content_tag :p, training.instructor_job_title, :class => "regular" %>
+                        </div>
+                        <a href="#" class="close"></a>
+                      </div>
+                      <p><%= image_tag training.instructor_photo.url %></p>
+                      <%= content_tag :p, training.instructor_description %>
+                      <div class="bottom">
+                        <div class="social">
+                          <%= link_to_unless training.instructor_profile.blank?, "", "#{training.instructor_profile}", :target => "_blank", :class => "ico ss dg" %>
+                          <%= link_to_unless training.instructor_twitter.blank?, "", "http://twitter.com/#{training.instructor_twitter}", :target => "_blank", :class => "ico ss dtw" %>
+                          <%= link_to_unless training.instructor_twitter.blank?, "", "#{training.instructor_website}", :target => "_blank", :class => "ico ss dw" %>
+                        </div>
+                        <a href="#" class="close"><%= t(:close) %></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>                    
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div id="agenda" class="container hr">
+      <h1><%= t(:agenda) %></h1>
+      <p class="larger white">Roses are red, violets are blue, </p>
+      <p class="larger white">RuPy team's busy working on conference schedule, </p>
+      <p class="larger white">so stay tuned.</p>
+      <p class="larger">&nbsp;</p>
+      <p class="larger">&nbsp;</p>
+      <p class="larger">&nbsp;</p>
+    </div>
+    <div id="location" class="container hr">
+      <h1><%= t(:location) %></h1>
+      <% if @event.present? %>
+        <p class="larger white">Lorem ipsum kanfgpoangpoemvide a sf <strong>mfsegore acgeetive</strong> and hands-on approachvg</p>
+        <p class="larger white">dev to gaiuseful vdajklnva dapoúpa vaúpmpoepknowledge.</p>
+        <p class="larger">&nbsp;</p>
+        <p class="larger">&nbsp;</p>
+        <p class="larger">&nbsp;</p>
+        <div class="colset">
+          <div class="row">
+            <div class="col24">
+              <div class="inner">
+                <div id="googleMap"></div>
+                <div class="locationDetails">
+                  <%= content_tag :p, @event.place, :class => "white hrDark" %>
+                  <div id="gps">
+                    <p><strong>GPS:</strong> </p>
+                    <p>49°12'35.666"N, </p>
+                    <p>16°35'56.187"E</p>
+                  </div>
+                  <p><strong>Address:</strong></p>
+                  <%= @event.address.html_safe %>
+                </div>
+              </div>
+            </div>
+            <div class="col24">
+              <div class="inner">
+                <div><%= image_tag @event.photo.url, :class => "photo" %></div>
+                <div class="locationDetails">
+                  <%= content_tag :p, @event.city, :class => "white hrDark" %>
+                  <%= content_tag :p, @event.description %>
                 </div>
               </div>
             </div>
           </div>
-        <% end %>
+        </div>
+        <div class="lineWithHole"><span class="blue"><span class="h2"><%= t(:accomodation) %></span></span></div>
+        <p class="larger">&nbsp;</p>
+        <div class="colset">
+          <div class="row">
+            <div class="col13">
+              <div class="inner">
+                <p class="larger red">Expensive:</p>
+                <p class="larger red">Barceló Brno Palace</p>
+                <p>&nbsp;</p>
+                <p class="white">If you are looking for living in a palace, Barceló Brno Palace is the right hotel for you. The recently renovated 19th century building standing in the historical heart of the the city offers elegant and comfortable rooms, superb restaurant, free Wi-Fi, sauna and a gym.</p>
+                <p>&nbsp;</p>
+                <div class="icos">
+                  <a href="#" class="ico ss g"></a><a href="#" class="ico ss b"></a>
+                </div>
+                <p class="right red"><strong>Price per night</strong></p>
+                <p class="right white"><strong>127–160 EUR</strong></p>
+              </div>
+            </div>
+            <div class="col13">
+              <div class="inner">
+                <p class="larger red">Standard</p>
+                <p class="larger red">Hotel Avanti</p>
+                <p>&nbsp;</p>
+                <p class="white">Hotel Avanti situated near the city centre by Luzanky Park offers its guests modern, spacious rooms, a restaurant with Czech and international cuisine and a wellness centre. Free Wi-Fi.</p>
+                <p class="white">Attention! Hotel Avanti offers a special discount rate for conference participants: Just mention our secret password <strong>"RuPy 12 Europe"</strong> and the discount is yours.</p>
+                <p>&nbsp;</p>
+                <div class="icos">
+                  <a href="#" class="ico ss g"></a><a href="#" class="ico ss b"></a>
+                </div>
+                <p class="right red"><strong>Price per night</strong></p>
+                <p class="right white">1 room / 1 person <strong>60 EUR</strong></p>
+                <p class="right white">1 room / 2 people  <strong>66 EUR</strong></p>
+              </div>
+            </div>
+            <div class="col13">
+              <div class="inner">
+                <p class="larger red">Cheap:</p>
+                <p class="larger red">Hostel Fleda</p>
+                <p>&nbsp;</p>
+                <p class="white">Are you a party animal looking for cheap and comfortable accommodation? Hostel Fleda is the right place for you. Located in a vibrant area right in the city centre and near the venue, Fleda features a bar and a well-known club Fleda where concerts, various theatre performances and movie projections take place. Bunk beds and shared bathrooms. Free Wi-Fi. Note that due to concerts and performances there might be an increased level of noise.</p>
+                <p>&nbsp;</p>
+                <div class="icos">
+                  <a href="#" class="ico ss g"></a><a href="#" class="ico ss b"></a>
+                </div>
+                <p class="right red"><strong>Price per night</strong></p>
+                <p class="right white">approx. <strong>14 EUR</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="larger">&nbsp;</p>
+        <p class="larger">&nbsp;</p>
+        <p class="larger white">For more information about accommodation please visit our <strong>blog.</strong></p>
+        <p class="larger">&nbsp;</p>
+        <p class="larger">&nbsp;</p>
+        <div class="lineWithHole"><span class="blue"><span class="h2">Travel info</span></span></div>
+        <p class="larger">&nbsp;</p>
+        <div class="colset">
+          <div class="row">
+            <div class="col14">
+              <div class="inner">
+                <p class="travelIco"><span class="ico sl t1"></span></p>
+                <p class="white">Student Agency buses leave regularly from Vienna, Berlin, Budapest, Munich, Bratislava or Prague. Note that it is necessary to buy bus tickets for Student Agency via their <strong><a href="#">website</a>.</strong></p>
+              </div>
+            </div>
+            <div class="col14">
+              <div class="inner">
+                <p class="travelIco"><span class="ico sl t2"></span></p>
+                <p class="white">EC trains to Brno leave regularly from Vienna, Prague, Bratislava, Budapest, Berlin, Munich or Warsaw. For train timetables check <strong><a href="#">jizdnirady.idnes.cz</a></strong> or <strong><a href="#">cd.cz</a>.</strong></p>
+              </div>
+            </div>
+            <div class="col14">
+              <div class="inner">
+                <p class="travelIco"><span class="ico sl t3"></span></p>
+                <p class="white">There are roads that connect Brno to with major Czech cities. Use D1 highway from the direction of Prague, Ostrava, Łódź or Gdańsk, D2 highway from Budapest and Bratislava, D3 highway from Austria, D5 or D8 highway from Germany. For the highway you have to buy a toll sticker. </p>
+              </div>
+            </div>
+            <div class="col14">
+              <div class="inner">
+                <p class="travelIco"><span class="ico sl t4"></span></p>
+                <p class="white">Directly to Brno from London with lowcosts Ryanair or Wizzair. Fly to Prague or Vienna and then take a direct Student Agency bus or an EC train.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="larger">&nbsp;</p>
+        <p class="larger">&nbsp;</p>
+        <p class="larger white">For more information & special tips about traveling please visit our <strong>blog.</strong></p>
+        <p class="larger">&nbsp;</p>
+        <p class="larger">&nbsp;</p>
       <% end %>
     </div>
-  </div>
-</div>
-<% if @trainings.present? %>
-<div id="workshops" class="container hr">
-  <h1><%= t(:workshops) %></h1>
-  <p class="larger white">In addition to the lectures, we offer an attendees the <strong>possibility to participate in workshops</strong> which </p>
-  <p class="larger white">provide a <strong>more active</strong> and hands-on approach to gain <strong>new useful knowledge</strong>.</p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <div class="colset">
-    <% @trainings.each_with_index do |training, index| %>
-      <div class="row">
-          <div class="col34">
-              <div class="modalLike" >
-                  <div class="top hrDark">
-                      <div class="title">
-                          <%= content_tag :p, training.name, :class => "white" %>
-                          <%= content_tag :p, training.instructor_name, :class => "regular" %>
-                      </div>
-                      <ul class="params">
-                          <%= content_tag :li do %>
-                            <span class="ico ss dpeople"></span><%= pluralize(training.inscription_amount, t(:attendee)) %>
-                          <% end unless training.inscription_amount.blank? %>
-                          <%= content_tag :li do %>
-                            <span class="ico ss dtime"></span><%= training.hours %>
-                          <% end unless training.hours.blank? %>
-                      </ul>
-                  </div>
-                  <%= content_tag :p, training.description %>
-                  <p>&nbsp;</p>
-                  <div class="bottom">
-                    <% if training.inscription_available? %>
-                      <%= link_to t(:register), [:new, @event.domain_locale, training, :inscription], :class => "register" %>
-                    <% else %>
-                      <%= link_to t(:register), "#", :class => "register" %>
-                    <% end %>
-                  </div>
-              </div>
-          </div>
-          <div class="col14">
-              <div class="speaker">
-                  <div class="img">
-                      <%= image_tag training.instructor_photo.url %>
-                  </div>
-                  <div class="info">
-                      <%= content_tag :p, training.instructor_name, :class => "name white" %>
-                      <%= content_tag :p, :class => "nick" do %>
-                        <%= link_to "@#{training.instructor_twitter}", "http://twitter.com/#{training.instructor_twitter}", :target => "_blank", :class => "white" %>
-                      <% end unless training.instructor_twitter.blank? %>
-                      <%= content_tag :p, training.instructor_job_title, :class => "description" %>
-                      <p class="modals">
-                          <!--
-                              Modals usage:
-                              
-                              $('.modals a') click shows modal div with ID
-                              set by rel attribute
-                          -->
-                          <a href="#" rel="bio<%= index %>">Bio</a>
-                      </p>
-                      <div id="bio<%= index %>" class="modal" style="display:none;">
-                          <div class="top hrDark">
-                              <div class="title">
-                                  <%= content_tag :p, training.instructor_name, :class => "white" %>
-                                  <%= content_tag :p, training.instructor_job_title, :class => "regular" %>
-                              </div>
-                              <a href="#" class="close"></a>
-                          </div>
-                          <p><%= image_tag training.instructor_photo.url %></p>
-                          <%= content_tag :p, training.instructor_description %>
-                          <div class="bottom">
-                              <div class="social">
-                                  <%= link_to_unless training.instructor_profile.blank?, "", "#{training.instructor_profile}", :target => "_blank", :class => "ico ss dg" %>
-                                  <%= link_to_unless training.instructor_twitter.blank?, "", "http://twitter.com/#{training.instructor_twitter}", :target => "_blank", :class => "ico ss dtw" %>
-                                  <%= link_to_unless training.instructor_twitter.blank?, "", "#{training.instructor_website}", :target => "_blank", :class => "ico ss dw" %>
-                              </div>
-                              <a href="#" class="close"><%= t(:close) %></a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>                    
-      </div>
-      <% end %>
-  </div>
-</div>
-<% end %>
-<div id="agenda" class="container hr">
-    <h1><%= t(:agenda) %></h1>
-    <p class="larger white">Roses are red, violets are blue, </p>
-    <p class="larger white">RuPy team's busy working on conference schedule, </p>
-    <p class="larger white">so stay tuned.</p>
-    <p class="larger">&nbsp;</p>
-    <p class="larger">&nbsp;</p>
-    <p class="larger">&nbsp;</p>
-</div>
-<div id="location" class="container hr">
-  <h1><%= t(:location) %></h1>
-  <% if @event.present? %>
-  <p class="larger white">Lorem ipsum kanfgpoangpoemvide a sf <strong>mfsegore acgeetive</strong> and hands-on approachvg</p>
-  <p class="larger white">dev to gaiuseful vdajklnva dapoúpa vaúpmpoepknowledge.</p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <div class="colset">
-      <div class="row">
-          <div class="col24">
-              <div class="inner">
-                  <div id="googleMap"></div>
-                  <div class="locationDetails">
-                      <%= content_tag :p, @event.place, :class => "white hrDark" %>
-                      <div id="gps">
-                          <p><strong>GPS:</strong> </p>
-                          <p>49°12'35.666"N, </p>
-                          <p>16°35'56.187"E</p>
-                      </div>
-                      <p><strong>Address:</strong></p>
-                      <%= @event.address.html_safe %>
-                  </div>
-              </div>
-          </div>
-          <div class="col24">
-              <div class="inner">
-                  <div><%= image_tag @event.photo.url, :class => "photo" %></div>
-                  <div class="locationDetails">
-                      <%= content_tag :p, @event.city, :class => "white hrDark" %>
-                      <%= content_tag :p, @event.description %>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="lineWithHole"><span class="blue"><span class="h2"><%= t(:accomodation) %></span></span></div>
-  <p class="larger">&nbsp;</p>
-  <div class="colset">
-      <div class="row">
-          <div class="col13">
-              <div class="inner">
-                  <p class="larger red">Expensive:</p>
-                  <p class="larger red">Barceló Brno Palace</p>
-                  <p>&nbsp;</p>
-                  <p class="white">If you are looking for living in a palace, Barceló Brno Palace is the right hotel for you. The recently renovated 19th century building standing in the historical heart of the the city offers elegant and comfortable rooms, superb restaurant, free Wi-Fi, sauna and a gym.</p>
-                  <p>&nbsp;</p>
-                  <div class="icos">
-                      <a href="#" class="ico ss g"></a><a href="#" class="ico ss b"></a>
-                  </div>
-                  <p class="right red"><strong>Price per night</strong></p>
-                  <p class="right white"><strong>127–160 EUR</strong></p>
-              </div>
-          </div>
-          <div class="col13">
-              <div class="inner">
-                  <p class="larger red">Standard</p>
-                  <p class="larger red">Hotel Avanti</p>
-                  <p>&nbsp;</p>
-                  <p class="white">Hotel Avanti situated near the city centre by Luzanky Park offers its guests modern, spacious rooms, a restaurant with Czech and international cuisine and a wellness centre. Free Wi-Fi.</p>
-                  <p class="white">Attention! Hotel Avanti offers a special discount rate for conference participants: Just mention our secret password <strong>"RuPy 12 Europe"</strong> and the discount is yours.</p>
-                  <p>&nbsp;</p>
-                  <div class="icos">
-                      <a href="#" class="ico ss g"></a><a href="#" class="ico ss b"></a>
-                  </div>
-                  <p class="right red"><strong>Price per night</strong></p>
-                  <p class="right white">1 room / 1 person <strong>60 EUR</strong></p>
-                  <p class="right white">1 room / 2 people  <strong>66 EUR</strong></p>
-              </div>
-          </div>
-          <div class="col13">
-              <div class="inner">
-                  <p class="larger red">Cheap:</p>
-                  <p class="larger red">Hostel Fleda</p>
-                  <p>&nbsp;</p>
-                  <p class="white">Are you a party animal looking for cheap and comfortable accommodation? Hostel Fleda is the right place for you. Located in a vibrant area right in the city centre and near the venue, Fleda features a bar and a well-known club Fleda where concerts, various theatre performances and movie projections take place. Bunk beds and shared bathrooms. Free Wi-Fi. Note that due to concerts and performances there might be an increased level of noise.</p>
-                  <p>&nbsp;</p>
-                  <div class="icos">
-                      <a href="#" class="ico ss g"></a><a href="#" class="ico ss b"></a>
-                  </div>
-                  <p class="right red"><strong>Price per night</strong></p>
-                  <p class="right white">approx. <strong>14 EUR</strong></p>
-              </div>
-          </div>
-      </div>
-  </div>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger white">For more information about accommodation please visit our <strong>blog.</strong></p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <div class="lineWithHole"><span class="blue"><span class="h2">Travel info</span></span></div>
-  <p class="larger">&nbsp;</p>
-  <div class="colset">
-      <div class="row">
-          <div class="col14">
-              <div class="inner">
-                  <p class="travelIco"><span class="ico sl t1"></span></p>
-                  <p class="white">Student Agency buses leave regularly from Vienna, Berlin, Budapest, Munich, Bratislava or Prague. Note that it is necessary to buy bus tickets for Student Agency via their <strong><a href="#">website</a>.</strong></p>
-              </div>
-          </div>
-          <div class="col14">
-              <div class="inner">
-                  <p class="travelIco"><span class="ico sl t2"></span></p>
-                  <p class="white">EC trains to Brno leave regularly from Vienna, Prague, Bratislava, Budapest, Berlin, Munich or Warsaw. For train timetables check <strong><a href="#">jizdnirady.idnes.cz</a></strong> or <strong><a href="#">cd.cz</a>.</strong></p>
-              </div>
-          </div>
-          <div class="col14">
-              <div class="inner">
-                  <p class="travelIco"><span class="ico sl t3"></span></p>
-                  <p class="white">There are roads that connect Brno to with major Czech cities. Use D1 highway from the direction of Prague, Ostrava, Łódź or Gdańsk, D2 highway from Budapest and Bratislava, D3 highway from Austria, D5 or D8 highway from Germany. For the highway you have to buy a toll sticker. </p>
-              </div>
-          </div>
-          <div class="col14">
-              <div class="inner">
-                  <p class="travelIco"><span class="ico sl t4"></span></p>
-                  <p class="white">Directly to Brno from London with lowcosts Ryanair or Wizzair. Fly to Prague or Vienna and then take a direct Student Agency bus or an EC train.</p>
-              </div>
-          </div>
-      </div>
-  </div>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger white">For more information & special tips about traveling please visit our <strong>blog.</strong></p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <% end %>
-</div>
-<div id="sponsors" class="container hr">
-  <h1><%= t(:sponsors) %></h1>
-  <p class="larger white">It’s <strong>thanks to the support and assistance</strong> of our sponsors that RuPy conference is possible </p>
-  <p class="larger white">so take the time and have a look on <strong>who they are</strong> and <strong>what they do.</strong></p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <% @sponsor_types.each do |sponsor_type| %>
-    <div class="lineWithHole"><span class="blue"><%= content_tag :span, sponsor_type.description, :class => "h2" %></span></div>
-    <% sponsor_type.sponsors.find_all_by_event_id(@event.id).each do |sponsor| %>
+    <div id="sponsors" class="container hr">
+      <h1><%= t(:sponsors) %></h1>
+      <p class="larger white">It’s <strong>thanks to the support and assistance</strong> of our sponsors that RuPy conference is possible </p>
+      <p class="larger white">so take the time and have a look on <strong>who they are</strong> and <strong>what they do.</strong></p>
       <p class="larger">&nbsp;</p>
-      <div class="colset">
-          <div class="row logo">
+      <p class="larger">&nbsp;</p>
+      <% @sponsor_types.each do |sponsor_type| %>
+        <div class="lineWithHole"><span class="blue"><%= content_tag :span, sponsor_type.description, :class => "h2" %></span></div>
+        <% sponsor_type.sponsors.find_all_by_event_id(@event.id).each do |sponsor| %>
+          <p class="larger">&nbsp;</p>
+          <div class="colset">
+            <div class="row logo">
               <div class="col14">
                 <%= content_tag :div, :class => "inner logo foo" do %>
                   <%- link_to sponsor.website do %>
@@ -376,89 +376,94 @@
                 <% end %>
               </div>
               <% if sponsor.description_available? %>
-              <div class="col34">
+                <div class="col34">
                   <%= content_tag :div, :class => "inner bar" do %>
                     <%= content_tag :p, sponsor.description, :class => "white" %>
                   <% end %>
-              </div>
+                </div>
               <% end %>
-          </div>
-      </div>
-    <% end %>
-  <% end if @sponsor_types.present? %>
-  <div class="lineWithHole"><span class="blue"><span class="h2">Supporters</span></span></div>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger white">If you are interested in <strong>becoming our sponsor</strong>, have a look at our sponsor </p>
-  <p class="larger white">brochure and contact us via email info at rupy.eu.</p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <p class="sponsor"><%= link_to t(:sponsor_brochure), @event.try(:brochure), :target => "_blank" %></p>
-</div>
-<div id="team" class="container hr">
-  <h1><%= t(:team) %></h1>
-  <p class="larger white">Our dedicated and enthusiastic team of organizers is ready </p>
-  <p class="larger white">to make the <strong>best RuPy conference yet.</strong></p>
-  <p class="larger">&nbsp;</p>
-  <p class="larger">&nbsp;</p>
-  <div class="colset">
-    <% @teams.each_with_index do |team, index| %>
-      <% if index.zero? || index.divmod(4)[1].zero? %><div class="row"><% end %>
-        <%= content_tag :div, :class => "col14" do %>
-          <div class="speaker blue">
-            <div class="img">
-              <%= image_tag team.photo.url, :class => "img-polaroid" %>
-            </div>
-            <div class="info">
-              <%= content_tag :p, team.name, :class => "name red" %>
-              <%= content_tag :p, :class => "nick" do %>
-                <%= link_to "@#{team.twitter}", "http://twitter.com/#{team.twitter}", :target => "_blank", :class => "white" %>
-              <% end unless team.twitter.blank? %>
-              <%= content_tag :p, team.description.html_safe, :class => "description white" %>
             </div>
           </div>
         <% end %>
-      <% if index.next.divmod(4)[1].zero? %></div><% end %>
-    <% end if @teams.present? %>
-  </div>
-</div>
-<div id="faq" class="container hr">
-  <h1><%= t(:frequently_asked_questions) %></h1>
-  <div class="colset">
-      <div class="row">
-          <div class="col14">
-              <div class="inner">
-                  <p class="large red"><%= t(:faq_about_title) %></p>
-                  <p class="white"><%= t(:text_about_title) %></p>
-              </div>
-          </div>
-          <div class="col14">
-              <div class="inner">
-                  <p class="large red"><%= t(:faq_different_title) %></p>
-                  <p class="white"><%= t(:text_different_title) %></p>
-              </div>
-          </div>
-          <div class="col14">
-              <div class="inner">
-                  <p class="large red"><%= t(:faq_hemisphere_title) %></p>
-                  <p class="white"><%= t(:text_hemisphere_title) %></p>
-              </div>
-          </div>
-          <div class="col14">
-              <div class="inner">
-                  <p class="large red"><%= t(:faq_for_title) %></p>
-                  <p class="white"><%= t(:text_for_title) %></p>
-              </div>
-          </div>
+        <% end if @sponsor_types.present? %>
+        <div class="lineWithHole"><span class="blue"><span class="h2">Supporters</span></span></div>
+        <p class="larger">&nbsp;</p>
+        <p class="larger">&nbsp;</p>
+        <p class="larger white">If you are interested in <strong>becoming our sponsor</strong>, have a look at our sponsor </p>
+        <p class="larger white">brochure and contact us via email info at rupy.eu.</p>
+        <p class="larger">&nbsp;</p>
+        <p class="larger">&nbsp;</p>
+        <p class="sponsor"><%= link_to t(:sponsor_brochure), @event.try(:brochure), :target => "_blank" %></p>
       </div>
-  </div>
-</div>
+      <div id="team" class="container hr">
+        <h1><%= t(:team) %></h1>
+        <p class="larger white">Our dedicated and enthusiastic team of organizers is ready </p>
+        <p class="larger white">to make the <strong>best RuPy conference yet.</strong></p>
+        <p class="larger">&nbsp;</p>
+        <p class="larger">&nbsp;</p>
+        <div class="colset">
+          <% @teams.each_with_index do |team, index| %>
+            <% if index.zero? || index.divmod(4)[1].zero? %><div class="row"><% end %>
+              <%= content_tag :div, :class => "col14" do %>
+                <div class="speaker blue">
+                  <div class="img">
+                    <%= image_tag team.photo.url, :class => "img-polaroid" %>
+                  </div>
+                  <div class="info">
+                    <%= content_tag :p, team.name, :class => "name red" %>
+                    <%= content_tag :p, :class => "nick" do %>
+                      <%= link_to "@#{team.twitter}", "http://twitter.com/#{team.twitter}", :target => "_blank", :class => "white" %>
+                      <% end unless team.twitter.blank? %>
+                      <%= content_tag :p, team.description.html_safe, :class => "description white" %>
+                    </div>
+                  </div>
+                <% end %>
+                <% if index.next.divmod(4)[1].zero? %></div><% end %>
+              <% end if @teams.present? %>
+            </div>
+          </div>
+          <div id="faq" class="container hr">
+            <h1><%= t(:frequently_asked_questions) %></h1>
+            <div class="colset">
+              <div class="row">
+                <div class="col14">
+                  <div class="inner">
+                    <p class="large red"><%= t(:faq_about_title) %></p>
+                    <p class="white"><%= t(:text_about_title) %></p>
+                  </div>
+                </div>
+                <div class="col14">
+                  <div class="inner">
+                    <p class="large red"><%= t(:faq_different_title) %></p>
+                    <p class="white"><%= t(:text_different_title) %></p>
+                  </div>
+                </div>
+                <div class="col14">
+                  <div class="inner">
+                    <p class="large red"><%= t(:faq_hemisphere_title) %></p>
+                    <p class="white"><%= t(:text_hemisphere_title) %></p>
+                  </div>
+                </div>
+                <div class="col14">
+                  <div class="inner">
+                    <p class="large red"><%= t(:faq_for_title) %></p>
+                    <p class="white"><%= t(:text_for_title) %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<div id="lastNote" class="container hr">
-    <p class="red xl"><%= t(:contact) %></p>
-    <p class="white xl"><strong><a href="mailto:hello@rupy.eu">hello@rupy.eu</a></strong> <%= t(:or) %> <strong><a href="https://www.hipchat.com/g4T5W6KqS">chat</a></strong></p>
-</div>
-<div id="footer" class="container">
-    <p class="thanks white"><%= t(:thanks_for) %><strong><a href="">Pyvec.org</a></strong><%= t(:thanks_for_help) %></p>
-    <p class="design white">Designed by <strong>Husha</strong></p>
+          <div id="lastNote" class="container hr">
+            <p class="red xl"><%= t(:contact) %></p>
+            <p class="white xl"><strong><a href="mailto:hello@rupy.eu">hello@rupy.eu</a></strong> <%= t(:or) %> <strong><a href="https://www.hipchat.com/g4T5W6KqS">chat</a></strong></p>
+          </div>
+          <div id="footer" class="container">
+            <p class="thanks white"><%= t(:thanks_for) %><strong><a href="">Pyvec.org</a></strong><%= t(:thanks_for_help) %></p>
+            <p class="design white">Designed by <strong>Husha</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
