@@ -221,21 +221,14 @@
     <% end %>
     <div id="agenda" class="container hr">
       <h1><%= t(:agenda) %></h1>
-      <p class="larger white">Roses are red, violets are blue, </p>
       <p class="larger white">RuPy team's busy working on conference schedule, </p>
       <p class="larger white">so stay tuned.</p>
-      <p class="larger">&nbsp;</p>
       <p class="larger">&nbsp;</p>
       <p class="larger">&nbsp;</p>
     </div>
     <div id="location" class="container hr">
       <h1><%= t(:location) %></h1>
       <% if @event.present? %>
-        <p class="larger white">Lorem ipsum kanfgpoangpoemvide a sf <strong>mfsegore acgeetive</strong> and hands-on approachvg</p>
-        <p class="larger white">dev to gaiuseful vdajklnva dapoúpa vaúpmpoepknowledge.</p>
-        <p class="larger">&nbsp;</p>
-        <p class="larger">&nbsp;</p>
-        <p class="larger">&nbsp;</p>
         <div class="colset">
           <div class="row">
             <div class="col24">
@@ -255,7 +248,7 @@
             </div>
             <div class="col24">
               <div class="inner">
-                <div><%= image_tag @event.photo.url, :class => "photo" %></div>
+                <%= image_tag @event.photo.url, :class => "photo" %>
                 <div class="locationDetails">
                   <%= content_tag :p, @event.city, :class => "white hrDark" %>
                   <%= content_tag :p, @event.description %>
