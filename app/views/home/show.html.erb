@@ -5,13 +5,17 @@
   <ul id="menu">
     <%= content_tag :li, link_to(t(:about), "#about") %>
     <%= content_tag :li, link_to(t(:speakers), "#speakers") %>
-    <%= content_tag :li, link_to(t(:workshops), "#workshops") if @trainings.present? %>
+    <%= content_tag :li, link_to(t(:workshops), "#workshops") if @trainings.present? and !@event.is_br? %>
     <%= content_tag :li, link_to(t(:agenda), "#agenda") %>
     <%= content_tag :li, link_to(t(:location), "#location") %>
     <%= content_tag :li, link_to(t(:sponsors), "#sponsors") %>
     <%= content_tag :li, link_to(t(:team), "#team") %>
     <%= content_tag :li, link_to(t(:faq), "#faq") %>
-    <%= content_tag :li, link_to(t(:register), "#register") if @event.present? && @event.has_event_inscription? %>
+    <% if @event.is_br? %>
+      <%= content_tag :li, link_to(t(:register), "/br/event/inscriptions/new") if @event.present? && @event.has_event_inscription? %>
+    <% else %>
+      <%= content_tag :li, link_to(t(:register), "http://www.amiando.com/rupy12.html") if @event.present? && @event.has_event_inscription? %>
+    <% end %>
   </ul>
 </div>
 
@@ -24,16 +28,31 @@
     <p>Strongly Dynamic Conference</p>
     <p class="white">Connecting Hemispheres</p>
   </div>
-  <div id="info">
-    <p class="white larger"><strong>RuPy</strong> is unique conference that brings together communities from different state-of-the-art programming </p>
-    <p class="white larger">languages <strong>Ruby, Python, JavaScript</strong> and related technologies.</p>
-    <p class="larger">&nbsp;</p>
-    <p class="white larger">Joins us on <strong>November 16-18, 2012</strong></p>
-    <p class="white larger">in Brno, Czech Republic.</p>
-    <p class="centered"><a href="http://www.amiando.com/rupy12.html" class="button">Register Now</a></p>
-    <p class="white centered"><strong>Save money</strong> and get your <strong>early bird ticket</strong> for <strong>54 EUR (with 19% VAT)</strong> until </p>
-    <p class="white centered">October, 5th. <strong>Regular ticket</strong> for <strong>78 EUR (with 19% VAT)</strong></p>
-  </div>
+  
+  <% if @event.is_br? %>
+    <div id="info">
+      <p class="white larger"><strong>RuPy</strong> é uma conferência fortemente dinânica focada nas tecnologias </p>
+      <p class="white larger">relacionadas a <strong>Ruby, Python e JavaScript</strong>.</p>
+      <p class="larger">&nbsp;</p>
+      <p class="white larger">Junte-se a nós: <strong>8 e 9 de Dezembro de 2012</strong></p>
+      <p class="white larger">em São José dos Campos, São Paulo.</p>
+      <p class="centered"><a href="/br/event/inscriptions/new" class="button">Inscreva-se!</a></p>
+      <p class="white centered"><strong>Economize</strong> e compre seu ticket <strong> no primeiro lote</strong> por <strong>R$ 69,00</strong> até </p>
+      <p class="white centered">15 de Outubro. <strong>Após, preços regulares</strong> por <strong>R$99,00</strong></p>
+    </div>
+  <% else %>
+    <div id="info">
+      <p class="white larger"><strong>RuPy</strong> is unique conference that brings together communities from different state-of-the-art programming </p>
+      <p class="white larger">languages <strong>Ruby, Python, JavaScript</strong> and related technologies.</p>
+      <p class="larger">&nbsp;</p>
+      <p class="white larger">Joins us on <strong>November 16-18, 2012</strong></p>
+      <p class="white larger">in Brno, Czech Republic.</p>
+      <p class="centered"><a href="http://www.amiando.com/rupy12.html" class="button">Register Now</a></p>
+      <p class="white centered"><strong>Save money</strong> and get your <strong>early bird ticket</strong> for <strong>54 EUR (with 19% VAT)</strong> until </p>
+      <p class="white centered">October, 5th. <strong>Regular ticket</strong> for <strong>78 EUR (with 19% VAT)</strong></p>
+    </div>
+  <% end %>
+
   <div class="colset">
     <div class="row">
       <div class="col24">
@@ -60,8 +79,13 @@
 
 <div id="speakers" class="container hr">
   <h1><%= t(:speakers) %></h1>
-  <p class="larger white">Behold our <strong>professional, creative, sharp-witted</strong> and simply <strong>awesome speakers</strong> and <strong>developers</strong></p>
-  <p class="larger white">who will surely make this conference an <strong>unforgettable experience.</strong></p>
+  <% if @event.is_br? %>
+    <p class="larger white">Aqui estão <strong>nosso melhores e mais criativos, perspicazes e </strong> simplesmente <strong>incríveis palestrantes</strong> e <strong>desenvolvedores</strong></p>
+    <p class="larger white">que certamente irão fazer esta conferência uma <strong>experiência inesquecível.</strong></p>
+  <% else %>
+    <p class="larger white">Behold our <strong>professional, creative, sharp-witted</strong> and simply <strong>awesome speakers</strong> and <strong>developers</strong></p>
+    <p class="larger white">who will surely make this conference an <strong>unforgettable experience.</strong></p>
+  <% end %>
   <p class="larger">&nbsp;</p>
   <p class="larger">&nbsp;</p>
   <div class="colset">
@@ -135,11 +159,16 @@
       </div>
     </div>
   </div>
-  <% if @trainings.present? %>
+  <% if @trainings.present? and !@event.is_br?%>
     <div id="workshops" class="container hr">
       <h1><%= t(:workshops) %></h1>
-      <p class="larger white">In addition to the lectures, we offer an attendees the <strong>possibility to participate in workshops</strong> which </p>
-      <p class="larger white">provide a <strong>more active</strong> and hands-on approach to gain <strong>new useful knowledge</strong>.</p>
+       <% if @event.is_br? %>
+        <p class="larger white">Complementando nossas palestras, iremos oferecer aos nossos participantes a <strong>possiblidade de participar de workshops</strong> no qual
+        iremos prover <strong>uma forma mais efetiva</strong> e um puro <strong>hands-on</strong>.</p>
+      <% else %>
+        <p class="larger white">In addition to the lectures, we offer an attendees the <strong>possibility to participate in workshops</strong> which </p>
+        <p class="larger white">provide a <strong>more active</strong> and hands-on approach to gain <strong>new useful knowledge</strong>.</p>
+      <% end %>
       <p class="larger">&nbsp;</p>
       <p class="larger">&nbsp;</p>
       <div class="colset">
@@ -221,8 +250,13 @@
     <% end %>
     <div id="agenda" class="container hr">
       <h1><%= t(:agenda) %></h1>
-      <p class="larger white">RuPy team's busy working on conference schedule, </p>
-      <p class="larger white">so stay tuned.</p>
+      <% if @event.is_br? %>
+        <p class="larger white">Nosso time, está ocupado trabalhando em nossa agenda,</p>
+        <p class="larger white">fique ligado.</p>
+      <% else %>
+        <p class="larger white">RuPy team's busy working on conference schedule, </p>
+        <p class="larger white">so stay tuned.</p>
+      <% end %>
       <p class="larger">&nbsp;</p>
       <p class="larger">&nbsp;</p>
     </div>
@@ -257,6 +291,7 @@
             </div>
           </div>
         </div>
+        <% if !@event.is_br? %>
         <div class="lineWithHole"><span class="blue"><span class="h2"><%= t(:accomodation) %></span></span></div>
         <p class="larger">&nbsp;</p>
         <div class="colset">
@@ -349,10 +384,16 @@
         <p class="larger">&nbsp;</p>
       <% end %>
     </div>
+    <% end %>
     <div id="sponsors" class="container hr">
       <h1><%= t(:sponsors) %></h1>
-      <p class="larger white">It’s <strong>thanks to the support and assistance</strong> of our sponsors that RuPy conference is possible </p>
-      <p class="larger white">so take the time and have a look on <strong>who they are</strong> and <strong>what they do.</strong></p>
+        <% if @event.is_br? %>
+          <p class="larger white">É com grande orgulho <strong>que nós agradecemos o suporte e confiança</strong> de nossos patrocinadores em nossa conferência.</p>
+          <p class="larger white">De uma olhada em <strong>quem são eles</strong> e <strong>o que eles fazem.</strong></p>
+        <% else %>
+          <p class="larger white">It’s <strong>thanks to the support and assistance</strong> of our sponsors that RuPy conference is possible </p>
+          <p class="larger white">so take the time and have a look on <strong>who they are</strong> and <strong>what they do.</strong></p>
+        <% end %>
       <p class="larger">&nbsp;</p>
       <p class="larger">&nbsp;</p>
       <% @sponsor_types.each do |sponsor_type| %>
@@ -382,16 +423,26 @@
         <div class="lineWithHole"><span class="blue"><span class="h2">Supporters</span></span></div>
         <p class="larger">&nbsp;</p>
         <p class="larger">&nbsp;</p>
-        <p class="larger white">If you are interested in <strong>becoming our sponsor</strong>, have a look at our sponsor </p>
-        <p class="larger white">brochure and contact us via email info at rupy.eu.</p>
+        <% if @event.is_br? %>
+          <p class="larger white">Se você tiver interesse em se <strong>tornar nosso apoiador</strong>, de uma olhada com carinho em </p>
+          <p class="larger white">nossa proposta de patrocínio: info at rupy.eu.</p>
+        <% else %>
+          <p class="larger white">If you are interested in <strong>becoming our sponsor</strong>, have a look at our sponsor </p>
+          <p class="larger white">brochure and contact us via email info at rupy.eu.</p>
+        <% end %>
         <p class="larger">&nbsp;</p>
         <p class="larger">&nbsp;</p>
         <p class="sponsor"><%= link_to t(:sponsor_brochure), @event.try(:brochure), :target => "_blank" %></p>
       </div>
       <div id="team" class="container hr">
         <h1><%= t(:team) %></h1>
-        <p class="larger white">Our dedicated and enthusiastic team of organizers is ready </p>
-        <p class="larger white">to make the <strong>best RuPy conference yet.</strong></p>
+        <% if @event.is_br? %>
+          <p class="larger white">Nosso dedicado time de organizados está 100% a disposição</p>
+          <p class="larger white">para fazer a melhor conferência de todas.</p>
+        <% else %>
+          <p class="larger white">Our dedicated and enthusiastic team of organizers is ready </p>
+          <p class="larger white">to make the <strong>best RuPy conference yet.</strong></p>
+        <% end %>
         <p class="larger">&nbsp;</p>
         <p class="larger">&nbsp;</p>
         <div class="colset">

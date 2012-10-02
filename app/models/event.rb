@@ -22,6 +22,10 @@ class Event < ActiveRecord::Base
     self.name
   end
 
+  def is_br?
+    self.locale == "pt-BR"
+  end
+
   def latitude_and_longitude
     "#{self.latitude}, #{self.longitude}"
   end
