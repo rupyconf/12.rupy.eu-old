@@ -1,0 +1,71 @@
+<section id="speakers" class="section container">
+  <h2><%= t(:speakers) %></h2>
+
+  <blockquote class="highline">
+    <span>Behold our <strong>professional, creative, sharp-witted</strong> and simply <strong>awesome speakers</strong> and <strong>developers</strong></span>
+    <span>who will surely make this conference an <strong>unforgettable experience</strong>.</span>
+  </blockquote>
+
+  <%- if speakers.present? -%>
+  <%- speakers.each_slice(4).with_index do |(*current_speakers), group_index| -%>
+    <div class="row">
+      <%- current_speakers.each_with_index do |speaker, index| -%>
+      <%- if speaker.new_record? -%>
+      <div class="span3 box">
+        <div class="content-column">
+          <%= image_tag speaker.photo.url %>
+          <div class="info">
+            <div class="more-speakers center-block">
+              <p class="middle">
+                <span>We're working</span> <span>hard to get even</span> <span>more awesome</span> <span>speakers!</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- else -%>
+      <div class="span3 box">
+        <div class="content-column">
+          <%= image_tag speaker.photo.url, size: '240x240', alt: speaker.name %>
+          <div class="info">
+            <div class="content-column">
+              <h4><%= speaker_name(speaker.name) %></h4>
+              <%= content_tag :div, class: 'twitter' do -%> 
+                <a href="https://twitter.com/<%= speaker.twitter %>">@<%= speaker.twitter %></a>
+              <%- end if speaker.twitter.present? -%>
+              <div class="title center-block"><span class="middle"><%= speaker.title %></span></div>
+              <div class="additional-info">
+                <p>                  
+                  <a href="#modal<%= group_index * 4 + index %>" data-toggle="modal">Bio</a>
+                </p>
+
+                <div class="modal hide" id="modal<%= group_index * 4 + index %>">
+                  <div class="content-column">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h3><%= speaker.name %></h3>
+                      <q><%= speaker.title %></q>
+                    </div>
+                    <div class="modal-body">
+                      <%= image_tag speaker.photo.url, size: '140x140', alt: speaker.name, class: 'speaker clearfix' %>
+                      <p><%= speaker.description.html_safe %></p>
+                    </div>
+                    <div class="modal-footer">
+                      <%= social_navbar speaker %>
+                      <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+      <%- end -%>
+      <%- end -%>
+    </div>
+  <%- end -%>
+  <%- end -%>
+
+</section>

@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'AvalonDemi';
+  font-weight: normal;
+  font-style:  normal;
+  src: url('Avalon-Demi-webfont.eot');
+  src: url('Avalon-Demi-webfont.eot?#iefix') format('embedded-opentype'),
+       url('Avalon-Demi-webfont.woff') format('woff'),
+       url('Avalon-Demi-webfont.ttf') format('truetype'),
+       url('Avalon-Demi-webfont.svg#avalonbold') format('svg');
+}
+
+@font-face {
+  font-family: 'AvalonBook';
+  font-weight: normal;
+  font-style:  normal;
+  src: url('Avalon-Book-webfont.eot');
+  src: url('Avalon-Book-webfont.eot?#iefix') format('embedded-opentype'),
+       url('Avalon-Book-webfont.woff') format('woff'),
+       url('Avalon-Book-webfont.ttf') format('truetype'),
+       url('Avalon-Book-webfont.svg#avalonregular') format('svg');
+}

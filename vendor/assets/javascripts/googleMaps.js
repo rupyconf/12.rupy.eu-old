@@ -8,7 +8,7 @@ var GoogleMapsController =
 
     init: function(initPosition, initMarkerText)
     {
-        if ($('#googleMap').length == 0)
+        if ($('#google-maps').length == 0)
             return false;
 
         var latLng = (initPosition) ? new google.maps.LatLng(initPosition[0], initPosition[1]) : new google.maps.LatLng(0, 0);
@@ -21,7 +21,7 @@ var GoogleMapsController =
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
-        this.map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
+        this.map = new google.maps.Map(document.getElementById("google-maps"), myOptions);
         this.placeMarker(latLng);
         this.infoWindow = new google.maps.InfoWindow({
             content: this.markerDesc

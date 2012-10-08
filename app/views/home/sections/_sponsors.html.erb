@@ -1,0 +1,45 @@
+<section id="sponsors" class="section container">
+  <h2><%= t(:sponsors) %></h2>
+
+  <blockquote class="highline">
+    <span>It’s <strong>thanks to the support and assistance</strong> of our sponsors that RuPy conference is possible</span>
+    <span>so take the time and have a look on <strong>who they are and what they do</strong>.</span>
+  </blockquote>
+
+  <%- sponsor_types.each do |sponsor_type| -%>
+  <%- if sponsor_type.needed_sponsor_description? -%>
+  <h3 class="highline"><%= sponsor_type.description.capitalize %> <%= 'Sponsor'.pluralize(sponsors[sponsor_type].count) %></h3>
+  <%- sponsors[sponsor_type].each do |sponsor| -%>
+  <div class="sponsor row">
+    <div class="span3 offset1 logo <%= sponsor_logo(sponsor) %>">
+      <%= link_to sponsor.website do %>
+        <%= image_tag sponsor.logo.url %>
+      <%- end -%>
+    </div>
+    <div class="span8">
+      <p class="description">
+        <%= sponsor.description %>
+      </p>
+    </div>
+  </div>
+  <%- end -%>
+  <%- else -%>
+  <h3 class="highline"><%= sponsor_headline(sponsors, sponsor_type) %></h3>
+  <div class="sponsor logos">
+  <%- sponsors[sponsor_type].each do |sponsor| -%>
+    <%= link_to sponsor.website do -%>
+      <%= image_tag sponsor.logo.url %>
+    <%- end -%>
+  <%- end -%>
+  </div>  
+  <%- end -%>
+  <%- end -%>
+
+  <blockquote class="highline">
+    <span>If you are interested in <strong>becoming our sponsor</strong>, have a look at our sponsor</span> <span>brochure and contact us via email <strong>info at rupy.eu</strong>.</span>
+  </blockquote>
+
+  <div class="button-block">
+    <a class="btn btn-large btn-primary">Sponsor brochure</a>
+  </div>
+</section>

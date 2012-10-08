@@ -5,8 +5,10 @@
   <%= f.association :event, :autofocus => true %>
   <%= f.input :sequence, :input_html => { :class => "span1" } %>
   <%= f.input :name %>
-  <%= f.input :twitter %>
   <%= f.input :title %>
+  <%= f.input :twitter %>
+  <%= f.input :github %>
+  <%= f.input :website %>
   <%= f.input :description, :input_html => { :class => "span8", :rows => 4 } %>
 
   <div class="control-group auto-fill-file">

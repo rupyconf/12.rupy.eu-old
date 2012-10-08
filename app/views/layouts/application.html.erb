@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="<%= I18n.locale %>">
 <head>
   <title>RUPY 2012</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,36 +24,25 @@
   <%= dispatcher_tag %>
   <%= favicon_link_tag "/favicon.png" %>
 
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'http://maps.google.com/maps/api/js?sensor=false' %>
+  <%= javascript_include_tag 'application' %>
 </head>
-<body>
-
+<body id="about">
   <%= yield %>
-  
-  <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
-  <%= javascript_include_tag "application" %>
   <script type="text/javascript">
-      $(function(){
-          $("#slides").slides({
-              play: 4000,
-              effect: 'fade'
-          });
-      });
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-8394595-1']);
+    _gaq.push(['_setDomainName', 'rupy.eu']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
   </script>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-8394595-1']);
-  _gaq.push(['_setDomainName', 'rupy.eu']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 </body>
 </html>

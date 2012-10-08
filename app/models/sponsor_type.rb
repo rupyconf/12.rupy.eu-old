@@ -8,4 +8,8 @@ class SponsorType < ActiveRecord::Base
     self.description
   end
 
+  def needed_sponsor_description?
+    %w{ GOLD DIAMOND }.include? description
+  end
+
 end

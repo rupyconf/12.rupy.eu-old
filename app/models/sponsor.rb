@@ -4,7 +4,7 @@ class Sponsor < ActiveRecord::Base
   belongs_to :event
 
   validates_presence_of :event, :sponsor_type, :sequence, :name, :description, :website
-  has_attached_file :logo, :url => "/system/:class/:attachment/:id.:extension", :default_url => "/default/default-sponsor.png"
+  has_attached_file :logo, url: '/assets/:class/:filename'
 
   default_scope order("event_id, sponsor_type_id, sequence")
 
