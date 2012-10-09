@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery.tweet
 //= require bootstrap-modal
+//= require bootstrap-scrollspy
 //= require googleMaps
 
 $(function(){

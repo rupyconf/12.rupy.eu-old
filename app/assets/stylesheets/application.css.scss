@@ -276,6 +276,11 @@ header {
       padding-right: 0;
     }
 
+    .active > a {
+      background: none !important;
+      color:      #E20031 !important;
+    }
+
     .highline {
       color: #FFFFFF !important;
     }
