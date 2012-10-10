@@ -13,7 +13,7 @@
   <div class="sponsor row">
     <div class="span3 offset1 logo <%= sponsor_logo(sponsor) %>">
       <%= link_to sponsor.website do %>
-        <%= image_tag sponsor.logo.url %>
+        <%= image_tag sponsor.logo.url, title: sponsor.name %>
       <%- end -%>
     </div>
     <div class="span8">
@@ -28,7 +28,7 @@
   <div class="sponsor logos">
   <%- sponsors[sponsor_type].each do |sponsor| -%>
     <%= link_to sponsor.website do -%>
-      <%= image_tag sponsor.logo.url %>
+      <%= image_tag sponsor.logo.url, title: sponsor.name %>
     <%- end -%>
   <%- end -%>
   </div>  
