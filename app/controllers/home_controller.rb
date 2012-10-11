@@ -1,8 +1,6 @@
 class HomeController < ApplicationController
 
   def show
-    @event = Event.last
-
     if @event.present?
       @sponsors_per_type = sponsors_per_event(@event)
       @speakers          = @event.speakers.all << Speaker.new # Temporary speaker
