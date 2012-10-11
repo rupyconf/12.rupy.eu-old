@@ -509,7 +509,7 @@ header {
   }
 
   .description {
-    @include content-columns(2);
+    @include content-columns(2, 2 * $gridColumnWidth);
 
     margin-bottom: 0;      
   }
