@@ -17,7 +17,8 @@ pt-BR:
   inscriptions: "Inscrições"
   trainings: "Treinamentos"
   faq: "FAQ"
-  location: "Localização"
+  faq_long: "Perguntas Frequentes"
+  location: "Local"
   agenda: "Agenda"
   workshops: "Workshops"
   about: "Sobre"
@@ -40,7 +41,7 @@ pt-BR:
   text_for_title: "Se você é um desenvolvedor que não tem medo de confrontar pontos de vista, está disposto a aprender e experimentar novas linguagens e tecnologias, está ansiosos para comparar os problemas e soluções, quer mergulhar e explorar modernas soluções ainda inexploradas, está pronto para compartilhar metodologias a fim de chegar a novas sinergias e ideias, então Rupy é exatamente a conferência que você não deve perder."
 
   thanks_for: "Obrigado aos nossos amigos da "
-  thanks_for_help: " por nos ajudar a realizar a RuPy."  
+  thanks_for_help: " por nos ajudar a realizar a RuPy."
 
   errors: &errors
     format: ! '%{attribute} %{message}'

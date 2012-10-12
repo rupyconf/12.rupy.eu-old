@@ -49,9 +49,9 @@
 
 <%= render 'home/sections/agenda' %>
 
-<%= render 'home/sections/location' %>
+<%= render 'home/sections/location', event: @event %>
 
-<%= render 'home/sections/sponsors', sponsor_types: @sponsors_per_type.keys, sponsors: @sponsors_per_type %>
+<%= render 'home/sections/sponsors', event: @event, sponsor_types: @sponsors_per_type.keys, sponsors: @sponsors_per_type %>
 
 <%= render 'home/sections/team', team: @team %>
 

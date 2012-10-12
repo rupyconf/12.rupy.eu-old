@@ -33,7 +33,7 @@
       <%= image_tag sponsor.logo.url, title: sponsor.name %>
     <%- end -%>
   <%- end -%>
-  </div>  
+  </div>
   <%- end -%>
   <%- end -%>
 
@@ -42,6 +42,6 @@
   </blockquote>
 
   <div class="button-block">
-    <a href="https://dl.dropbox.com/u/7622715/rupy-12-sponsor.pdf" class="btn btn-large btn-primary">Sponsor brochure</a>
+    <%= link_to "Sponsor brochure", event.brochure, :class => "btn btn-large btn-primary" %>
   </div>
 </section>
