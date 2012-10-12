@@ -9,7 +9,7 @@
           <ul class="nav pull-right">
             <li><%= link_to t(:about), '#about' %></li>
             <li><%= link_to t(:speakers), '#speakers' %></li>
-            <li><%= link_to t(:workshops), '#workshops' %></li>
+            <li><%= link_to t(:workshops), '#workshops' unless @event.is_br? %></li>
             <li><%= link_to t(:agenda), '#agenda' %></li>
             <li><%= link_to t(:location), '#location' %></li>
             <li><%= link_to t(:sponsors), '#sponsors' %></li>
@@ -43,7 +43,7 @@
   </div>
 </section>
 
-<%= render 'home/sections/about' %>
+<%= render 'home/sections/about', event: @event %>
 
 <%= render 'home/sections/speakers', speakers: @speakers %>
 
