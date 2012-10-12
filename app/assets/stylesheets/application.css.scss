@@ -20,6 +20,12 @@ strong, h1, h2, h3, h4, h5, h6, #logo p, .btn, dt,
   font-weight: normal;
 }
 
+.justify-text {
+  @include hyphens();
+ 
+  text-align: justify;
+}
+
 blockquote, div, p {
   &.highline {
     border:     0;
@@ -197,12 +203,6 @@ section.container, footer .container {
   }
 
   .modal-body {
-    p {
-      @include hyphens();
- 
-      text-align: justify;
-    }
-
     img.speaker {
       float:         left;
       margin-right:  10px;
@@ -475,9 +475,6 @@ header {
   }
 
   p {
-    @include hyphens();
- 
-    text-align: justify;
     font-size:   16px;
     line-height: 20px;
   }
@@ -513,9 +510,7 @@ header {
 
   .description {
     @include content-columns(2);
-    @include hyphens();
 
-    text-align:    justify;
     margin-bottom: 0;      
   }
 
