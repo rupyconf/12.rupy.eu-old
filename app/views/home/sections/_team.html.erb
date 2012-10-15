@@ -2,7 +2,7 @@
   <h2><%= t(:team) %></h2>
 
   <blockquote class="highline">
-    <span>Our dedicated and enthusiastic team of organizers is ready</span> <span><strong>to make the best RuPy conference yet</strong>.</span>
+    <%= t(:team_description).html_safe %>
   </blockquote>
 
   <%- if team.present? -%>
@@ -14,7 +14,7 @@
         <%= image_tag member.photo.url %>
         <div class="info">
           <h4><%= member.name %></h4>
-          <%= content_tag :div, class: 'twitter' do -%> 
+          <%= content_tag :div, class: 'twitter' do -%>
             <a href="https://twitter.com/<%= member.twitter %>">@<%= member.twitter %></a>
           <%- end if member.twitter.present? -%>
           <p>
