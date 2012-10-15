@@ -75,16 +75,14 @@ section.container, footer .container {
 }
 
 .icon {
-  display:        inline-block; 
-  vertical-align: top;
-  background:     image-url('icons.png') no-repeat;
+  display:     inline-block; 
+  background:  image-url('icons.png') no-repeat;
+  overflow:    hidden;
+  text-indent: 100%;
+  white-space: nowrap;
 
   a {
     display: inherit;
-  }
-
-  &:first-line, a:first-line {
-    @include hide-text();
   }
 
   &.small, &.small a {
@@ -242,7 +240,7 @@ h3.highline {
   height:        20px;
 
   &:first-line {
-    background-color: $bodyBackground;
+    background-color: $bodyBackground;    
   }
 
   &:before, &:after{
