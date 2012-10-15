@@ -1,3 +1,8 @@
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap.min
+//= require dispatcher
+
 App.br_inscriptions = {};
 
 App.br_inscriptions["new"] = function() {
