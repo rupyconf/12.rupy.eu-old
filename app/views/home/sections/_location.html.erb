@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  <% if event.domain_locale == "eu" %>
+  <% unless event.is_br? %>
     <h3 class="highline"><%= t(:accomodation) %></h3>
     <div id="accomodation" class="row">
       <div class="span4">
