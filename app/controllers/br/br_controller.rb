@@ -1,5 +1,6 @@
 class Br::BrController < ApplicationController
 
+  layout 'br'
   before_filter :verify_domain_locale!
 
 protected

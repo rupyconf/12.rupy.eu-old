@@ -2,12 +2,13 @@
 require "digest/sha1"
 
 class Br::InscriptionsController < Br::BrController
-  layout 'admin', :only => [:index, :edit, :update]
   before_filter :authenticate_admin!, :only => [:index, :edit, :update]
 
   skip_before_filter :verify_authenticity_token, :only => [:pagseguro]
 
   def index
+    layout 'admin'
+
     if params[:training_id].present?
       @inscriptions = Br::Inscription.find_all_by_training_id(params[:training_id])
     else
@@ -34,6 +35,8 @@ class Br::InscriptionsController < Br::BrController
   end
 
   def edit
+    layout 'admin'
+
     @inscription = Br::Inscription.find_by_payment_token(params[:id])
   end
 

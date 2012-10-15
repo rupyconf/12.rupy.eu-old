@@ -1,7 +1,4 @@
-/*
- *= require fonts
-*/
-
+@import 'fonts';
 @import 'variables';
 @import 'bootstrap';
 
@@ -22,7 +19,7 @@ strong, h1, h2, h3, h4, h5, h6, #logo p, .btn, dt,
 
 .justify-text {
   @include hyphens();
- 
+
   text-align: justify;
 }
 
@@ -68,14 +65,14 @@ section.container, footer .container {
 
   h2 {
     font-size:   64px;
-    line-height: 64px; 
+    line-height: 64px;
     padding:     54px 0;
     text-align:  center;
   }
 }
 
 .icon {
-  display:     inline-block; 
+  display:     inline-block;
   background:  image-url('icons.png') no-repeat;
   text-indent: 110%;
   overflow:    hidden;
@@ -97,7 +94,7 @@ section.container, footer .container {
 
   &.large, &.large a {
     width:  68px;
-    height: 68px; 
+    height: 68px;
   }
 
   &.small {
@@ -214,7 +211,7 @@ section.container, footer .container {
     margin-top: 15px;
     border:     0;
     background: transparent;
-    
+
     .nav {
       margin-bottom: 0;
     }
@@ -230,7 +227,7 @@ section.container, footer .container {
         left:  15px;
         right: 15px;
       }
-    }    
+    }
   }
 }
 
@@ -240,7 +237,7 @@ h3.highline {
   height:        24px;
 
   &:first-line {
-    background-color: $bodyBackground;    
+    background-color: $bodyBackground;
   }
 
   &:before, &:after{
@@ -267,7 +264,7 @@ header {
     text-shadow: none;
   }
 
-  .nav { 
+  .nav {
     margin-right: 0 !important;
 
     & > li:last-of-type a {
@@ -329,7 +326,7 @@ header {
       left:   187px;
       bottom: 70px;
     }
- 
+
     width:      688px;
     background: image-url('rupy-logo-large.png') no-repeat;
 
@@ -412,7 +409,7 @@ header {
 
     .center-block {
       display: table;
-      width:   100%;      
+      width:   100%;
 
       .middle {
         display:        table-cell;
@@ -436,7 +433,7 @@ header {
 
     .more-speakers {
       height:      100%;
-      
+
       p {
         font-size:   20px;
         line-height: 25px;
@@ -464,7 +461,7 @@ header {
   h3 {
     text-align:    center;
     font-size:     25px;
-    line-height:   31px; 
+    line-height:   31px;
     margin-bottom: 25px;
 
     span {
@@ -509,7 +506,7 @@ header {
   .description {
     @include content-columns(2, 2 * $gridColumnWidth);
 
-    margin-bottom: 0;      
+    margin-bottom: 0;
   }
 
   .logos {
@@ -551,7 +548,7 @@ header {
       margin-top:    0;
       border-bottom: 8px solid $bodyBackground;
     }
-  
+
     address {
       @include content-columns(2);
 
