@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+<head>
+  <title>RUPY 2012</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="keywords" content="python, ruby, conference, europe, brazil">
+  <meta name="author" content="RUPY 2012 team">
+
+  <meta property="og:title" content="RUPY 2012">
+  <meta property="og:url" content="<%= root_url %>">
+  <meta property="og:image" content="<%= asset_path('og_logo_info.png') %>">
+  <meta property="og:image:width" content="125">
+  <meta property="og:image:height" content="125">
+
+  <meta itemprop="name" content="Rupy 2012">
+  <meta itemprop="description" content="Rupy 2012, Strongly dynamic Conference. Connecting Hemispheres.">
+  <meta itemprop="image" content="<%= asset_path('og_logo_info.png') %>">
+
+  <link rel="image_src" href="<%= asset_path('og_logo_info.png') %>" />
+
+  <%= csrf_meta_tags %>
+  <%= dispatcher_tag %>
+  <%= favicon_link_tag "/favicon.png" %>
+
+  <%= stylesheet_link_tag 'br', media: 'all' %>
+  <%= javascript_include_tag 'br' %>
+</head>
+<body>
+  <header>
+    <div id="header-background"></div>
+  </header>
+
+  <div id="main" class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>
