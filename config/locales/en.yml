@@ -25,7 +25,7 @@ en:
 
   speakers_description: "<span>Behold our <strong>professional, creative, sharp-witted</strong> and simply <strong>awesome speakers</strong> and <strong>developers</strong><span><span>who will surely make this conference an <strong>unforgettable experience.</strong><span>"
   agenda_description: "<span>Roses are <strong>red</strong>, violets are <strong>blue</strong>,</span><span>RuPy team's busy working on <strong>conference schedule</strong>, so <strong>stay tuned</strong>.</span>"
-  local_description: "<span>By <strong>connecting hemispheres</strong> RuPy aims to <strong>connecting people</strong> as well.</span><span><strong><%= event.city %></strong> wil be the place where all the <strong>RuPy magic</strong> will happen.</span>"
+  local_description: "<span>By <strong>connecting hemispheres</strong> RuPy aims to <strong>connecting people</strong> as well.</span><span><strong>Brno</strong> will be the place where all the <strong>RuPy magic</strong> will happen.</span>"
   sponsor_description: "<span>It’s <strong>thanks to the support and assistance</strong> of our sponsors that RuPy conference is possible</span><span>so take the time and have a look on <strong>who they are and what they do</strong>.</span>"
   sponsor_brochure_description: "<span>If you are interested in <strong>becoming our sponsor</strong>, have a look at our sponsor</span><span>brochure and contact us via email <strong>info at rupy.eu</strong>.</span>"
   team_description: "<span>Our dedicated and enthusiastic team of organizers is ready</span><span><strong>to make the best RuPy conference yet</strong>.</span>"
