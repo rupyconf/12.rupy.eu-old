@@ -77,8 +77,8 @@ section.container, footer .container {
 .icon {
   display:     inline-block; 
   background:  image-url('icons.png') no-repeat;
+  text-indent: 110%;
   overflow:    hidden;
-  text-indent: 100%;
   white-space: nowrap;
 
   a {
@@ -237,7 +237,7 @@ section.container, footer .container {
 h3.highline {
   text-align:    center;
   border-bottom: 1px solid #E20031;
-  height:        20px;
+  height:        24px;
 
   &:first-line {
     background-color: $bodyBackground;    
