@@ -2,8 +2,7 @@
   <h2><%= t(:speakers) %></h2>
 
   <blockquote class="highline">
-    <span>Behold our <strong>professional, creative, sharp-witted</strong> and simply <strong>awesome speakers</strong> and <strong>developers</strong></span>
-    <span>who will surely make this conference an <strong>unforgettable experience</strong>.</span>
+    <%= t(:speakers_description).html_safe %>
   </blockquote>
 
   <%- if speakers.present? -%>
@@ -30,12 +29,12 @@
           <div class="info">
             <div class="content-column">
               <h4><%= speaker_name(speaker.name) %></h4>
-              <%= content_tag :div, class: 'twitter' do -%> 
+              <%= content_tag :div, class: 'twitter' do -%>
                 <a href="https://twitter.com/<%= speaker.twitter %>">@<%= speaker.twitter %></a>
               <%- end if speaker.twitter.present? -%>
               <div class="title center-block"><span class="middle"><%= speaker.title %></span></div>
               <div class="additional-info">
-                <p>                  
+                <p>
                   <a href="#modal<%= group_index * 4 + index %>" data-toggle="modal">Bio</a>
                 </p>
 
@@ -56,12 +55,12 @@
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>
         </div>
-      </div>   
+      </div>
       <%- end -%>
       <%- end -%>
     </div>
