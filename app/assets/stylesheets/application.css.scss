@@ -72,16 +72,14 @@ section.container, footer .container {
 }
 
 .icon {
-  display:        inline-block;
-  vertical-align: top;
-  background:     image-url('icons.png') no-repeat;
+  display:     inline-block;
+  background:  image-url('icons.png') no-repeat;
+  text-indent: 110%;
+  overflow:    hidden;
+  white-space: nowrap;
 
   a {
     display: inherit;
-  }
-
-  &:first-line, a:first-line {
-    @include hide-text();
   }
 
   &.small, &.small a {
@@ -236,7 +234,7 @@ section.container, footer .container {
 h3.highline {
   text-align:    center;
   border-bottom: 1px solid #E20031;
-  height:        20px;
+  height:        24px;
 
   &:first-line {
     background-color: $bodyBackground;
@@ -506,7 +504,7 @@ header {
   }
 
   .description {
-    @include content-columns(2);
+    @include content-columns(2, 2 * $gridColumnWidth);
 
     margin-bottom: 0;
   }
