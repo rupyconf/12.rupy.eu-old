@@ -7,7 +7,7 @@
             <a href="http://rupy.eu/" title="Brno Edition" class="current">Brno Edition</a>|<a href="http://rupy.com.br/" title="Brazil Edition">Brazil Edition</a>
           </div>
           <ul class="nav pull-right">
-            <li><%= link_to t(:about), '#about' %></li>
+            <li class="active"><%= link_to t(:about), '#about' %></li>
             <li><%= link_to t(:speakers), '#speakers' %></li>
             <li><%= link_to t(:workshops), '#workshops' unless @event.is_br? %></li>
             <li><%= link_to t(:agenda), '#agenda' %></li>
