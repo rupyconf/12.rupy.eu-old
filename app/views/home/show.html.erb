@@ -4,7 +4,8 @@
       <div class="container">
         <div class="nav-collapse collapse">
           <div class="brand">
-            <a href="http://rupy.eu/" title="Brno Edition" class="current">Brno Edition</a>|<a href="http://rupy.com.br/" title="Brazil Edition">Brazil Edition</a>
+            <a href="http://rupy.eu/" title="Brno Edition" class="<%= 'current' if !@event.try('is_br?') %>">Brno Edition</a>|
+            <a href="http://rupy.com.br/" title="Brazil Edition" class="<%= 'current' if @event.try('is_br?') %>">Brazil Edition</a>
           </div>
           <ul class="nav pull-right">
             <li class="active"><%= link_to t(:about), '#about' %></li>
@@ -14,7 +15,7 @@
             <li><%= link_to t(:location), '#location' %></li>
             <li><%= link_to t(:sponsors), '#sponsors' %></li>
             <li><%= link_to t(:team), '#team' %></li>
-            <li><%= link_to t(:faq), '#faq' %></li>
+            <li><%= link_to t(:faq), '#faq' unless @event.is_br? %></li>
             <li><%= link_to t(:register), 'http://www.amiando.com/rupy12.html', class: 'highline' %></li>
           </ul>
         </div>
@@ -47,7 +48,7 @@
 
 <%= render 'home/sections/speakers', speakers: @speakers %>
 
-<%= render 'home/sections/workshops' %>
+<%= render 'home/sections/workshops' unless @event.is_br? %>
 
 <%= render 'home/sections/agenda' %>
 
@@ -57,11 +58,11 @@
 
 <%= render 'home/sections/team', team: @team %>
 
-<%= render 'home/sections/faq' %>
+<%= render 'home/sections/faq' unless @event.is_br? %>
 
 <section id="contact" class="section container">
   <div class="highline">
-    <span>Feel free to contact us</span> <span><a href="mailto:hello@rupy.eu">hello@rupy.eu</a> or <a href="https://www.hipchat.com/g4T5W6KqS">chat</a></span>
+    <%= t(:contact).html_safe %>
   </div>
 </section>
 

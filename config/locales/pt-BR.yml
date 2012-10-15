@@ -3,7 +3,7 @@ pt-BR:
   contact: "Sinta-se a vontade para entrar em contato conosco"
   or: "ou"
   our_blog: "Nosso blog"
-  sponsor_brochure: "Proposta de Patrocínio"
+  sponsor_brochure: "Proposta de patrocínio"
   previous_editions: "Edições anteriores"
   frequently_asked_questions: "Dúvidas Frequentes"
   accomodation: "Acomodações"
@@ -22,6 +22,14 @@ pt-BR:
   agenda: "Agenda"
   workshops: "Workshops"
   about: "Sobre"
+
+  speakers_description: "<span>Aqui estão <strong>nosso melhores e mais criativos, perspicazes e </strong> simplesmente <strong>incríveis palestrantes</strong> e <strong>desenvolvedores</strong><span><span>que certamente irão fazer esta conferência uma <strong>experiência inesquecível.</strong><span>"
+  agenda_description: "<span>Nosso time, está trabalhando em <strong>nossa agenda</strong>, <strong>fique ligado</strong>.</span>"
+  local_description: "<span><strong>Conectando hemisférios</strong>, Rupy visa também <strong>conectar as pessoas</strong>.</span><span>São José dos Campos/SP será o lugar onde toda a <strong>magia do Rupy</strong> vai acontecer.</span>"
+  sponsor_description: "<span>É com grande orgulho <strong>que nós agradecemos o suporte e confiança</strong> de nossos patrocinadores em nossa conferência.</span><span>De uma olhada em <strong>quem são eles e o que eles fazem</strong>.</span>"
+  sponsor_brochure_description: "<span>Se você tiver interesse em <strong>se tornar nosso apoiador</strong>,</span><span>de uma olhada com carinho em nossa proposta de patrocínio:</span>"
+  team_description: "<span>Nosso dedicadme de organizados está 100% a disposição</span><span><strong>para fazer a melhor conferência de todas</strong>.</span>"
+  contact: "<span>Fique a vontade para nos contatar</span> <span><a href='mailto:contato@rupy.com.br'>hello@rupy.eu</a> ou <a href='https://www.hipchat.com/g4T5W6KqS'>chat</a></span>"
 
   attendee: 'participante'
   trainings_description: "O dia anterior a conferência, dia 07/12 (sex), será totalmente dedicado a cursos com duração de 8 horas e com vagas limitadas para que você possa aprofundar seu conhecimento ou ter o primeiro contato com as linguagens mais poderosas do momento. Aproveite!"
