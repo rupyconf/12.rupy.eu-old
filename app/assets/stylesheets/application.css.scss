@@ -589,7 +589,10 @@ header {
     address {
       @include content-columns(2);
 
-      height: 110px; // force breaking after Europe
+      -webkit-column-fill: auto;
+      -moz-column-fill:    auto;
+      column-fill:         auto;
+      height:              110px;
     }
   }
 
