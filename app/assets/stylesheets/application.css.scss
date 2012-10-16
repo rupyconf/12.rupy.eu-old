@@ -214,6 +214,14 @@ section.container, footer .container {
 
     .nav {
       margin-bottom: 0;
+
+      > li {
+        margin-left: 4px;
+        
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
     }
 
     .btn-primary {
