@@ -300,10 +300,6 @@ header {
   background: none;
   margin-top: -20px;
 
-  & > .row:last-of-type {
-    margin-bottom: 60px;
-  }
-
   .registration-info {
     font-size:   16px;
     line-height: 20px;
@@ -313,7 +309,7 @@ header {
     margin-top: 40px;
   }
 
-  blockquote{
+  blockquote {
     margin-bottom: 30px;
   }
 
@@ -443,6 +439,35 @@ header {
       span {
         display: block;
       }
+    }
+  }
+}
+
+#about {
+  h3.highline {
+    margin-bottom: 50px;
+  }
+
+  .news {
+    font-size:   16px;
+    line-height: 20px;
+    
+    .tweet_list, .rss-feed p {
+      a {
+        @include font-family-sans-serif();
+      
+        color: #E20031;
+      }
+    }
+
+   .tweet_list {
+      span.at + a {
+        color: inherit;
+      }
+    }
+
+    ul {
+      @extend ul.unstyled;
     }
   }
 }
