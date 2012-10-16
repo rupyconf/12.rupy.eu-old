@@ -285,13 +285,13 @@ header {
     }
 
     .highline {
-      color: #FFFFFF !important;
+      color: $textColor !important;
     }
   }
 
   .nav-collapse > .brand {
-    margin-left: 30px;
-    color: #FFFFFF;
+    margin-left: $gridGutterWidth;
+    color:       $textColor;
 
     padding: {
       left:  0;

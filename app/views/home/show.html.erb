@@ -4,8 +4,7 @@
       <div class="container">
         <div class="nav-collapse collapse">
           <div class="brand">
-            <a href="http://rupy.eu/" title="Brno Edition" class="<%= 'current' if !@event.try('is_br?') %>">Brno Edition</a>|
-            <a href="http://rupy.com.br/" title="Brazil Edition" class="<%= 'current' if @event.try('is_br?') %>">Brazil Edition</a>
+            <a href="http://rupy.eu/" title="Brno Edition" class="<%= 'current' if !@event.try('is_br?') %>">Brno Edition</a>&nbsp;|&nbsp;<a href="http://rupy.com.br/" title="Brazil Edition" class="<%= 'current' if @event.try('is_br?') %>">Brazil Edition</a>
           </div>
           <ul class="nav pull-right">
             <li class="active"><%= link_to t(:about), '#about' %></li>
