@@ -460,7 +460,11 @@ header {
     font-size:   16px;
     line-height: 20px;
     
-    .tweet_list, .rss-feed p {
+    .tweeted {
+      display: block;
+    }
+    
+    .tweet_text, .rss-feed p {
       a {
         @include font-family-sans-serif();
       

@@ -8,9 +8,9 @@
 $(function(){
   $('.tweet').tweet({
     username:     'rupy',
-    loading_text: 'Loading tweets…',
+    loading_text: 'Loading latest tweet…',
     count:        1,
-    template:     '{text} <br>&mdash; {time}'
+    template:     '<span class="tweeted">Tweeted {time}</span> {text}'
   });
 
   $('.rss-feed').rssfeed('http://blog.rupy.eu/rss', {
