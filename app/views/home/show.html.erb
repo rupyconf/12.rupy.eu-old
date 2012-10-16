@@ -15,7 +15,7 @@
             <li><%= link_to t(:sponsors), '#sponsors' %></li>
             <li><%= link_to t(:team), '#team' %></li>
             <li><%= link_to t(:faq), '#faq' unless @event.is_br? %></li>
-            <li><%= link_to t(:register), 'http://www.amiando.com/rupy12.html', class: 'highline' %></li>
+            <li><%= link_to t(:register), (@event.try('is_br?') ? new_br_event_inscription_path : 'http://www.amiando.com/rupy12.html'), class: 'highline' %></li>
           </ul>
         </div>
       </div>
