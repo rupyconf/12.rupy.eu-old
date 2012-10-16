@@ -6,6 +6,7 @@ Rupy::Application.routes.draw do
     root :to => "events#index"
     resources :events, :except => [:show]
     resources :speakers, :except => [:show]
+    resources :schedules, :except => [:show]
     resources :sponsors, :except => [:show]
     resources :teams, :except => [:show]
     resources :trainings, :except => [:show]

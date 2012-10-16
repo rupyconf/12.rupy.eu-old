@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h2>Listing schedule itens</h2>
+</div>
+
+<%= link_to 'New', new_admin_schedule_path, :class => 'btn btn-success btn-small btn-top' %>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Event</th>
+      <th>Date/Time</th>
+      <th>Speaker</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedules.each_with_index do |schedule, index| %>
+      <tr>
+        <td class="nowrap"><%= index.next %></td>
+        <td class="nowrap"><%= schedule.event %></td>
+        <td class="nowrap"><%= l schedule.occur_at, :format => :short %></td>
+        <td><%= schedule.speaker %></td>
+        <td class="nowrap">
+          <div class="pull-right">
+            <%= link_to 'Edit', [:edit, :admin, schedule], :class => 'btn btn-small' %>
+            <%= link_to 'Destroy', [:admin, schedule], :class => 'btn btn-danger btn-small', :confirm => 'Tem certeza?', :method => :delete %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  <tbody>
+</table>
