@@ -35,13 +35,14 @@
               <div class="title center-block"><span class="middle"><%= speaker.title %></span></div>
               <div class="additional-info">
                 <p>
-                  <a href="#modal<%= group_index * 4 + index %>" data-toggle="modal">Bio</a>
+                  <a href="#<%= speaker.name.parameterize %>" data-toggle="modal">Bio</a><%- if speaker.talk_available? -%>&nbsp;|&nbsp;<a href="#<%= speaker.name.parameterize %>-talk" data-toggle="modal">Talk</a>
+                  <%- end -%>
                 </p>
 
-                <div class="modal hide" id="modal<%= group_index * 4 + index %>">
+                <div class="modal hide" id="<%= speaker.name.parameterize %>">
                   <div class="content-column">
                     <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
                       <h3><%= speaker.name %></h3>
                       <q><%= speaker.title %></q>
                     </div>
@@ -51,11 +52,30 @@
                     </div>
                     <div class="modal-footer">
                       <%= social_navbar speaker %>
-                      <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
+                      <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
                     </div>
                   </div>
                 </div>
 
+                <%- if speaker.talk_available? -%>
+                <div class="modal hide" id="<%= speaker.name.parameterize %>-talk">
+                  <div class="content-column">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h3><%= speaker.talk_title %></h3>
+                      <q><%= speaker.name %></q>
+                    </div>
+                    <div class="modal-body">
+                      <div class="justify-text">
+                        <%= speaker.talk_description.html_safe %>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+                    </div>
+                  </div>
+                </div>
+                <%- end -%>
               </div>
             </div>
           </div>

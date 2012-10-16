@@ -8,8 +8,14 @@ class Speaker < ActiveRecord::Base
 
   default_scope order("event_id, sequence")
 
+  delegate :title, :description, :available?, to: :talk, prefix: true, allow_nil: true
+
   def to_s
     self.name
+  end
+
+  def talk
+    @talk ||= Talk.new(self)
   end
 
 end
