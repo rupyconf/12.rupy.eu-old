@@ -10,7 +10,8 @@
       <th>#</th>
       <th>Event</th>
       <th>Date/Time</th>
-      <th>Speaker</th>
+      <th>Speaker 1</th>
+      <th>Speaker 2</th>
       <th></th>
     </tr>
   </thead>
@@ -20,8 +21,9 @@
       <tr>
         <td class="nowrap"><%= index.next %></td>
         <td class="nowrap"><%= schedule.event %></td>
-        <td class="nowrap"><%= l schedule.occur_at, :format => :short %></td>
-        <td><%= schedule.speaker %></td>
+        <td class="nowrap"><%= l(schedule.occur_at, :format => :short) if schedule.occur_at %></td>
+        <td><%= schedule.speaker1 %></td>
+        <td><%= schedule.speaker2 %></td>
         <td class="nowrap">
           <div class="pull-right">
             <%= link_to 'Edit', [:edit, :admin, schedule], :class => 'btn btn-small' %>

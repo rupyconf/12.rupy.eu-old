@@ -3,8 +3,9 @@
   <%= f.error_notification %>
 
   <%= f.association :event, :autofocus => true %>
-  <%= f.input :occur_at, :input_html => { :class => "span1" } %>
-  <%= f.association :speaker %>
+  <%= f.input :occur_at, :input_html => { :class => "span1" }, :include_blank => true %>
+  <%= f.association :speaker1 %>
+  <%= f.association :speaker2 %>
   <%= f.input :talk %>
   <%= f.input :talk_description, :input_html => { :class => "span8", :rows => 4 } %>
 

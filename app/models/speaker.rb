@@ -8,4 +8,8 @@ class Speaker < ActiveRecord::Base
 
   default_scope order("event_id, sequence")
 
+  def to_s
+    self.name
+  end
+
 end
