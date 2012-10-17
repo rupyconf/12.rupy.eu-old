@@ -5,7 +5,11 @@
 //= require bootstrap-scrollspy
 //= require googleMaps
 
-$(function(){
+$(function() {
+  var hash_tag = location.href.slice(location.href.indexOf('#'));
+  
+  $('#speakers a[href$="' + hash_tag + '"][data-toggle="modal"]').trigger('click');
+
   $('.tweet').tweet({
     username:     'rupy',
     loading_text: 'Loading latest tweet…',
