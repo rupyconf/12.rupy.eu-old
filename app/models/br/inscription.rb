@@ -7,7 +7,12 @@ class Br::Inscription < ActiveRecord::Base
   attr_accessor :state_id
   validates_uniqueness_of :payment_token
   validates_presence_of :first_name, :last_name, :email, :cpf, :city_id, :ruby_experience, :python_experience, :javascript_experience
-  validates_inclusion_of :student, :in => [true, false]
+  validates_inclusion_of :student, :conferred, :excluded, :in => [true, false]
+
+  validates_inclusion_of :conferred, :in => [false], :unless => "self.confirmed_status?", :message => "not allowed for this status"
+  validates_inclusion_of :excluded, :in => [false], :unless => "self.can_destroy?", :message => "not allowed for this status"
+
+  default_scope where(:excluded => false)
 
   def self.experiences_itens
     ["Nenhum", "Iniciante", "Intermediário", "Avançado"]
@@ -45,6 +50,10 @@ class Br::Inscription < ActiveRecord::Base
   def confirmed_status?(status = nil)
     status ||= self.payment_status.to_s
     ["completed", "approved"].include? status
+  end
+
+  def can_destroy?
+    [nil, "", "pending"].include? self.payment_status.to_s
   end
 
   def id_formatted

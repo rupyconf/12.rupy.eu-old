@@ -38,9 +38,10 @@ body {
   margin-bottom: 25px;
 }
 
-.table {
-  td {vertical-align: middle; }
-  td.nowrap { white-space: nowrap; width: 1px; }
+.table td {
+  vertical-align: middle;
+  &.nowrap { white-space: nowrap; width: 1px; }
+  form { display: inline; }
 }
 
 input[type="file"] {

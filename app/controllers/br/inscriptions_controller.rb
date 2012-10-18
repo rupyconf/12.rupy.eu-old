@@ -42,10 +42,15 @@ class Br::InscriptionsController < Br::BrController
 
     flash[:success] = "Inscription was successfully updated." if @inscription.update_attributes(params[:br_inscription])
 
-    if @inscription.event.present?
-      respond_with @inscription, :location => br_event_inscriptions_path
+    if @inscription.errors.any? && (@inscription.conferred_changed? || @inscription.excluded_changed?)
+      flash[:error] = @inscription.errors.full_messages.first
+      redirect_to br_event_inscriptions_path
     else
-      respond_with @inscription, :location => br_training_inscriptions_path(@inscription.training_id)
+      if @inscription.event.present?
+        respond_with @inscription, :location => br_event_inscriptions_path
+      else
+        respond_with @inscription, :location => br_training_inscriptions_path(@inscription.training_id)
+      end
     end
   end
 

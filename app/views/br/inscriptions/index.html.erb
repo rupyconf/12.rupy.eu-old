@@ -23,11 +23,21 @@
         <td class="nowrap"><%= l inscription.created_at, :format => :short %></td>
         <td><%= inscription.name %></td>
         <td><%= inscription.email %></td>
-        <td class="nowrap"><%= inscription.payment_status %></td>
         <td class="nowrap">
-          <div>
-            <%= link_to 'Edit', [:edit, inscription], :class => 'btn btn-small' %>
-          </div>
+          <%= content_tag :i, "", :class => "icon-ok" if inscription.conferred? %>
+          <%= inscription.payment_status %>
+        </td>
+        <td class="nowrap">
+          <%= link_to 'Edit', [:edit, inscription], :class => 'btn btn-small' %>
+          <%= simple_form_for inscription do |f| %>
+            <%= f.hidden_field :excluded, :value => true %>
+            <%= f.button :submit, "Destroy", :class => "btn-danger btn-small", :confirm => "Confirm?" %>
+          <% end %>
+          |
+          <%= simple_form_for inscription do |f| %>
+            <%= f.hidden_field :conferred, :value => !inscription.conferred? %>
+            <%= f.button :submit, "Confer", :class => "btn-primary btn-small", :confirm => "Confirm?" %>
+          <% end %>
         </td>
       </tr>
     <% end %>

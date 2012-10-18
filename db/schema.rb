@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016144937) do
+ActiveRecord::Schema.define(:version => 20121018151526) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(:version => 20121016144937) do
     t.string   "ruby_experience"
     t.string   "python_experience"
     t.string   "javascript_experience"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.string   "payment_token"
     t.string   "payment_status"
     t.string   "payment_method"
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(:version => 20121016144937) do
     t.integer  "event_id"
     t.integer  "training_id"
     t.string   "payment_transaction"
+    t.boolean  "excluded",                :default => false
+    t.boolean  "conferred",               :default => false
   end
 
   add_index "br_inscriptions", ["city_id"], :name => "index_br_inscriptions_on_city_id"
