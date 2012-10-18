@@ -10,6 +10,7 @@
       <th>Date</th>
       <th>Name</th>
       <th>E-mail</th>
+      <th>Student</th>
       <th>Status</th>
       <th></th>
     </tr>
@@ -23,6 +24,7 @@
         <td class="nowrap"><%= l inscription.created_at, :format => :short %></td>
         <td><%= inscription.name %></td>
         <td><%= inscription.email %></td>
+        <td><%= inscription.student %></td>
         <td class="nowrap">
           <%= content_tag :i, "", :class => "icon-ok" if inscription.conferred? %>
           <%= inscription.payment_status %>
