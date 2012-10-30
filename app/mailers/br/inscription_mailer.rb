@@ -4,6 +4,6 @@ class Br::InscriptionMailer < ActionMailer::Base
 
   def confirm_email(inscription)
     @inscription = inscription
-    mail(:to => inscription.email, :subject => "[RuPy 2012] Inscrição confirmada!")
+    mail(:to => [inscription.email, "contato@rupy.com.br"], :subject => "[RuPy 2012] Inscrição confirmada!")
   end
 end

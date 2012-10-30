@@ -53,7 +53,7 @@ class Br::Inscription < ActiveRecord::Base
   end
 
   def can_destroy?
-    [nil, "", "pending"].include? self.payment_status.to_s
+    [nil, "", "pending", "canceled"].include? self.payment_status.to_s
   end
 
   def id_formatted
