@@ -686,6 +686,9 @@ header {
   margin-bottom: 60px;
 }
 
+#agenda .highline {
+  margin-bottom: 20px;
+}
 #agenda .table {
   margin-bottom: 45px;
 }
@@ -711,12 +714,13 @@ header {
   font-family: 'AvalonDemi', sans-serif;
   font-weight: bold;
 }
-
 .table tbody td a {
   font-family: 'AvalonBook', sans-serif;
   font-weight: normal;
 }
 
 .table th, .table td {
-  line-height: 40px;
+  vertical-align: middle;
+  padding: 18px 10px;
+  line-height: 24px;
 }

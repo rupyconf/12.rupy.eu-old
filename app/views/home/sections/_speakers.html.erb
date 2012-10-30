@@ -35,7 +35,7 @@
               <div class="title center-block"><span class="middle"><%= speaker.title %></span></div>
               <div class="additional-info">
                 <p>
-                  <a href="#<%= speaker.name.parameterize %>" data-toggle="modal">Bio</a><%- if speaker.talk_available? -%>&nbsp;|&nbsp;<a href="#<%= speaker.name.parameterize %>-talk" data-toggle="modal">Talk</a>
+                  <a href="#<%= speaker.name.parameterize %>" data-toggle="modal">Bio</a><%- if speaker.talk_available? -%>&nbsp;|&nbsp;<a href="#<%= speaker.talk_title.parameterize %>" data-toggle="modal">Talk</a>
                   <%- end -%>
                 </p>
 
@@ -58,12 +58,12 @@
                 </div>
 
                 <%- if speaker.talk_available? -%>
-                <div class="modal hide" id="<%= speaker.name.parameterize %>-talk">
+                <div class="modal hide" id="<%= speaker.talk_title.parameterize %>">
                   <div class="content-column">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
                       <h3><%= speaker.talk_title %></h3>
-                      <q><%= speaker.name %></q>
+                      <q><%= speaker.talk.speakers %></q>
                     </div>
                     <div class="modal-body">
                       <div class="justify-text">

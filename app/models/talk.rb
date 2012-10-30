@@ -13,4 +13,8 @@ class Talk
     @schedule.present?
   end
 
+  def speakers
+    [@schedule.speaker1, @schedule.speaker2].compact.join(", ") if self.available?
+  end
+
 end
