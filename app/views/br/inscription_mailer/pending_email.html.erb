@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p>Olá <%= @inscription.name %>!</p>
+
+    <p>Sua inscrição para o evento <strong>RUPY BRAZIL 2012</strong> ainda está <strong>PENDENTE</strong>.</p>
+
+    <p>Após a <strong>confirmação do pagamento</strong> que é realizado pelo PagSeguro, nos lhe enviaremos um e-mail confirmando a inscrição.</p>
+
+    <p>
+      Você pode visualizar e acompanhar a situação da sua inscrição através do link abaixo:<br>
+      <%= link_to br_inscription_url(@inscription), br_inscription_url(@inscription), :target => "_blank" %>
+    </p>
+
+    <p>Qualquer dúvida estamos a disposição.</p>
+
+    <p>
+      <strong>RuPy Brazil Team</strong><br>
+      <%= link_to "rupy.com.br", root_url, :target => "_blank" %>
+    </p>
+  </body>
+</html>

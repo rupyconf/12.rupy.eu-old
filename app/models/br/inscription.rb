@@ -47,6 +47,10 @@ class Br::Inscription < ActiveRecord::Base
     !confirmed_status?(old_status) && confirmed_status?
   end
 
+  def payment_pending?(old_status)
+    old_status != "pending" && self.payment_status.to_s == "pending"
+  end
+
   def confirmed_status?(status = nil)
     status ||= self.payment_status.to_s
     ["completed", "approved"].include? status

@@ -72,6 +72,7 @@ class Br::InscriptionsController < Br::BrController
       inscription.payment_processed_at = notification.processed_at
       inscription.save!
 
+      Br::InscriptionMailer.pending_email(inscription).deliver if inscription.payment_pending?(old_status)
       Br::InscriptionMailer.confirm_email(inscription).deliver if inscription.payment_confirmed?(old_status)
     end
 

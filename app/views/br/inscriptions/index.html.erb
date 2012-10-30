@@ -44,6 +44,9 @@
             <%= f.hidden_field :conferred, :value => !inscription.conferred? %>
             <%= f.button :submit, "Confer", :class => "btn-primary btn-small", :confirm => "Confirm?" %>
           <% end %>
+          <% if inscription.payment_status == "pending" %>
+            | <%= link_to 'Mail', [inscription, :inscription_mailers], :method => :post, :class => 'btn btn-success btn-small', :confirm => "Confirm?", :remote => true %>
+          <% end %>
         </td>
       </tr>
     <% end %>
