@@ -11,6 +11,7 @@
       <th>Name</th>
       <th>E-mail</th>
       <th>City</th>
+      <th>Company</th>
       <th>Student</th>
       <th>Status</th>
       <th></th>
@@ -26,6 +27,7 @@
         <td><%= inscription.name %></td>
         <td><%= inscription.email %></td>
         <td><%= inscription.city %></td>
+        <td><%= inscription.company_name %></td>
         <td><%= "yes" if inscription.student? %></td>
         <td class="nowrap">
           <%= content_tag :i, "", :class => "icon-ok" if inscription.conferred? %>
