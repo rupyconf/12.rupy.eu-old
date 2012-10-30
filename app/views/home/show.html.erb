@@ -49,7 +49,7 @@
 
 <%= render 'home/sections/workshops' unless @event.is_br? %>
 
-<%= render 'home/sections/agenda' %>
+<%= render 'home/sections/agenda', dates: @schedule_dates, rooms: @schedule_rooms %>
 
 <%= render 'home/sections/location', event: @event %>
 

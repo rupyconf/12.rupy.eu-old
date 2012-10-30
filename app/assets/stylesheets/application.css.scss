@@ -217,7 +217,7 @@ section.container, footer .container {
 
       > li {
         margin-left: 4px;
-        
+
         &:first-of-type {
           margin-left: 0;
         }
@@ -459,15 +459,15 @@ header {
   .news {
     font-size:   16px;
     line-height: 20px;
-    
+
     .tweeted {
       display: block;
     }
-    
+
     .tweet_text, .rss-feed p {
       a {
         @include font-family-sans-serif();
-      
+
         color: #E20031;
       }
     }
@@ -684,4 +684,39 @@ header {
 
 #speakers .row, #team .row {
   margin-bottom: 60px;
+}
+
+#agenda .table {
+  margin-bottom: 45px;
+}
+
+#agenda .table th:first-child {
+  width: 10%;
+}
+#agenda .table th:not(:first-child) {
+  width: 45%;
+}
+
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+  background-color: #1B2A6B;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #1B2A6B;
+}
+
+.table th {
+  font-family: 'AvalonDemi', sans-serif;
+  font-weight: bold;
+}
+
+.table tbody td a {
+  font-family: 'AvalonBook', sans-serif;
+  font-weight: normal;
+}
+
+.table th, .table td {
+  line-height: 40px;
 }

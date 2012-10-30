@@ -12,5 +12,6 @@ class CreateSponsorTypes < ActiveRecord::Migration
     SponsorType.create!(:sequence => 3, :description => "SILVER")
     SponsorType.create!(:sequence => 4, :description => "BRONZE")
     SponsorType.create!(:sequence => 5, :description => "SUPPORT")
+    SponsorType.create!(:sequence => 6, :description => "MEDIA")
   end
 end

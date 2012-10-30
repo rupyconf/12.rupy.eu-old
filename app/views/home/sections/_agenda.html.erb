@@ -1,7 +1,98 @@
 <section id="agenda" class="section container">
   <h2><%= t(:agenda) %></h2>
 
-  <blockquote class="highline">
-    <%= t(:agenda_description).html_safe %>
-  </blockquote>
+  <% if dates.empty? %>
+    <blockquote class="highline">
+      <%= t(:agenda_description).html_safe %>
+    </blockquote>
+  <% else %>
+    <% dates.each do |date| %>
+      <h3 class="highline"><%= l(date) %></h3>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <% rooms.each do |room| %>
+              <%= content_tag :th, room.name %>
+            <% end %>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @event.schedules.where("DATE(occur_at) = ?", date).joins(:room).group_by(&:occur_at).keys.each do |datetime| %>
+            <tr>
+              <td><%= l(datetime.to_time) %></td>
+              <% rooms.each do |room| %>
+                <% item = @event.schedules.where("occur_at = ? AND room_id = ?", datetime, room.id).all.first %>
+                <td>
+                  <% if item %>
+                    <%= link_to item.talk, "##{item.id}-talk", :"data-toggle" => "modal" %>
+                    <div class="modal hide" id="<%= item.id %>-talk">
+                      <div class="content-column">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h3><%= item.talk %></h3>
+                          <q><%= [item.speaker1, item.speaker2].compact.join(", ") %></q>
+                        </div>
+                        <div class="modal-body">
+                          <div class="justify-text">
+                            <%= item.talk_description.html_safe %>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    (<%= [(link_to item.speaker1, "##{item.speaker1.to_s.parameterize}", :"data-toggle" => "modal" if item.speaker1), (link_to item.speaker2, "##{item.speaker2.to_s.parameterize}", :"data-toggle" => "modal" if item.speaker2)].compact.join(", ").html_safe %>)
+                    <% if item.speaker1.present? %>
+                    <div class="modal hide" id="<%= item.speaker1.to_s.parameterize %>">
+                      <div class="content-column">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h3><%= item.speaker1 %></h3>
+                          <q><%= item.speaker1.title %></q>
+                        </div>
+                        <div class="modal-body">
+                          <%= image_tag item.speaker1.photo.url, size: '140x140', alt: item.speaker1.name, class: 'speaker clearfix' %>
+                          <p class="justify-text"><%= item.speaker1.description.html_safe %></p>
+                        </div>
+                        <div class="modal-footer">
+                          <%= social_navbar item.speaker1 %>
+                          <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+                        </div>
+                      </div>
+                    </div>
+                    <% end %>
+                    <% if item.speaker2.present? %>
+                    <div class="modal hide" id="<%= item.speaker2.to_s.parameterize %>">
+                      <div class="content-column">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h3><%= item.speaker2 %></h3>
+                          <q><%= item.speaker2.title %></q>
+                        </div>
+                        <div class="modal-body">
+                          <%= image_tag item.speaker2.photo.url, size: '140x140', alt: item.speaker2.name, class: 'speaker clearfix' %>
+                          <p class="justify-text"><%= item.speaker2.description.html_safe %></p>
+                        </div>
+                        <div class="modal-footer">
+                          <%= social_navbar item.speaker2 %>
+                          <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+                        </div>
+                      </div>
+                    </div>
+                    <% end %>
+                  <% else %>
+                  -
+                  <% end %>
+                </td>
+              <% end %>
+            </tr>
+          <% end %>
+        <tbody>
+      </table>
+    <% end %>
+  <% end %>
 </section>

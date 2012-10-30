@@ -1,10 +1,7 @@
 <%= render :partial => "header" %>
 
 <% if (@inscription.event.present? && @inscription.event.inscription_available?) || (@inscription.training.present? && @inscription.training.inscription_available?) %>
-  <p class="information">
-    *Inscrição válida somente para os 2 dias de conferência (8 e 9 de dezembro). O dia 7 de dezembro é um dia específico para treinamentos e não está incluso nesta inscrição.<br>
-    Para inscriver-se em um treinamento <%= link_to "clique aqui", root_path.concat("#trainings") %>.
-  </p>
+  <p class="information">*Inscrição válida somente para os 2 dias de conferência (8 e 9 de dezembro).</p>
 
   <%= simple_form_for @inscription, :html => { :class => "well form-horizontal" } do |f| %>
 

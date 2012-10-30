@@ -80,4 +80,12 @@ pt-BR:
       body: ! 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
         one: ! 'Não foi possível gravar %{model}: 1 erro'
-        other: ! 'Não foi possível gravar %{model}: %{count} erros.'  
+        other: ! 'Não foi possível gravar %{model}: %{count} erros.'
+
+  date:
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    formats:
+      default: "%d de %B de %Y"
+  time:
+    formats:
+      default: "%H:%M"  

@@ -51,3 +51,7 @@ en:
 
   thanks_for: "Thanks to our friends from "
   thanks_for_help: " for helping us to get the conference rolling."
+
+  date:
+    formats:
+      default: "%d de %B de %Y"  
