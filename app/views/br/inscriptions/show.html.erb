@@ -2,6 +2,7 @@
 
 <% if @inscription.payment_status.blank? %>
   <h2>Pagamento</h2>
+  <p><%= "#{@inscription.name} (#{@inscription.email})" %></michep>
   <p>Para finalizar o processo de inscrição, você deve efetuar o pagamento. Você será redirecionado para a página de pagamento do PagSeguro para escolher a forma de pagamento e realizar a mesma.</p>
   <p class="information">
     ***Note que a página do PagSeguro estará em nome de "Designa Soluções em TI Ltda. ME", que é a empresa responsável por processar os pagamentos da conferência.<br>

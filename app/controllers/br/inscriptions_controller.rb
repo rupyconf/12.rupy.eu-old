@@ -2,7 +2,7 @@
 require "digest/sha1"
 
 class Br::InscriptionsController < Br::BrController
-  layout 'admin', :only => [:index, :edit, :update]
+  layout :inscription_layout
   before_filter :authenticate_admin!, :only => [:index, :edit, :update]
 
   skip_before_filter :verify_authenticity_token, :only => [:pagseguro]
@@ -42,10 +42,15 @@ class Br::InscriptionsController < Br::BrController
 
     flash[:success] = "Inscription was successfully updated." if @inscription.update_attributes(params[:br_inscription])
 
-    if @inscription.event.present?
-      respond_with @inscription, :location => br_event_inscriptions_path
+    if @inscription.errors.any? && (@inscription.conferred_changed? || @inscription.excluded_changed?)
+      flash[:error] = @inscription.errors.full_messages.first
+      redirect_to br_event_inscriptions_path
     else
-      respond_with @inscription, :location => br_training_inscriptions_path(@inscription.training_id)
+      if @inscription.event.present?
+        respond_with @inscription, :location => br_event_inscriptions_path
+      else
+        respond_with @inscription, :location => br_training_inscriptions_path(@inscription.training_id)
+      end
     end
   end
 
@@ -67,9 +72,17 @@ class Br::InscriptionsController < Br::BrController
       inscription.payment_processed_at = notification.processed_at
       inscription.save!
 
+      Br::InscriptionMailer.pending_email(inscription).deliver if inscription.payment_pending?(old_status)
       Br::InscriptionMailer.confirm_email(inscription).deliver if inscription.payment_confirmed?(old_status)
     end
 
     render :nothing => true
   end
+
+protected
+
+  def inscription_layout
+    ["index", "edit", "update"].include?(action_name) ? "admin" : "br"
+  end
+
 end

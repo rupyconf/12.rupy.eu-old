@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006223612) do
+ActiveRecord::Schema.define(:version => 20121029133722) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -26,12 +26,16 @@ ActiveRecord::Schema.define(:version => 20121006223612) do
     t.datetime "updated_at",                          :null => false
   end
 
+  add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
+
   create_table "br_cities", :force => true do |t|
     t.string   "name"
     t.integer  "state_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "br_cities", ["state_id"], :name => "index_br_cities_on_state_id"
 
   create_table "br_inscriptions", :force => true do |t|
     t.string   "first_name"
@@ -40,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20121006223612) do
     t.string   "cpf"
     t.integer  "city_id"
     t.string   "twitter"
-    t.integer  "student"
+    t.boolean  "student"
     t.string   "educational_institution"
     t.string   "company_name"
     t.string   "company_website"
@@ -48,8 +52,8 @@ ActiveRecord::Schema.define(:version => 20121006223612) do
     t.string   "ruby_experience"
     t.string   "python_experience"
     t.string   "javascript_experience"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.string   "payment_token"
     t.string   "payment_status"
     t.string   "payment_method"
@@ -57,7 +61,11 @@ ActiveRecord::Schema.define(:version => 20121006223612) do
     t.integer  "event_id"
     t.integer  "training_id"
     t.string   "payment_transaction"
+    t.boolean  "excluded",                :default => false
+    t.boolean  "conferred",               :default => false
   end
+
+  add_index "br_inscriptions", ["city_id"], :name => "index_br_inscriptions_on_city_id"
 
   create_table "br_states", :force => true do |t|
     t.string   "symbol"
@@ -93,15 +101,25 @@ ActiveRecord::Schema.define(:version => 20121006223612) do
     t.integer  "inscription_amount"
   end
 
+  create_table "rooms", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "schedules", :force => true do |t|
     t.integer  "event_id"
     t.datetime "occur_at"
-    t.integer  "speaker_id"
     t.string   "talk"
     t.text     "talk_description"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "speaker1_id"
+    t.integer  "speaker2_id"
+    t.integer  "room_id"
   end
+
+  add_index "schedules", ["event_id"], :name => "index_schedules_on_event_id"
 
   create_table "speakers", :force => true do |t|
     t.integer  "sequence"
@@ -142,6 +160,8 @@ ActiveRecord::Schema.define(:version => 20121006223612) do
     t.integer  "event_id"
   end
 
+  add_index "sponsors", ["sponsor_type_id"], :name => "index_sponsors_on_sponsor_type_id"
+
   create_table "teams", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -181,5 +201,7 @@ ActiveRecord::Schema.define(:version => 20121006223612) do
     t.string   "instructor_job_title"
     t.string   "hours"
   end
+
+  add_index "trainings", ["event_id"], :name => "index_trainings_on_event_id"
 
 end

@@ -2,8 +2,7 @@
   <h2><%= t(:speakers) %></h2>
 
   <blockquote class="highline">
-    <span>Behold our <strong>professional, creative, sharp-witted</strong> and simply <strong>awesome speakers</strong> and <strong>developers</strong></span>
-    <span>who will surely make this conference an <strong>unforgettable experience</strong>.</span>
+    <%= t(:speakers_description).html_safe %>
   </blockquote>
 
   <%- if speakers.present? -%>
@@ -17,7 +16,7 @@
           <div class="info">
             <div class="more-speakers center-block">
               <p class="middle">
-                <span>We're working</span> <span>hard to get even</span> <span>more awesome</span> <span>speakers!</span>
+                <%= t(:new_speaker).html_safe %>
               </p>
             </div>
           </div>
@@ -30,19 +29,20 @@
           <div class="info">
             <div class="content-column">
               <h4><%= speaker_name(speaker.name) %></h4>
-              <%= content_tag :div, class: 'twitter' do -%> 
+              <%= content_tag :div, class: 'twitter' do -%>
                 <a href="https://twitter.com/<%= speaker.twitter %>">@<%= speaker.twitter %></a>
               <%- end if speaker.twitter.present? -%>
               <div class="title center-block"><span class="middle"><%= speaker.title %></span></div>
               <div class="additional-info">
-                <p>                  
-                  <a href="#modal<%= group_index * 4 + index %>" data-toggle="modal">Bio</a>
+                <p>
+                  <a href="#<%= speaker.name.parameterize %>" data-toggle="modal">Bio</a><%- if speaker.talk_available? -%>&nbsp;|&nbsp;<a href="#<%= speaker.talk_title.parameterize %>" data-toggle="modal">Talk</a>
+                  <%- end -%>
                 </p>
 
-                <div class="modal hide" id="modal<%= group_index * 4 + index %>">
+                <div class="modal hide" id="<%= speaker.name.parameterize %>">
                   <div class="content-column">
                     <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
                       <h3><%= speaker.name %></h3>
                       <q><%= speaker.title %></q>
                     </div>
@@ -52,16 +52,35 @@
                     </div>
                     <div class="modal-footer">
                       <%= social_navbar speaker %>
-                      <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
+                      <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
                     </div>
                   </div>
                 </div>
-                
+
+                <%- if speaker.talk_available? -%>
+                <div class="modal hide" id="<%= speaker.talk_title.parameterize %>">
+                  <div class="content-column">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h3><%= speaker.talk_title %></h3>
+                      <q><%= speaker.talk.speakers %></q>
+                    </div>
+                    <div class="modal-body">
+                      <div class="justify-text">
+                        <%= speaker.talk_description.html_safe %>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+                    </div>
+                  </div>
+                </div>
+                <%- end -%>
               </div>
             </div>
           </div>
         </div>
-      </div>   
+      </div>
       <%- end -%>
       <%- end -%>
     </div>

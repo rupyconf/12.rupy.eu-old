@@ -1,7 +1,4 @@
-/*
- *= require fonts
-*/
-
+@import 'fonts';
 @import 'variables';
 @import 'bootstrap';
 
@@ -22,7 +19,7 @@ strong, h1, h2, h3, h4, h5, h6, #logo p, .btn, dt,
 
 .justify-text {
   @include hyphens();
- 
+
   text-align: justify;
 }
 
@@ -68,23 +65,21 @@ section.container, footer .container {
 
   h2 {
     font-size:   64px;
-    line-height: 64px; 
+    line-height: 64px;
     padding:     54px 0;
     text-align:  center;
   }
 }
 
 .icon {
-  display:        inline-block; 
-  vertical-align: top;
-  background:     image-url('icons.png') no-repeat;
+  display:     inline-block;
+  background:  image-url('icons.png') no-repeat;
+  text-indent: 110%;
+  overflow:    hidden;
+  white-space: nowrap;
 
   a {
     display: inherit;
-  }
-
-  &:first-line, a:first-line {
-    @include hide-text();
   }
 
   &.small, &.small a {
@@ -99,7 +94,7 @@ section.container, footer .container {
 
   &.large, &.large a {
     width:  68px;
-    height: 68px; 
+    height: 68px;
   }
 
   &.small {
@@ -216,9 +211,17 @@ section.container, footer .container {
     margin-top: 15px;
     border:     0;
     background: transparent;
-    
+
     .nav {
       margin-bottom: 0;
+
+      > li {
+        margin-left: 4px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
     }
 
     .btn-primary {
@@ -232,14 +235,14 @@ section.container, footer .container {
         left:  15px;
         right: 15px;
       }
-    }    
+    }
   }
 }
 
 h3.highline {
   text-align:    center;
   border-bottom: 1px solid #E20031;
-  height:        20px;
+  height:        24px;
 
   &:first-line {
     background-color: $bodyBackground;
@@ -269,7 +272,7 @@ header {
     text-shadow: none;
   }
 
-  .nav { 
+  .nav {
     margin-right: 0 !important;
 
     & > li:last-of-type a {
@@ -282,13 +285,13 @@ header {
     }
 
     .highline {
-      color: #FFFFFF !important;
+      color: $textColor !important;
     }
   }
 
   .nav-collapse > .brand {
-    margin-left: 30px;
-    color: #FFFFFF;
+    margin-left: $gridGutterWidth;
+    color:       $textColor;
 
     padding: {
       left:  0;
@@ -305,10 +308,6 @@ header {
   background: none;
   margin-top: -20px;
 
-  & > .row:last-of-type {
-    margin-bottom: 60px;
-  }
-
   .registration-info {
     font-size:   16px;
     line-height: 20px;
@@ -318,7 +317,7 @@ header {
     margin-top: 40px;
   }
 
-  blockquote{
+  blockquote {
     margin-bottom: 30px;
   }
 
@@ -331,7 +330,7 @@ header {
       left:   187px;
       bottom: 70px;
     }
- 
+
     width:      688px;
     background: image-url('rupy-logo-large.png') no-repeat;
 
@@ -414,7 +413,7 @@ header {
 
     .center-block {
       display: table;
-      width:   100%;      
+      width:   100%;
 
       .middle {
         display:        table-cell;
@@ -438,7 +437,7 @@ header {
 
     .more-speakers {
       height:      100%;
-      
+
       p {
         font-size:   20px;
         line-height: 25px;
@@ -448,6 +447,39 @@ header {
       span {
         display: block;
       }
+    }
+  }
+}
+
+#about {
+  h3.highline {
+    margin-bottom: 40px;
+  }
+
+  .news {
+    font-size:   16px;
+    line-height: 20px;
+
+    .tweeted {
+      display: block;
+    }
+
+    .tweet_text, .rss-feed p {
+      a {
+        @include font-family-sans-serif();
+
+        color: #E20031;
+      }
+    }
+
+   .tweet_list {
+      span.at + a {
+        color: inherit;
+      }
+    }
+
+    ul {
+      @extend ul.unstyled;
     }
   }
 }
@@ -466,7 +498,7 @@ header {
   h3 {
     text-align:    center;
     font-size:     25px;
-    line-height:   31px; 
+    line-height:   31px;
     margin-bottom: 25px;
 
     span {
@@ -501,17 +533,17 @@ header {
 
   .logo {
     &.redhat {
-      padding-top: 1.5em;
+      padding-top: 1.65em;
     }
     &.vendavo {
-      padding-top: 0.75em;
+      padding-top: 1em;
     }
   }
 
   .description {
-    @include content-columns(2);
+    @include content-columns(2, $gridColumnWidth);
 
-    margin-bottom: 0;      
+    margin-bottom: 0;
   }
 
   .logos {
@@ -553,11 +585,14 @@ header {
       margin-top:    0;
       border-bottom: 8px solid $bodyBackground;
     }
-  
+
     address {
       @include content-columns(2);
 
-      height: 110px; // force breaking after Europe
+      -webkit-column-fill: auto;
+      -moz-column-fill:    auto;
+      column-fill:         auto;
+      height:              110px;
     }
   }
 
@@ -649,4 +684,43 @@ header {
 
 #speakers .row, #team .row {
   margin-bottom: 60px;
+}
+
+#agenda .highline {
+  margin-bottom: 20px;
+}
+#agenda .table {
+  margin-bottom: 45px;
+}
+
+#agenda .table th:first-child {
+  width: 10%;
+}
+#agenda .table th:not(:first-child) {
+  width: 45%;
+}
+
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+  background-color: #1B2A6B;
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #1B2A6B;
+}
+
+.table th {
+  font-family: 'AvalonDemi', sans-serif;
+  font-weight: bold;
+}
+.table tbody td a {
+  font-family: 'AvalonBook', sans-serif;
+  font-weight: normal;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  padding: 18px 10px;
+  line-height: 24px;
 }

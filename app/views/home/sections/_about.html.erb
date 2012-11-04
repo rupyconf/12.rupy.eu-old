@@ -6,32 +6,19 @@
     </p>
   </div>
 
-  <blockquote class="highline">
-    <span><strong>RuPy</strong> is unique conference that brings together communities from different <strong>state-of-the-art</strong> programming</span>
-    <span>languages <strong>Ruby</strong>, <Strong>Python</strong>, <strong>JavaScript</strong> and related technologies.</span>
-  </blockquote>
-
-  <div class="highline">
-    <span>Joins us on <strong>November 16&mdash;18, 2012</strong></span> <span>in Brno, Czech Republic.</span>
-  </div>
-
-  <div class="button-block">
-    <a href="http://www.amiando.com/rupy12.html" class="btn btn-large btn-primary">Register Now</a>
-  </div>
-
-  <div class="highline registration-info">
-    <span>Sorry, all <strong>early bird tickets</strong> are already <strong>sold</strong>.</span> <span>Get your <strong>regular ticket</strong> for <strong>78 EUR</strong> (with 20% VAT).</span>
-  </div>
+  <%= event.inscription_description.html_safe %>
 
   <div class="row">
     <div class="span6">
-      <div class="content-column">
-        <h3 class="highline"><span class="icon medium twitter">Twitter</span></h3>
+      <h3 class="highline"><span class="icon medium twitter">Twitter</span></h3>
+      <div class="content-column news">
+        <div class="tweet"></div>
       </div>
     </div>
     <div class="span6">
-      <div class="content-column">
-        <h3 class="highline"><span class="icon medium tumblr">Blog</span></h3>
+      <h3 class="highline"><span class="icon medium tumblr">Blog</span></h3>
+      <div class="content-column news">
+        <div class="rss-feed"></div>
       </div>
     </div>
   </div>

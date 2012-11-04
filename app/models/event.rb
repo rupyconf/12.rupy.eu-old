@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
 
   has_many :speakers
+  has_many :schedules
   has_many :sponsors
   has_many :teams
   has_many :trainings
