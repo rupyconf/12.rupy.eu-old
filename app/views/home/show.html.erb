@@ -59,7 +59,7 @@
 
 <%= render 'home/sections/faq' unless @event.is_br? %>
 
-<%= render 'home/sections/coc' %>
+<%= render 'home/sections/coc' unless @event.is_br? %>
 
 <section id="contact" class="section container">
   <div class="highline">
