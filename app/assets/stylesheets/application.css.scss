@@ -723,6 +723,12 @@ header {
   vertical-align: middle;
   padding: 18px 10px;
   line-height: 24px;
+  text-align: center;
+}
+
+.table tbody td.without_room, .table tbody td.without_room a {
+  color: #E20031;
+  font-weight: bold;
 }
 
 #coc .row {

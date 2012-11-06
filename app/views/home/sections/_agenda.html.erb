@@ -8,7 +8,7 @@
   <% else %>
     <% dates.each do |date| %>
       <h3 class="highline"><%= l(date) %></h3>
-      <table class="table table-hover">
+      <table class="table table-hover table-bordered">
         <thead>
           <tr>
             <th></th>
@@ -19,19 +19,34 @@
         </thead>
 
         <tbody>
-          <% @event.schedules.where("DATE(occur_at) = ?", date).joins(:room).group_by(&:occur_at).keys.each do |datetime| %>
+          <% @event.schedules.where("DATE(occur_at) = ?", date).group_by(&:occur_at).keys.each do |datetime| %>
             <tr>
-              <td><%= l(datetime.to_time) %></td>
-              <% rooms.each do |room| %>
-                <% item = @event.schedules.where("occur_at = ? AND room_id = ?", datetime, room.id).all.first %>
-                <td>
-                  <% if item %>
+              <% items = @event.schedules.where("occur_at = ?", datetime).all %>
+              <% if items.size == 1 && items.first.room_id.nil? %>
+                <% item = items.first %>
+                <td><%= l(datetime.to_time) %></td>
+                <td class="without_room" colspan=2>
+                  <% if item.speaker1.present? %>
                     <%= link_to item.talk, "##{item.talk.parameterize}", :"data-toggle" => "modal" %><br>
                     (<%= [(link_to item.speaker1, "##{item.speaker1.name.parameterize}", :"data-toggle" => "modal" if item.speaker1), (link_to item.speaker2, "##{item.speaker2.name.parameterize}", :"data-toggle" => "modal" if item.speaker2)].compact.join(", ").html_safe %>)
                   <% else %>
-                  -
+                    <%= item.talk %>
                   <% end %>
                 </td>
+              <% else %>
+                <td><%= l(datetime.to_time) %></td>
+                <% rooms.each do |room| %>
+                  <td>
+                    <% item = nil %>
+                    <% items.each { |i| item = i if i.room_id == room.id } %>
+                    <% if item %>
+                      <%= link_to item.talk, "##{item.talk.parameterize}", :"data-toggle" => "modal" %><br>
+                      (<%= [(link_to item.speaker1, "##{item.speaker1.name.parameterize}", :"data-toggle" => "modal" if item.speaker1), (link_to item.speaker2, "##{item.speaker2.name.parameterize}", :"data-toggle" => "modal" if item.speaker2)].compact.join(", ").html_safe %>)
+                    <% else %>
+                    -
+                    <% end %>
+                  </td>
+                <% end %>
               <% end %>
             </tr>
           <% end %>
