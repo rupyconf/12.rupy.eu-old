@@ -10,10 +10,10 @@ class Br::InscriptionsController < Br::BrController
   def index
     if params[:training_id].present?
       @inscriptions = Br::Inscription.find_all_by_training_id(params[:training_id])
-      @inscriptions_status = Br::Inscription.where("training_id = ?", params[:training_id]).group(:payment_status).count
+      @inscriptions_status = (Br::Inscription.where("training_id = ?", params[:training_id]).group(:payment_status).count.collect { |item| "#{item[0].blank? ? 'unlabeled' : item[0]}: #{item[1]}" }).join(" | ")
     else
       @inscriptions = Br::Inscription.find_all_by_event_id(@event.id)
-      @inscriptions_status = Br::Inscription.where("event_id = ?", @event.id).group(:payment_status).count
+      @inscriptions_status = (Br::Inscription.where("event_id = ?", @event.id).group(:payment_status).count.collect { |item| "#{item[0].blank? ? 'unlabeled' : item[0]}: #{item[1]}" }).join(" | ")
     end
   end
 
