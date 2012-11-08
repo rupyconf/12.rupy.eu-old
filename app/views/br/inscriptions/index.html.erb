@@ -2,6 +2,12 @@
   <h2>Listing inscriptions</h2>
 </div>
 
+<div id="statistics">
+  <% @inscriptions_status.each do |item| %>
+    <%= content_tag :p, "#{item[0].blank? ? 'unlabeled' : item[0]}: #{item[1]}" %>
+  <% end %>
+</div>
+
 <table class="table table-striped table-hover table-bordered">
   <thead>
     <tr>
