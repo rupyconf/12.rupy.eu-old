@@ -242,7 +242,7 @@ section.container, footer .container {
 h3.highline {
   text-align:    center;
   border-bottom: 1px solid #E20031;
-  height:        24px;
+  height:        20px;
 
   &:first-line {
     background-color: $bodyBackground;
@@ -453,6 +453,7 @@ header {
 
 #about {
   h3.highline {
+    height:        24px;
     margin-bottom: 40px;
   }
 
