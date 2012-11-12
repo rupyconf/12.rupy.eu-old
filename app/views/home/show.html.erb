@@ -17,9 +17,6 @@
             <%- unless @event.is_br? -%>
             <li><%= link_to t(:faq), '#faq' %></li>
             <%- end -%>
-            <%- if @event.is_br? -%>
-            <li><%= link_to t(:register), new_br_event_inscription_path, class: 'highline' %></li>
-            <%- end -%>
           </ul>
         </div>
       </div>
