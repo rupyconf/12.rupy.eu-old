@@ -14,8 +14,9 @@
             <li><%= link_to t(:location), '#location' %></li>
             <li><%= link_to t(:sponsors), '#sponsors' %></li>
             <li><%= link_to t(:team), '#team' %></li>
-            <li><%= link_to t(:faq), '#faq' unless @event.is_br? %></li>
-            <li><%= link_to t(:register), (@event.try('is_br?') ? new_br_event_inscription_path : 'http://www.amiando.com/rupy12.html'), class: 'highline' %></li>
+            <%- unless @event.is_br? -%>
+            <li><%= link_to t(:faq), '#faq' %></li>
+            <%- end -%>
           </ul>
         </div>
       </div>
@@ -59,7 +60,7 @@
 
 <%= render 'home/sections/faq' unless @event.is_br? %>
 
-<%= render 'home/sections/coc' %>
+<%= render 'home/sections/coc' unless @event.is_br? %>
 
 <section id="contact" class="section container">
   <div class="highline">

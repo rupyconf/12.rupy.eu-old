@@ -242,7 +242,7 @@ section.container, footer .container {
 h3.highline {
   text-align:    center;
   border-bottom: 1px solid #E20031;
-  height:        24px;
+  height:        20px;
 
   &:first-line {
     background-color: $bodyBackground;
@@ -453,6 +453,7 @@ header {
 
 #about {
   h3.highline {
+    height:        24px;
     margin-bottom: 40px;
   }
 
@@ -524,11 +525,8 @@ header {
 }
 
 #sponsors {
-  .sponsor {
-    padding: {
-      top:    45px;
-      bottom: 45px;
-    }
+  .sponsors {
+    padding-bottom: 25px;
   }
 
   .logo {
@@ -565,9 +563,13 @@ header {
     margin-bottom: 65px;
   }
 
-  h3.highline:last-of-type + div.sponsor {
+  h3.highline:last-of-type + div.sponsors {
     border-bottom: 1px solid #E20031;
-    margin-bottom: 65px;
+    margin-bottom: 45px;
+  }
+
+  div.sponsors:last-of-type {
+    border-bottom: 0 !important;
   }
 }
 
@@ -724,6 +726,12 @@ header {
   vertical-align: middle;
   padding: 18px 10px;
   line-height: 24px;
+  text-align: center;
+}
+
+.table tbody td.without_room, .table tbody td.without_room a {
+  color: #E20031;
+  font-weight: bold;
 }
 
 #coc .row {
