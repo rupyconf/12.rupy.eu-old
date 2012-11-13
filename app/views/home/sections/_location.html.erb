@@ -48,44 +48,46 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="span6">
-      <div class="content-column">
-        <div class="location-details">
-          <div class="content-column">
-            <h3>Friday track: VUT</h3>
-            <address>
-              <strong>Address:</strong><br/>
-              Technicka 8 <br/>
-              616 00 Brno<br/>
-              room T-020<br/>
-              tel. : +420 532 294 111<br/>
-              <strong>GPS:</strong><br/>
-              Latitude: 49.22608<br/>
-              Longitude: 16.58127
-            </address>
+  <%- unless event.is_br? %>
+    <div class="row">
+      <div class="span6">
+        <div class="content-column">
+          <div class="location-details">
+            <div class="content-column">
+              <h3>Friday track: VUT</h3>
+              <address>
+                <strong>Address:</strong><br/>
+                Technicka 8 <br/>
+                616 00 Brno<br/>
+                room T-020<br/>
+                tel. : +420 532 294 111<br/>
+                <strong>GPS:</strong><br/>
+                Latitude: 49.22608<br/>
+                Longitude: 16.58127
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="content-column">
+          <div class="location-details">
+            <div class="content-column">
+              <h3>Workshops: RedHat HQ</h3>
+              <address>
+                <strong>Address:</strong><br/>
+                Purkyňova 99, 612 45 Brno<br/>
+                tel. : +420 532 294 111<br/>
+                <strong>GPS:</strong><br/>
+                Latitude: 49.22608<br/>
+                Longitude: 16.58127
+              </address>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="span6">
-      <div class="content-column">
-        <div class="location-details">
-          <div class="content-column">
-            <h3>Workshops: RedHat HQ</h3>
-            <address>
-              <strong>Address:</strong><br/>
-              Purkyňova 99, 612 45 Brno<br/>
-              tel. : +420 532 294 111<br/>
-              <strong>GPS:</strong><br/>
-              Latitude: 49.22608<br/>
-              Longitude: 16.58127
-            </address>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <% end %>
 
 
   <% if event.is_br? %>
