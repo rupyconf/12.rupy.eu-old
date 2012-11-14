@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="span9 box">
+        <div class="modalLike">
+            <div class="top hrDark">
+                <div class="title">
+                    <p class="white"><%= training.name %></p>
+                    <p class="regular"><%= training.instructor_name %></p>
+                </div>
+                <ul class="params">
+                    <li><span class="icon small people"></span><%= training.inscription_amount %></li>
+                    <li><span class="icon small duration"></span><%= training.sequence %></li>
+                </ul>
+            </div>
+            <p><%= training.description %></p>
+        </div>
+    </div>
+    <div class="span3 box">
+        <div class="content-column speaker">
+            <%= image_tag training.instructor_photo, size: '240x240', alt: training.instructor_name %>
+            <div class="info">
+              <div class="content-column">
+                <h4>
+                  <span>
+                    <%= training.instructor_name %>
+                  </span>
+                </h4>
+                <div class="title center-block">
+                  <span class="middle"><%= training.instructor_job_title %></span>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>                    
+</div>
+

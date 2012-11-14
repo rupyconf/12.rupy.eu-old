@@ -239,6 +239,67 @@ section.container, footer .container {
   }
 }
 
+.white {
+  color: white !important;
+}
+
+.hrDark {
+  background: url(http://projekty.insisto.pl/rupy2/css/../images/hrDark.png) repeat-x bottom left;
+  padding-bottom: 9px;
+}
+
+.speaker {
+  min-height: 473px;
+}
+
+.modalLike {
+  background: #e20031;
+  padding: 15px 17px;
+  text-align: justify;
+  
+  position: relative;
+  min-height: 450px;
+  color: #000033;
+  margin: 0 auto;
+  
+  div.top {
+    overflow: hidden;
+    font-family: 'AvalonDemi';
+    margin: 0 0 16px 0;
+    
+    div.title {
+      float: left;
+      
+      p.white {
+        font-size: 20px;
+        margin: 12px 0 7px 0;
+      }
+      
+      p.regular {
+        margin: 0 0 12px 0;
+      }
+    }  
+    
+    ul.params {
+      margin: 15px;
+      float: right;
+      list-style-type: none;
+      
+      li {
+        float: left;
+        margin: 0 0 0 12px;
+        line-height: 36px;
+        
+        span {
+          float: left;
+          margin: 0 11px 0 0;
+        }
+      }
+    }
+  }
+}
+
+
 h3.highline {
   text-align:    center;
   border-bottom: 1px solid #E20031;
@@ -685,7 +746,7 @@ header {
   }
 }
 
-#speakers .row, #team .row {
+#speakers .row, #team .row, #workshops .row {
   margin-bottom: 60px;
 }
 

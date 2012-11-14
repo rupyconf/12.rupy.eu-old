@@ -1,6 +1,16 @@
 <section id="workshops" class="section container">
   <h2><%= t(:workshops) %></h2>
-
+  
+  <blockquote class="highline">
+    <span>In addition to the lectures, we offer an attendees the <strong>possibility to participate in workshops</strong> which
+    </span> 
+    <span>provide a <strong>more active</strong> and hands-on approach to gain <strong>new useful knowledge</strong>.</span>
+  </blockquote>
+  
+  <% @trainings.each do |training| %>
+    <%= render 'home/sections/training', training: training %>
+  <% end %>
+  
   <div class="button-block">
     <%= link_to 'Register for workshops', 'http://goo.gl/My4EP', :class => "btn btn-large btn-primary" %>
   </div>
