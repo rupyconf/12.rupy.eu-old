@@ -54,4 +54,4 @@ en:
 
   date:
     formats:
-      default: "%d de %B de %Y"  
+      default: "%dth of %B %Y"
