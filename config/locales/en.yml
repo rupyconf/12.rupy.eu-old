@@ -54,4 +54,7 @@ en:
 
   date:
     formats:
-      default: "%d de %B de %Y"  
+      default: "%a, %d %b %Y"
+  time:
+    formats:
+      default: "%H:%M"
