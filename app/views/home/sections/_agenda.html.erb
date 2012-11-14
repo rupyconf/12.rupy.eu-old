@@ -1,14 +1,11 @@
 <section id="agenda" class="section container">
   <h2><%= t(:agenda) %></h2>
 
-  <div class="button-block">
-    <%= link_to 'Check our agenda', 'http://goo.gl/HzcMZ', :class => "btn btn-large btn-primary" %>
-  </div>
 
   <% if dates.empty? %>
-    <blockquote class="highline">
-      <%= t(:agenda_description).html_safe %>
-    </blockquote>
+    <div class="button-block">
+      <%= link_to 'Check our agenda', 'http://goo.gl/HzcMZ', :class => "btn btn-large btn-primary" %>
+    </div>
   <% else %>
     <% dates.each do |date| %>
       <h3 class="highline"><%= l(date) %></h3>
