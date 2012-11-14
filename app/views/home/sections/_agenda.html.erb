@@ -3,8 +3,10 @@
 
 
   <% if dates.empty? %>
-    <div class="button-block">
-      <%= link_to 'Check our agenda', 'http://goo.gl/HzcMZ', :class => "btn btn-large btn-primary" %>
+    <div class='row'>
+      <div class="button-block">
+        <%= link_to 'Check our agenda', 'http://goo.gl/HzcMZ', :class => "btn btn-large btn-primary" %>
+      </div>
     </div>
   <% else %>
     <% dates.each do |date| %>
