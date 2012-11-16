@@ -47,7 +47,9 @@
                       <q><%= speaker.title %></q>
                     </div>
                     <div class="modal-body">
-                      <%= image_tag speaker.photo.url, size: '140x140', alt: speaker.name, class: 'speaker clearfix' %>
+                      <p class="speaker-avatar">
+                        <%= image_tag speaker.photo.url, size: '140x140', alt: speaker.name, class: 'clearfix' %>
+                      </p>
                       <p class="justify-text"><%= speaker.description.html_safe %></p>
                     </div>
                     <div class="modal-footer">

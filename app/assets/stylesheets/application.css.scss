@@ -198,10 +198,14 @@ section.container, footer .container {
   }
 
   .modal-body {
-    img.speaker {
-      float:         left;
-      margin-right:  10px;
-      margin-bottom: 10px;
+    .speaker-avatar {
+      margin: 0px;
+      
+      img {
+        float:         left;
+        margin-right:  10px;
+        margin-bottom: 10px;
+      }
     }
   }
 
