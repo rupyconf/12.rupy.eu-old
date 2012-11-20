@@ -28,14 +28,16 @@
               <% if items.size == 1 && items.first.room_id.nil? %>
                 <% item = items.first %>
                 <td><%= l(datetime.to_time) %></td>
-                <td class="without_room" colspan=2>
-                  <% if item.speaker1.present? %>
+                <% if item.speaker1.present? %>
+                  <td colspan=2>
                     <%= link_to item.talk, "##{item.speaker1.name.parameterize}-talk", :"data-toggle" => "modal" %><br>
                     (<%= [(link_to item.speaker1, "##{item.speaker1.name.parameterize}", :"data-toggle" => "modal" if item.speaker1), (link_to item.speaker2, "##{item.speaker2.name.parameterize}", :"data-toggle" => "modal" if item.speaker2)].compact.join(", ").html_safe %>)
-                  <% else %>
+                  </td>
+                <% else %>
+                  <td class="without_speaker" colspan=2>
                     <%= item.talk %>
-                  <% end %>
-                </td>
+                  </td>
+                <% end %>
               <% else %>
                 <td><%= l(datetime.to_time) %></td>
                 <% rooms.each do |room| %>

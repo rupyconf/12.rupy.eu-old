@@ -200,7 +200,7 @@ section.container, footer .container {
   .modal-body {
     .speaker-avatar {
       margin: 0px;
-      
+
       img {
         float:         left;
         margin-right:  10px;
@@ -794,7 +794,7 @@ header {
   text-align: center;
 }
 
-.table tbody td.without_room, .table tbody td.without_room a {
+.table tbody td.without_speaker, .table tbody td.without_speaker a {
   color: #E20031;
   font-weight: bold;
 }
