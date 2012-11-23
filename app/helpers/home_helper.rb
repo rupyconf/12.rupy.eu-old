@@ -4,7 +4,7 @@ module HomeHelper
 
   # TODO: refactoring needed
   def speaker_name(name)
-    name.scan(/(Dr \p{Word}+|\p{Word}+) (.*)/) do |first_name, last_name| 
+    name.scan(/(Dr \p{Word}+|\p{Word}+) (.*)/) do |first_name, last_name|
       name = "<span>#{ first_name }</span> <span>#{ last_name }</span>"
     end
 
@@ -16,7 +16,7 @@ module HomeHelper
   end
 
   def sponsor_headline(sponsors, sponsor_type)
-    "#{ sponsor_type.description.capitalize } #{ t(:sponsor).pluralize(sponsors[sponsor_type].count) }"
+    "#{ sponsor_type.description.capitalize } #{ 'Sponsor'.pluralize(sponsors[sponsor_type].count) }"
   end
 
   def link_to_speaker(site, link, *options)
